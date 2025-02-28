@@ -4,6 +4,7 @@
 
 <template>
   <div class="m-auto max-w-[96%]">
+    <Header />
     <NuxtPage />
   </div>
 </template>

@@ -2,10 +2,20 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  modules: ['@nuxt/image', 'nuxt-vue3-google-signin', '@sidebase/nuxt-auth', '@nuxt/ui', '@vueuse/nuxt'],
+  modules: [
+    '@nuxt/image',
+    'nuxt-vue3-google-signin',
+    '@sidebase/nuxt-auth',
+    '@nuxt/ui',
+    '@vueuse/nuxt',
+    '@nuxtjs/i18n',
+    '@pinia/nuxt',
+    '@nuxtjs/google-fonts'
+  ],
   image: {
     dir: 'assets/images'
   },
+  css: ['@/assets/styles.css'],
   googleSignIn: {
     clientId: process.env.GG_CLIENT_ID,
   },
@@ -29,6 +39,37 @@ export default defineNuxtConfig({
     },
     globalAppMiddleware: {
       isEnabled: false
+    }
+  },
+  i18n: {
+    locale: 'en',
+    strategy: 'prefix',
+    locales: [
+        {
+          code: 'en',
+          name: 'English',
+          flag: 'twemoji:flag-united-kingdom',
+        },
+        {
+          code: 'vi',
+          name: 'Tiếng Việt',
+          flag: 'twemoji:flag-vietnam',
+        },
+    ],
+    messages: {
+      en: {
+        hello: 'Hello'
+      },
+      vi: {
+        hello: 'Xin chào'
+      }
+    }
+  },
+  googleFonts: {
+    families: {
+      'Be Vietnam Pro': '100..900',
+      Roboto: true,
+      'Josefin+Sans': true,
     }
   }
 })
