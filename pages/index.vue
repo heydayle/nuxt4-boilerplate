@@ -52,8 +52,8 @@ const FEATURES = [
   <div class="p-4 h-screen flex flex-col justify-center items-center">
     <div class="grid grid-cols-[1fr,40%] gap-8 w-full content-center">
       <div class="flex flex-col justify-between items-center">
-        <div>
-          <h1 class="text-2xl font-bold">Welcome to the Nuxt Boilerplate!</h1>
+        <div class="w-[60%]">
+          <h1 class="text-4xl font-bold">Welcome to the Nuxt Boilerplate!</h1>
           <p>
             Kickstart Your Nuxt Project – Preconfigured, Optimized, Ready to
             Code!
@@ -68,7 +68,7 @@ const FEATURES = [
             <div
               v-for="(item, index) in FEATURES"
               :key="index"
-              class="flex flex-col justify-center items-center bg-white-50/5 h-[200px] rounded-2xl transition duration-600 opacity-50 cursor-pointer hover:opacity-100 hover:shadow-white-100/10 hover:shadow-2xl"
+              class="flex flex-col justify-center items-center bg-white-50/5 h-[100px] rounded-2xl transition duration-600 opacity-50 cursor-pointer hover:opacity-100 hover:shadow-white-100/10 hover:shadow-2xl"
             >
               <UIcon :name="item.icon" size="32" />
               <div>{{ item.label }}</div>
