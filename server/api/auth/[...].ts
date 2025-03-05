@@ -1,4 +1,3 @@
-import CredentialsProvider from 'next-auth/providers/credentials'
 import Google from 'next-auth/providers/google'
 import { NuxtAuthHandler } from '#auth'
 

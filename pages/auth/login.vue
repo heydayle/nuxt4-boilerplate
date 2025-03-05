@@ -2,12 +2,18 @@
 
 import { ref, reactive } from 'vue';
 import { useStorage } from '@vueuse/core';
-import { useFetch } from '@vueuse/core';
 import {
     useTokenClient,
     type AuthCodeFlowSuccessResponse,
     type AuthCodeFlowErrorResponse,
 } from "vue3-google-signin";
+
+definePageMeta({
+    layout: 'auth',
+});
+useHead({
+  title: 'Login'
+})
 
 const access_token = useStorage('access_token')
 const credentials = useStorage('credentials')
@@ -21,10 +27,10 @@ const handleOnSuccess = (response: AuthCodeFlowSuccessResponse) => {
 const handleOnError = (errorResponse: AuthCodeFlowErrorResponse) => {
     console.log("Error: ", errorResponse);
 };
-const scpopes = <string[]>['email', 'profile',]
+const scopes = ['email', 'profile',]
 
-const { isReady, login: loginByGoogle } = useTokenClient({
-    scope: scpopes,
+const { login: loginByGoogle } = useTokenClient({
+    scope: scopes,
     onSuccess: handleOnSuccess,
     onError: handleOnError,
 });
@@ -33,23 +39,25 @@ const model = reactive({
     email: '',
     password: '',
 });
+const remember = ref(true)
 const passwordType = ref('password');
 
 const showPassword = () => {
     passwordType.value = passwordType.value === 'password' ? 'text' : 'password';
 };
+const signIn = () => {}
 </script>
 <template>
     <div class="flex flex-col justify-center items-center h-screen">
         <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] filter blur-xl rounded-full bg-primary-50/10" />
         <div>
             <h1 class="py-4 text-white">{{ '\<' }} Login {{ '/\>' }}</h1>
-            <div class="relative z-1 flex flex-col space-y-4 w-[400px] px-4 py-8 bg-primary-100 rounded-2xl">
+            <div class="relative z-1 flex flex-col space-y-4 w-[400px] px-4 py-8 bg-white-100 rounded-2xl">
                 <UForm class="flex flex-col space-y-3 text-white">
-                    <UInput v-model="email" label="Email" size="xl" color="primary" :ui="{ rounded: 'rounded-xl' }" />
-                    <UInput v-model="password" label="Password" :type="passwordType" size="xl" color="primary" :ui="{ rounded: 'rounded-xl', icon: { trailing: { pointer: '' } } }">
+                    <UInput v-model="model.email" label="Email" size="xl" color="primary" :ui="{ rounded: 'rounded-xl' }" />
+                    <UInput v-model="model.password" label="Password" :type="passwordType" size="xl" color="primary" :ui="{ rounded: 'rounded-xl', icon: { trailing: { pointer: '' } } }">
                         <template #trailing>
-                            <UButton variant="ghost" @click="showPassword" color="primary" :ui="{ rounded: 'rounded-full' }">
+                            <UButton variant="ghost" color="primary" :ui="{ rounded: 'rounded-full' }" @click="showPassword">
                                 <UIcon v-if="passwordType === 'password'" name="mdi-eye-off" />
                                 <UIcon v-else name="mdi-eye" />
                             </UButton>
@@ -62,7 +70,7 @@ const showPassword = () => {
                         </div>
                         <div class="flex items-center space-x-2">
                         <UButton variant="ghost" @click="signIn">Sign up</UButton>
-                            <UButton UButton  @click="signIn">Sign in</UButton> 
+                            <UButton @click="signIn">Sign in</UButton>
                         </div>
                     </div>
                 </UForm>

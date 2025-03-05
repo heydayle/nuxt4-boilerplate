@@ -1,18 +1,24 @@
 <script setup lang="ts">
+
+interface Locale {
+  code: string
+  label: string
+  flag: string
+}
 const { locale, locales } = useI18n();
-const switchLocalePath = useSwitchLocalePath();
 const selected = computed(() =>
-  locales.value.find((item: any) => item.code === locale.value)
+  locales.value.find((item) => item.code === locale.value) as Locale
 );
+
 </script>
 <template>
   <USelectMenu
     v-model="selected"
     :options="locales"
-    valueAttribute="code"
+    value-attribute="code"
     variant="outline"
     :popper="{ placement: 'left-end' }"
-    :uiMenu="{ base: 'w-40' }"
+    :ui-menu="{ base: 'w-40' }"
   >
     <template #option="{ option: option }">
       <SwitchLocalePathLink :locale="option.code">

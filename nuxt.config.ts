@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
@@ -10,7 +11,8 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/i18n',
     '@pinia/nuxt',
-    '@nuxtjs/google-fonts'
+    '@nuxt/fonts',
+    '@nuxtjs/eslint-module'
   ],
   image: {
     dir: 'assets/images'
@@ -42,7 +44,6 @@ export default defineNuxtConfig({
     }
   },
   i18n: {
-    locale: 'en',
     strategy: 'prefix',
     locales: [
         {
@@ -56,20 +57,30 @@ export default defineNuxtConfig({
           flag: 'twemoji:flag-vietnam',
         },
     ],
-    messages: {
-      en: {
-        hello: 'Hello'
-      },
-      vi: {
-        hello: 'Xin chào'
-      }
-    }
   },
-  googleFonts: {
-    families: {
-      'Be Vietnam Pro': '100..900',
-      Roboto: true,
-      'Josefin+Sans': true,
+  fonts: {
+    families: [
+      { name: 'Be Vietnam Pro', provider: 'google' },
+    ],
+    defaults: {
+      weights: [400, 500, 600, 700, 800, 900],
+      styles: ['normal', 'italic'],
+      subsets: [
+        'cyrillic-ext',
+        'cyrillic',
+        'greek-ext',
+        'greek',
+        'vietnamese',
+        'latin-ext',
+        'latin',
+      ]
+    },
+  },
+  eslint: {
+    overrideConfig: {
+      rules: {
+        "vue/multi-word-component-names": "off",
+      }
     }
   }
 })
