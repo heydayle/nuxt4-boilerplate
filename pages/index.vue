@@ -6,9 +6,6 @@ definePageMeta({
   name: 'Home'
 });
 
-useHead({
-  title: 'Kickstart Nuxt!!!'
-})
 </script>
 <template>
   <Welcome />
