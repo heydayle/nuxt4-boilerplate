@@ -1,12 +1,21 @@
 <script setup lang="ts">
-import Welcome from "~/components/Welcome.vue";
+import NBWelcome from "~/components/NBWelcome.vue";
 
 definePageMeta({
-  layout: "default",
+  layout: "landing",
   name: 'Home'
+});
+useHead({
+  title: 'Kickstart Nuxt 🚀',
+  meta: [
+    {
+      name: 'description',
+      content: 'Welcome to NuxtKit!'
+    }
+  ]
 });
 
 </script>
 <template>
-  <Welcome />
+  <NBWelcome />
 </template>

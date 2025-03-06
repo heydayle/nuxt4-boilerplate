@@ -2,61 +2,19 @@
 definePageMeta({
   layout: "default",
 });
-const FEATURES = [
-  {
-    label: "Next Auth",
-    icon: "fluent-color:shield-checkmark-20",
-  },
-  {
-    label: "Pinia",
-    icon: "logos:pinia",
-  },
-  {
-    label: "NuxtUI",
-    icon: "vscode-icons:file-type-nuxt",
-  },
-  {
-    label: "TailwindCSS",
-    icon: "vscode-icons:file-type-tailwind",
-  },
-  {
-    label: "Axios",
-    icon: "simple-icons:axios",
-  },
-  {
-    label: "i18n",
-    icon: "ic:round-translate",
-  },
-  {
-    label: "Lint",
-    icon: "logos:eslint",
-  },
-  {
-    label: "Vueuse",
-    icon: "logos:vueuse",
-  },
-  {
-    label: "Routing",
-    icon: "devicon-plain:reactrouter",
-  },
-];
+const { app } = useAppConfig()
+const localPath = useLocalePath()
+const FEATURES = app.features;
 </script>
 <template>
   <div class="p-4 h-screen flex flex-col justify-center items-center">
     <div class="grid grid-cols-[1fr,40%] gap-8 w-full content-center">
       <div class="flex flex-col justify-between items-center">
         <div class="w-[60%]">
-          <h1 class="text-4xl font-bold">Welcome to the <span class="text-green-500 font-black">Nuxt Boilerplate!</span></h1>
-          <p>
-            Kickstart Your Nuxt Project – Preconfigured, Optimized, Ready to
-            Code!
-          </p>
-          <UButton class="mt-2">Get started</UButton>
-          <p class="my-4">
-            Ready-to-use framework for Nuxt projects, pre-configured framework
-            with essential libraries and tools, streamlining development and
-            ensuring a clean, structured codebase. 🚀
-          </p>
+          <h1 class="text-4xl font-bold">{{ $t('welcome.title') }} <span class="text-green-500 font-black">Nuxt Boilerplate!</span></h1>
+          <p>{{ $t('welcome.subTitle') }}</p>
+          <UButton class="mt-2" :to="localPath('docs')">{{ $t('welcome.getStarted') }}</UButton>
+          <p class="my-4">{{ $t('welcome.description') }}</p>
           <div class="grid grid-cols-4 gap-4 mt-6 content-center align-center">
             <div
                 v-for="(item, index) in FEATURES"

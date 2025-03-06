@@ -1,4 +1,4 @@
-import type { Social, Header, Link } from '@/types/nuxtTypes'
+import type { Social, Header, Link, Feature } from '@/types/nuxtTypes'
 declare module 'nuxt/schema' {
     interface AppConfigInput {
       /** Theme configuration */
@@ -6,14 +6,22 @@ declare module 'nuxt/schema' {
         /** Primary app color */
         primaryColor?: string
       },
-      template?: {
-        ui?: {},
-        features?: any[],
+      app?: {
+        //eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ui?: any,
+        meta?: {
+          title?: string,
+          description?: string,
+          keywords?: string
+        }
+        features?: Feature[],
         socials?: Social[],
-        headers?: Header[],
+        headers?: Header,
         footer?: {
             references?: Link[],
             children?: Link[],
+            contact?: Link[],
+            copyright?: string
         }
       }
     }

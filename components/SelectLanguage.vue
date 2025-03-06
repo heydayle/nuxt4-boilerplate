@@ -17,7 +17,7 @@ const selected = computed(() =>
     :options="locales"
     value-attribute="code"
     variant="outline"
-    :popper="{ placement: 'left-end' }"
+    :popper="{ placement: 'left' }"
     :ui-menu="{ base: 'w-40' }"
   >
     <template #option="{ option: option }">
@@ -33,7 +33,7 @@ const selected = computed(() =>
         </UButton>
       </SwitchLocalePathLink>
     </template>
-    <UButton variant="ghost">
+    <UButton variant="ghost" block>
       <UIcon :name="selected.flag" size="40" />
     </UButton>
   </USelectMenu>

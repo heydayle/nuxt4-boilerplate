@@ -1,3 +1,11 @@
+export interface Navigation {
+    name: string
+    label: string
+    path: string
+    class?: string
+    transition?: string
+    disabled?: boolean
+}
 export interface Social {
     name: string
     icon?: string
@@ -10,16 +18,11 @@ export interface Link {
     target?: string
 }
 export interface Header {
-    label: string
-    path: string
-    class?: string
-    transition?: string
-    disabled?: boolean
+    navigation: Navigation[]
+    logo?: string
+    heading?: string
 }
-export interface Footer {
-    label: string
-    path: string
-    class?: string
-    transition?: string
-    disabled?: boolean
+export interface Feature {
+    label?: string
+    icon?: string
 }

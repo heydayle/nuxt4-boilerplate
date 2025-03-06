@@ -1,11 +1,42 @@
-import { type Template } from "./types/templateTypes"
-
 export default defineAppConfig({
   ui: {
     primary: 'green',
     gray: 'cool'
   },
-  template: {
+  app: {
+    meta: {
+      title: 'Nuxt Starter',
+      description: 'Nuxt Starter with Vite',
+      keywords: 'nuxt, vite, starter'
+    },
+    socials: [
+      {
+        name: 'Github',
+        icon: 'simple-icons:github',
+        href: 'https://github.com/heydayle'
+      },
+    ],
+    headers: {
+      heading: 'Nuxt Starter',
+      logo: "/logo.svg",
+      navigation: [
+        {
+          name: "docs",
+          label: "nav.docs",
+          path: "/docs",
+        },
+        {
+          name: "about",
+          label: "nav.about",
+          path: "/about",
+        },
+        {
+          name: "contact",
+          label: "nav.contact",
+          path: "/contact",
+        }
+      ]
+    },
     features: [
       {
         label: "Next Auth",

@@ -50,11 +50,13 @@ export default defineNuxtConfig({
           code: 'en',
           name: 'English',
           flag: 'twemoji:flag-united-kingdom',
+          file: './locales/en.ts',
         },
         {
           code: 'vi',
           name: 'Tiếng Việt',
           flag: 'twemoji:flag-vietnam',
+          file: './locales/vi.ts',
         },
     ],
   },
@@ -79,7 +81,7 @@ export default defineNuxtConfig({
   eslint: {
     overrideConfig: {
       rules: {
-        "vue/multi-word-component-names": "off",
+        'vue/multi-word-component-names':[0],
       }
     }
   }
