@@ -8,7 +8,7 @@ const FEATURES = app.features;
 </script>
 <template>
   <div>
-    <div class="container p-4 h-screen flex flex-col justify-center items-center">
+    <div class="p-4 h-screen flex flex-col justify-center items-center">
       <div class="grid grid-cols-[1fr,40%] gap-8 w-full content-center">
         <div class="flex flex-col justify-between items-center">
           <div class="w-[60%]">

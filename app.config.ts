@@ -70,8 +70,13 @@ export default defineAppConfig({
     documents: {
       sidebars: [
         {
+          name: 'get-started',
+          icon: 'lineicons:rocket-5',
+          label: 'Get started'
+        },
+        {
           name: 'get-started-installation',
-          icon: 'material-symbols:play-arrow',
+          icon: 'material-symbols:power-settings-new-outline',
           label: 'Installation'
         },
         {
