@@ -1,10 +1,12 @@
 export interface Navigation {
     name: string
     label: string
-    path: string
+    path?: string
+    href?: string
     class?: string
     transition?: string
     disabled?: boolean
+    icon?: string
 }
 export interface Social {
     name: string

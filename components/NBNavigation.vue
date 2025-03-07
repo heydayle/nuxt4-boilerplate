@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { app } = useAppConfig()
+const { app } = useAppConfig();
 const navigation = app.headers.navigation;
 </script>
 
@@ -7,14 +7,13 @@ const navigation = app.headers.navigation;
   <div>
     <div class="w-full flex justify-end mr-6">
       <ul class="flex items-center space-x-4">
-        <NuxtLinkLocale v-for="(item, index) in navigation" :key="index" :to="item.name">
+        <NuxtLinkLocale v-for="(item) in navigation" :key="item.name" :to="item.name">
           <span>{{ $t(item.label) }}</span>
-        </NuxtLinkLocale >
+        </NuxtLinkLocale>
       </ul>
     </div>
   </div>
 </template>
 
 <style scoped>
-
 </style>

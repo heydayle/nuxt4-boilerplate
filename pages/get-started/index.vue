@@ -1,12 +1,16 @@
 <script setup lang="ts">
-useHead({
-  title: ''
+definePageMeta({
+  layout: 'document'
 })
+useHead({
+  title: 'Documents'
+})
+
 </script>
 
 <template>
   <div>
-    <div>About</div>
+      
   </div>
 </template>
 

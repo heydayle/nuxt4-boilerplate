@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import NBWelcome from "~/components/NBWelcome.vue";
 
 definePageMeta({
   layout: "landing",
@@ -10,7 +9,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'Welcome to NuxtKit!'
+      content: 'Welcome to Nuxt Boilerplate v3!'
     }
   ]
 });

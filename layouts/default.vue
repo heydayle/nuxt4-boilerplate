@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import Header from '~/components/layouts/Header.vue'
 </script>
 
 <template>
-  <div class="m-auto max-w-[96%]">
-    <Header />
+  <div class="m-auto">
+    <LayoutsHeader />
     <NuxtPage />
   </div>
 </template>

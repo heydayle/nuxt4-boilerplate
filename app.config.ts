@@ -4,8 +4,9 @@ export default defineAppConfig({
     gray: 'cool'
   },
   app: {
+    version: 'v0.0.1-alpha',
     meta: {
-      title: 'Nuxt Starter',
+      title: 'Nuxt Boilerplate',
       description: 'Nuxt Starter with Vite',
       keywords: 'nuxt, vite, starter'
     },
@@ -13,7 +14,7 @@ export default defineAppConfig({
       {
         name: 'Github',
         icon: 'simple-icons:github',
-        href: 'https://github.com/heydayle'
+        href: 'https://github.com/heydayle/nuxt-boilerplate-v3'
       },
     ],
     headers: {
@@ -21,20 +22,15 @@ export default defineAppConfig({
       logo: "/logo.svg",
       navigation: [
         {
-          name: "docs",
+          name: "get-started",
           label: "nav.docs",
-          path: "/docs",
-        },
-        {
-          name: "about",
-          label: "nav.about",
-          path: "/about",
+          path: "/get-started",
         },
         {
           name: "contact",
           label: "nav.contact",
           path: "/contact",
-        }
+        },
       ]
     },
     features: [
@@ -70,10 +66,20 @@ export default defineAppConfig({
         label: "Vueuse",
         icon: "logos:vueuse",
       },
-      {
-        label: "Routing",
-        icon: "devicon-plain:reactrouter",
-      },
-    ]
+    ],
+    documents: {
+      sidebars: [
+        {
+          name: 'get-started-installation',
+          icon: 'material-symbols:play-arrow',
+          label: 'Installation'
+        },
+        {
+          name: 'get-started-configuration',
+          icon: 'icon-park-outline:config',
+          label: 'Configuration'
+        }
+      ]
+    }
   }
 })

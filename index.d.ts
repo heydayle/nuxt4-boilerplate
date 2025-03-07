@@ -9,6 +9,7 @@ declare module 'nuxt/schema' {
       app?: {
         //eslint-disable-next-line @typescript-eslint/no-explicit-any
         ui?: any,
+        version?: string
         meta?: {
           title?: string,
           description?: string,
@@ -22,6 +23,9 @@ declare module 'nuxt/schema' {
             children?: Link[],
             contact?: Link[],
             copyright?: string
+        },
+        documents?: {
+          sidebars?: Navigation[]
         }
       }
     }
