@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { introduce } from '~/__mock__/introduction'
 definePageMeta({
   layout: 'document'
 })
@@ -16,11 +17,13 @@ const links = [
     label: 'Get started'
   }
 ]
+const INTRODUCE = introduce
 </script>
 
 <template>
-  <div>
+  <div class="h-full">
       <UBreadcrumb :links="links" />
+      <MDC :value="INTRODUCE" tag="article" />
   </div>
 </template>
 

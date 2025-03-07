@@ -1,0 +1,80 @@
+/* styles/typography.css */
+/* Custom heading styles to override Tailwind defaults */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    article {
+        h1 {
+            @apply text-4xl font-bold text-gray-200 my-6 leading-tight;
+        }
+
+        h2 {
+            @apply text-3xl font-semibold text-gray-300 my-5 leading-tight;
+        }
+
+        h3 {
+            @apply text-2xl font-semibold text-gray-400 my-4;
+        }
+
+        h4 {
+            @apply text-xl font-medium text-gray-500 my-3;
+        }
+
+        h5 {
+            @apply text-lg font-medium text-gray-600 my-2;
+        }
+
+        h6 {
+            @apply text-base font-medium text-gray-700 my-2;
+        }
+        p {
+            @apply my-3;
+        }
+
+        /* Dark mode variants */
+        .dark h1 {
+            @apply text-gray-100;
+        }
+
+        .dark h2, .dark h3 {
+            @apply text-gray-200;
+        }
+
+        .dark h4, .dark h5, .dark h6 {
+            @apply text-gray-300;
+        }
+
+        ul {
+            @apply pl-5 list-disc my-4;
+        }
+
+        ul > li {
+            @apply mb-2 text-gray-300;
+        }
+
+        /* Nested lists */
+        ul > li > ul {
+            @apply mt-2 mb-0;
+        }
+
+        ul > li > ul > li {
+            @apply text-gray-300;
+        }
+
+        /* Dark mode variants */
+        .dark ul > li {
+            @apply text-gray-300;
+        }
+
+        .dark ul > li > ul > li {
+            @apply text-gray-300;
+        }
+
+        a[rel="nofollow"] {
+            @apply text-primary;
+        }
+    }
+}

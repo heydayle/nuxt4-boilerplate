@@ -9,7 +9,9 @@ const sidebar = app.documents.sidebars
   <div class="container m-auto">
     <div class="grid grid-cols-[200px,1fr] p-4">
       <LayoutsSidebar :sidebar-items="sidebar" />
-      <NuxtPage />
+      <div class="max-h-[calc(100vh-120px)] overflow-y-auto px-4">
+        <NuxtPage />
+      </div>
     </div>
   </div>
 </div>
