@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { installation } from '~/__mock__/installation'
 definePageMeta({
   layout: 'document'
 })
@@ -23,7 +24,8 @@ const links = [
 ]
 </script>
 <template>
-    <div>
+    <div class="h-full">
       <UBreadcrumb :links="links" />
+      <MDC :value="installation" tag="article" />
     </div>
 </template>
