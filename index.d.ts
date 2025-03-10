@@ -11,9 +11,13 @@ declare module 'nuxt/schema' {
         ui?: any,
         version?: string
         meta?: {
-          title?: string,
-          description?: string,
+          title?: string
+          description?: string
           keywords?: string
+          image?: string
+          author?: string
+          publisher?: string
+          canonical?: string
         }
         features?: Feature[],
         socials?: Social[],

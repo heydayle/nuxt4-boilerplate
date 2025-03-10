@@ -24,6 +24,7 @@ const INTRODUCE = introduce
   <div class="h-full">
       <UBreadcrumb :links="links" />
       <MDC :value="INTRODUCE" tag="article" />
+      <NBFeatures />
   </div>
 </template>
 

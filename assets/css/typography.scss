@@ -1,13 +1,13 @@
 /* styles/typography.css */
 /* Custom heading styles to override Tailwind defaults */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer base {
+    body {
+        @apply text-gray-500
+    }
     article {
         h1, h2, h3, h4, h5, h6 {
-            @apply text-gray-800;
+            @apply text-gray-800 hover:text-primary;
         }
 
         pre {
@@ -38,7 +38,7 @@
             @apply text-base font-medium my-2;
         }
         p {
-            @apply my-3;
+            @apply my-3 text-gray-500;
         }
 
         ul {
@@ -46,7 +46,11 @@
         }
 
         ul > li {
-            @apply mb-2 text-gray-800;
+            @apply mb-2 text-gray-500;
+        }
+
+        ul > li > strong {
+            @apply text-gray-800;
         }
 
         /* Nested lists */
@@ -63,17 +67,29 @@
         }
     }
     .dark {
-        h1, h2, h3, h4, h5, h6 {
-            @apply text-gray-200;
+        body {
+            @apply text-gray-300
         }
-        ul > li {
-            @apply text-gray-200;
-        }
-        ul > li > ul > li {
-            @apply text-gray-200;
-        }
-        pre {
-            @apply bg-gray-800;
+        article {
+            h1, h2, h3, h4, h5, h6 {
+                @apply text-gray-200 hover:text-primary;
+            }
+            p {
+                @apply text-gray-200;
+            }
+            ul > li {
+                @apply mb-2 text-gray-300;
+            }
+    
+            ul > li > strong {
+                @apply text-gray-200;
+            }
+            ul > li > ul > li {
+                @apply text-gray-300;
+            }
+            pre {
+                @apply bg-gray-900;
+            }
         }
     }
 }

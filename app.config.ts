@@ -8,7 +8,11 @@ export default defineAppConfig({
     meta: {
       title: 'Nuxt Boilerplate',
       description: 'Nuxt Starter with Vite',
-      keywords: 'nuxt, vite, starter'
+      keywords: 'nuxt, vite, starter',
+      image: '/cover.png',
+      author: 'Thinh Le',
+      publisher: 'Thinh Le',
+      canonical: 'https://github.com/heydayle/nuxt-boilerplate-v3'
     },
     socials: [
       {

@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div>Contact</div>
+  <div class="container">Contact</div>
 </template>
 
 <style scoped>
