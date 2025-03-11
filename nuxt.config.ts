@@ -20,7 +20,7 @@ export default defineNuxtConfig({
     preference: 'dark',
   },
   image: {
-    // dir: '~/public',
+    domains: ['nuxt-boilerplate-starter.vercel.app'],
     provider: 'ipx'
   },
   css: ['@/assets/styles.css'],
