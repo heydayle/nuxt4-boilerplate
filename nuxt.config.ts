@@ -20,7 +20,8 @@ export default defineNuxtConfig({
     preference: 'dark',
   },
   image: {
-    dir: 'assets/images'
+    // dir: '~/public',
+    provider: 'ipx'
   },
   css: ['@/assets/styles.css'],
   googleSignIn: {

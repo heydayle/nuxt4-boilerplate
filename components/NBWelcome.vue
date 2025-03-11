@@ -36,7 +36,7 @@ const FEATURES = app.features;
                 class="absolute bg-green-500/30 filter blur-2xl w-[300px] h-[300px] rounded-full animate animate-pulse "
             />
             <div class="absolute -top-36 w-[500px] overflow-hidden shadow-lg shadow-primary rounded-full">
-              <NuxtImg src="/logo.png" width="1200px" class=" animate animate-slow-spining" />
+              <NuxtImg src="/images/logo.png" format="webp" width="1200px" class=" animate animate-slow-spining" />
             </div>
             <UIcon
                 name="simple-icons:nuxt"
