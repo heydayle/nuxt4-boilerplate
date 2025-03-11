@@ -1,3 +1,5 @@
+import { _keyframes } from "#tailwind-config/theme";
+
 export default {
     theme: {
         extend: {
@@ -15,6 +17,15 @@ export default {
                     '900': '#3d3d3d',
                     '950': '#292929',
                 },
+            },
+            keyframes: {
+                slowSpining: {
+                '0%': { transform: 'rotate(0deg)' },
+                '100%': { transform: 'rotate(360deg)' },
+                }
+            },
+            animation: {
+                'slow-spining': 'slowSpining 30s linear infinite',
             }
         }
     },

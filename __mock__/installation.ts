@@ -14,6 +14,9 @@ npm install
 pnpm install
 \`\`\`
 
+<div style="background: #3d3d3d">
+    <p class="!text-gray-700"># Clone repository</p>
+</div>
 
 ## # Usage
 

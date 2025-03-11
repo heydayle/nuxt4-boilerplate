@@ -14,7 +14,7 @@ const FEATURES = app.features;
           <div class="w-[60%]">
             <h1 class="text-4xl font-bold">{{ $t('welcome.title') }} <span class="text-green-500 font-black">Nuxt Boilerplate!</span></h1>
             <p>{{ $t('welcome.subTitle') }}</p>
-            <UButton class="mt-2" :to="localPath('get-started')">{{ $t('welcome.getStarted') }}</UButton>
+            <UButton class="mt-2" variant="outline" :to="localPath('get-started')">{{ $t('welcome.getStarted') }}</UButton>
             <p class="my-4">{{ $t('welcome.description') }}</p>
             <div class="grid grid-cols-4 gap-4 mt-6 content-center align-center">
               <div
@@ -30,14 +30,17 @@ const FEATURES = app.features;
         </div>
         <div class="flex flex-col justify-between items-center self-center">
           <div
-              class="relative h-[200px] w-[200px] flex flex-col justify-center items-center"
+              class="relative h-[200px] w-[200px] flex flex-col justify-center items-center transform -skew-y-12 -skew-x-6 "
           >
             <div
-                class="absolute bg-green-500/30 filter blur-2xl w-[300px] h-[300px] rounded-full animate animate-pulse"
+                class="absolute bg-green-500/30 filter blur-2xl w-[300px] h-[300px] rounded-full animate animate-pulse "
             />
+            <div class="absolute -top-36 w-[500px] overflow-hidden shadow-lg shadow-primary rounded-full">
+              <NuxtImg src="/logo.png" width="1200px" class=" animate animate-slow-spining" />
+            </div>
             <UIcon
                 name="simple-icons:nuxt"
-                class="relative z-1 text-[180px] text-white"
+                class="relative z-1 text-[90px] text-primary"
             />
           </div>
         </div>

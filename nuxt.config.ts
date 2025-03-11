@@ -14,7 +14,11 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxtjs/eslint-module',
     '@nuxtjs/mdc',
+    '@nuxtjs/color-mode',
   ],
+  colorMode: {
+    preference: 'dark',
+  },
   image: {
     dir: 'assets/images'
   },
