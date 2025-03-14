@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import LogoImg from '~/public/images/logo.png';
+
 definePageMeta({
   layout: "default",
 });
@@ -36,7 +38,11 @@ const FEATURES = app.features;
                 class="absolute bg-green-500/30 filter blur-2xl w-[300px] h-[300px] rounded-full animate animate-pulse "
             />
             <div class="absolute -top-36 w-[500px] overflow-hidden shadow-lg shadow-primary rounded-full">
-              <NuxtImg src="/images/logo.png" format="webp" width="1200px" class=" animate animate-slow-spining" />
+              <NuxtPicture
+                :src="LogoImg"
+                format="webp"
+                :imgAttrs="{ class: 'animate animate-slow-spining' }"
+              />
             </div>
             <UIcon
                 name="simple-icons:nuxt"
