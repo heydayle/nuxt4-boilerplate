@@ -14,14 +14,14 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxtjs/eslint-module',
     '@nuxtjs/mdc',
-    '@nuxtjs/color-mode',
   ],
   colorMode: {
     preference: 'dark',
   },
   image: {
     domains: ['nuxt-boilerplate-starter.vercel.app'],
-    provider: 'ipx'
+    provider: 'ipx',
+    dir: 'public/images',
   },
   css: ['@/assets/styles.css'],
   googleSignIn: {
@@ -34,10 +34,17 @@ export default defineNuxtConfig({
         telegramBotToken: process.env.TELEGRAM_BOT_TOKEN
     }
   },
+  // nitro: {
+  //   publicAssets: [{
+  //     baseURL: "assets/images",
+  //     dir: "public/images",
+  //     maxAge: 60 * 60 * 24 * 7, // 7 days
+  //   },],
+  // },
   vite: {
     server: {
-      allowedHosts: ['localhost', '.dev']
-    }
+      allowedHosts: ['localhost', '.dev'],
+    },
   },
   auth: {
     isEnabled: true,
