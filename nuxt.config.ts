@@ -100,7 +100,9 @@ export default defineNuxtConfig({
     }
   },
   mdc: {
-    highlight: false,
+    highlight: {
+      theme: 'github-dark',
+    },
     components: {
       prose: true
     }

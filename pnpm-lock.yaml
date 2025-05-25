@@ -84,6 +84,9 @@ importers:
       shadcn-nuxt:
         specifier: ^1.0.2
         version: 1.0.2(magicast@0.3.5)
+      shiki:
+        specifier: ^3.4.2
+        version: 3.4.2
       typescript:
         specifier: ^5.8.2
         version: 5.8.2
@@ -13724,7 +13727,7 @@ snapshots:
       '@webassemblyjs/ast': 1.14.1
       '@webassemblyjs/wasm-edit': 1.14.1
       '@webassemblyjs/wasm-parser': 1.14.1
-      acorn: 8.14.0
+      acorn: 8.14.1
       browserslist: 4.24.4
       chrome-trace-event: 1.0.4
       enhanced-resolve: 5.18.1

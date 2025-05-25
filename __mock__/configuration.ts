@@ -14,7 +14,7 @@ This file provides global app-level configuration for the Nuxt Boilerplate. It l
 
 ## 📌 Structure Overview
 
-\`\`\` .ts
+\`\`\` bash .ts
 export default defineAppConfig({
   ui: { ... },
   app: { ... }
@@ -25,7 +25,7 @@ export default defineAppConfig({
 
 Configures UI theming preferences:
 
-\`\`\` .ts
+\`\`\`bash .ts
 ui: {
   primary: 'green',
   gray: 'cool'
@@ -42,14 +42,14 @@ The main configuration object that contains meta information, navigation, social
 
 ## 🆎 version
 
-\`\`\`.ts
+\`\`\`bash .ts
 version: 'v0.0.1-alpha'
 \`\`\`
 - Defines the app version for reference (can be shown in footers or tooltips).
 
 ## 🧾 meta
 
-\`\`\`.ts
+\`\`\`bash .ts
 meta: {
   title: 'Nuxt Boilerplate',
   description: 'Nuxt Starter with Vite',
@@ -73,7 +73,7 @@ meta: {
 
 ## 🌐 socials
 
-\`\`\`.ts
+\`\`\`bash .ts
 socials: [
   {
     name: 'Github',
@@ -92,7 +92,7 @@ List of social profiles with:
 
 ## 🧭 headers
 
-\`\`\`.ts
+\`\`\`bash .ts
 headers: {
   heading: 'Nuxt Starter',
   logo: '/logo.svg',
@@ -106,7 +106,7 @@ headers: {
 
 - navigation: Defines site navigation links:
 
-    \`\`\`
+    \`\`\` bash
     navigation: [
       {
         name: "get-started",
@@ -115,7 +115,7 @@ headers: {
       },
       ...
     ]
-    \`\`\`
+    \`\`\` bash
     Each nav item includes:
 
     - name: \`Internal ID\`
@@ -126,7 +126,7 @@ headers: {
     
 ## ⚡ features
 
-\`\`\`.ts
+\`\`\`bash .ts
 features: [
   { label: 'Next Auth', icon: 'fluent-color:shield-checkmark-20' },
   { label: 'Pinia', icon: 'logos:pinia' },
@@ -136,9 +136,9 @@ features: [
 
 ## 🔍 Accessing Config in Your App
 
-Use useAppConfig() to access any of this configuration anywhere in your Nuxt app:
+Use \`useAppConfig()\` to access any of this configuration anywhere in your Nuxt app:
 
-\`\`\`
+\`\`\` bash
 const config = useAppConfig()
 
 console.log(config.app.version) // Output: v0.0.1-alpha

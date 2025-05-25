@@ -40,6 +40,7 @@
     "@nuxtjs/eslint-module": "^4.1.0",
     "eslint": "^9.21.0",
     "shadcn-nuxt": "^1.0.2",
+    "shiki": "^3.4.2",
     "typescript": "^5.8.2",
     "vue-tsc": "^2.2.6"
   }

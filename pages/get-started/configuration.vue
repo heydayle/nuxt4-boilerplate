@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {configuration} from "~/__mock__/configuration";
+import {highlightBashInMarkdown} from "~/composables/useShiki";
 
 definePageMeta({
   layout: 'document'
@@ -14,6 +15,10 @@ const links = [
     label: 'Configuration'
   }
 ]
+const shikiConvert = ref('')
+onMounted(async () => {
+  shikiConvert.value = await highlightBashInMarkdown(configuration)
+})
 </script>
 <template>
     <div>
