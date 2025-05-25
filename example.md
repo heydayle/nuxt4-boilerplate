@@ -1,8 +1,7 @@
-export const installation = `
-# Installation
+# Installation Guide for nuxt-boilerplate-v3
 This boilerplate is a modern Nuxt 3 starter configured with useful development tools and best practices.
 
-## 📦 Prerequisites
+# 📦 Prerequisites
 
 Make sure you have the following installed:
 
@@ -12,79 +11,97 @@ Make sure you have the following installed:
 
 To install pnpm globally if not already:
 
-\`\`\`bash
+```bash
 npm install -g pnpm
-\`\`\`
+```
 
-## 🚀 Steps to Install and Run the Project
+# 🚀 Steps to Install and Run the Project
 Clone the repository:
-\`\`\`bash
+```bash
 git clone https://github.com/heydayle/nuxt-boilerplate-v3.git
 cd nuxt-boilerplate-v3
-\`\`\`
+```
 
 Install dependencies:
-\`\`\`bash Copy Edit
+```bash Copy Edit
 pnpm install
-\`\`\`
+```
 
 Alternatively, use npm install or yarn depending on your preference.
 Start the development server:
 
-\`\`\`bash
+```bash
 pnpm dev
 By default, the app will be running at:
 👉 http://localhost:3000
-\`\`\`
+```
 
-## ⚙️ Build for Production
+⚙️ Build for Production
 To generate a production build:
 
-\`\`\` bash
+``` bash
 pnpm build
-\`\`\`
-
+```
 
 To preview the production build locally:
-\`\`\` bash
+``` bash
 pnpm preview
-\`\`\`
+```
+📁 Project Structure Highlights
+/components – Vue components
 
-## 🛠 Included Features
-- Nuxt 3
+/layouts – Application layouts
 
-- TypeScript
+/pages – File-based routing
 
-- ESLint + Prettier
+/plugins – Nuxt plugins
 
-- Vueuse
+/composables – Vue composables
 
-- Next Auth
+/assets – Static assets like CSS, fonts, images
 
-- Pinia
+/app.config.ts – App-wide config overrides
 
-- NuxtUI
+/nuxt.config.ts – Main configuration file
 
-- TailwindCSS
+🛠 Included Features
+Nuxt 3
 
-- Auto imports for components and composables
+TypeScript
 
-- Runtime config via .env
+ESLint + Prettier
 
-## 📄 Environment Variables
+TailwindCSS
 
-- Duplicate \`example.env\` file in the root and rename to \`.env\` of your project to configure runtime variables:
+Auto imports for components and composables
 
-\`\`\`bash
-# Your secret key
-GG_CLIENT_ID=
-GG_CLIENT_SECRET=
-GG_API_KEY=
-\`\`\`
+Runtime config via .env
 
-## 📁 Project Structure
+📄 Environment Variables
+Duplicate `example.env` file in the root and rename to `.env` of your project to configure runtime variables:
 
-\`\`\`
+env
+Copy
+Edit
+NUXT_PUBLIC_API_BASE=https://api.example.com
+🧼 Linting & Formatting
+To lint the code:
+
+bash
+Copy
+Edit
+pnpm lint
+To fix linting issues automatically:
+
+bash
+Copy
+Edit
+pnpm lint:fix
+Let me know if you'd like a version of this as a Markdown file (README.md) or if you want deployment instructions too.
+
+## # Project Structure
+
+```
 nuxt-boilerplate-v3/
 ├── assets/            # Static assets (images, fonts, etc.)
 ├── components/        # Reusable Vue components
@@ -101,5 +118,4 @@ nuxt-boilerplate-v3/
 ├── nuxt.config.ts     # Nuxt configuration
 ├── tailwind.config.js # TailwindCSS configuration
 └── tsconfig.json      # TypeScript configuration
-\`\`\`
-`
+```

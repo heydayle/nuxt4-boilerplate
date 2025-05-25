@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {configuration} from "~/__mock__/configuration";
+
 definePageMeta({
   layout: 'document'
 })
@@ -16,5 +18,6 @@ const links = [
 <template>
     <div>
       <UBreadcrumb :links="links" />
+      <MDC :value="configuration" tag="article" />
     </div>
 </template>

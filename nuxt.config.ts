@@ -99,4 +99,10 @@ export default defineNuxtConfig({
       }
     }
   },
+  mdc: {
+    highlight: false,
+    components: {
+      prose: true
+    }
+  },
 })

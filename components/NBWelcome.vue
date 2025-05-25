@@ -37,16 +37,12 @@ const FEATURES = app.features;
             <div
                 class="absolute bg-green-500/30 filter blur-2xl w-[300px] h-[300px] rounded-full animate animate-pulse "
             />
-            <div class="absolute -top-36 w-[500px] overflow-hidden shadow-lg shadow-primary rounded-full">
+            <div class="">
               <img
                 :src="LogoImg"
                 class="animate animate-slow-spining"
               />
             </div>
-            <UIcon
-                name="simple-icons:nuxt"
-                class="relative z-1 text-[90px] text-primary"
-            />
           </div>
         </div>
       </div>

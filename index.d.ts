@@ -30,7 +30,8 @@ declare module 'nuxt/schema' {
         },
         documents?: {
           sidebars?: Navigation[]
-        }
+        },
+        contacts?: Social[],
       }
     }
   }

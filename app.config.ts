@@ -89,6 +89,23 @@ export default defineAppConfig({
           label: 'Configuration'
         }
       ]
-    }
+    },
+    contacts: [
+      {
+        name: '/heydayle',
+        icon: 'simple-icons:github',
+        href: 'https://github.com/heydayle'
+      },
+      {
+        name: '/thinhle99',
+        icon: 'simple-icons:linkedin',
+        href: 'https://linkedin.com/in/thinhle99'
+      },
+      {
+        name: '@email',
+        icon: 'simple-icons:gmail',
+        href: 'mailto:hungthinh.ckc@gmail.com'
+      },
+    ]
   }
 })
