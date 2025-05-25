@@ -14,6 +14,7 @@ const sidebar = app.documents.sidebars
       </div>
     </div>
   </div>
+  <LayoutsFooter />
 </div>
 </template>
 

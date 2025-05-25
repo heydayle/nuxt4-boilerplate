@@ -5,6 +5,7 @@
   <div class="m-auto">
     <LayoutsHeader />
     <NuxtPage />
+    <LayoutsFooter />
   </div>
 </template>
 

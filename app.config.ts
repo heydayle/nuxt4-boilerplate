@@ -4,7 +4,7 @@ export default defineAppConfig({
     gray: 'cool'
   },
   app: {
-    version: 'v0.0.1-alpha',
+    version: 'v0.0.2-alpha',
     meta: {
       title: 'Nuxt Boilerplate',
       description: 'Nuxt Starter with Vite',

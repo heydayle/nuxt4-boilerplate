@@ -24,5 +24,6 @@ onMounted(async () => {
     <div>
       <UBreadcrumb :links="links" />
       <MDC :value="configuration" tag="article" />
+      <Shiki lang="js" code="console.log('hello');" as="span" />
     </div>
 </template>

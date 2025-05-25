@@ -6,11 +6,11 @@ This boilerplate is a modern Nuxt 3 starter configured with useful development t
 
 Make sure you have the following installed:
 
-- Node.js (version 18 or above recommended)
+- \`Node.js\` (version 18 or above recommended)
 
-- pnpm (preferred), or npm/yarn
+- \`pnpm\` (preferred), or npm/yarn
 
-To install pnpm globally if not already:
+To install \`pnpm\` globally if not already:
 
 \`\`\`bash
 npm install -g pnpm
@@ -24,11 +24,11 @@ cd nuxt-boilerplate-v3
 \`\`\`
 
 Install dependencies:
-\`\`\`bash Copy Edit
+\`\`\`bash
 pnpm install
 \`\`\`
 
-Alternatively, use npm install or yarn depending on your preference.
+Alternatively, use \`npm install\` or \`yarn\` depending on your preference.
 Start the development server:
 
 \`\`\`bash
@@ -84,7 +84,7 @@ GG_API_KEY=
 
 ## 📁 Project Structure
 
-\`\`\`
+\`\`\` bash
 nuxt-boilerplate-v3/
 ├── assets/            # Static assets (images, fonts, etc.)
 ├── components/        # Reusable Vue components

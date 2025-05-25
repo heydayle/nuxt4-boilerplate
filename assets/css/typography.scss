@@ -10,12 +10,12 @@
             @apply text-gray-800 hover:text-primary;
         }
 
-        //pre {
-        //    code {
-        //        @apply bg-transparent;
-        //    }
-        //    @apply p-4 bg-gray-300 rounded-lg overflow-auto;
-        //}
+        pre {
+            code {
+                @apply bg-transparent border-none
+            }
+           @apply p-4 bg-neutral-50 rounded-lg overflow-auto;
+        }
 
         h1 {
             @apply text-4xl font-bold my-6 leading-tight;
@@ -68,9 +68,9 @@
         a[rel="nofollow"] {
             @apply text-primary;
         }
-        //code {
-        //    @apply bg-gray-300 rounded-lg text-gray-500 px-2;
-        //}
+        code {
+           @apply px-1.5 py-0.5 text-sm font-mono font-medium rounded-lg inline-block border border-[#314158] text-white-50 bg-[#1d293d]
+        }
         @apply text-sm
     }
     .dark {
@@ -94,9 +94,12 @@
             ul > li > ul > li {
                 @apply text-gray-300;
             }
-            //pre {
-            //    @apply bg-gray-900;
-            //}
+            pre {
+                code {
+                    @apply bg-transparent border-none
+                }
+               @apply bg-[#0d1117];
+            }
         }
     }
 }

@@ -6,26 +6,22 @@ This file provides global app-level configuration for the Nuxt Boilerplate. It l
 
 ---
 
-## 📁 File Location
-
-    /app.config.ts
-
----
-
 ## 📌 Structure Overview
 
-\`\`\` bash .ts
+\`\`\`ts
 export default defineAppConfig({
   ui: { ... },
   app: { ... }
 })
 \`\`\`
 
+---
+
 ## 🎨 ui
 
 Configures UI theming preferences:
 
-\`\`\`bash .ts
+\`\`\`ts
 ui: {
   primary: 'green',
   gray: 'cool'
@@ -36,20 +32,22 @@ ui: {
 
 - \`gray\`: Shade variant for neutral tones (e.g., cool, warm).
 
+---
+
 ## 🧠 app
 
-The main configuration object that contains meta information, navigation, social links, features, and documentation structure.
+The main configuration object that contains \`meta\`, \`navigation\`, \`social links\`, \`features\`, and documentation structure.
 
-## 🆎 version
+### 🆎 version
 
-\`\`\`bash .ts
+\`\`\`ts
 version: 'v0.0.1-alpha'
 \`\`\`
 - Defines the app version for reference (can be shown in footers or tooltips).
 
-## 🧾 meta
+### 🧾 meta
 
-\`\`\`bash .ts
+\`\`\`ts
 meta: {
   title: 'Nuxt Boilerplate',
   description: 'Nuxt Starter with Vite',
@@ -71,9 +69,9 @@ meta: {
 
 - canonical: Canonical URL to avoid SEO duplication.
 
-## 🌐 socials
+### 🌐 socials
 
-\`\`\`bash .ts
+\`\`\`ts
 socials: [
   {
     name: 'Github',
@@ -90,9 +88,9 @@ List of social profiles with:
 
 - href: External link.
 
-## 🧭 headers
+### 🧭 headers
 
-\`\`\`bash .ts
+\`\`\`ts
 headers: {
   heading: 'Nuxt Starter',
   logo: '/logo.svg',
@@ -106,7 +104,7 @@ headers: {
 
 - navigation: Defines site navigation links:
 
-    \`\`\` bash
+    \`\`\`ts
     navigation: [
       {
         name: "get-started",
@@ -115,7 +113,7 @@ headers: {
       },
       ...
     ]
-    \`\`\` bash
+    \`\`\`
     Each nav item includes:
 
     - name: \`Internal ID\`
@@ -124,9 +122,9 @@ headers: {
     
     - path: \`Route path\`
     
-## ⚡ features
+### ⚡ features
 
-\`\`\`bash .ts
+\`\`\`ts
 features: [
   { label: 'Next Auth', icon: 'fluent-color:shield-checkmark-20' },
   { label: 'Pinia', icon: 'logos:pinia' },
@@ -134,18 +132,18 @@ features: [
  ]
 \`\`\`
 
-## 🔍 Accessing Config in Your App
+### 🔍 Accessing Config in Your App
 
 Use \`useAppConfig()\` to access any of this configuration anywhere in your Nuxt app:
 
-\`\`\` bash
+\`\`\`ts
 const config = useAppConfig()
 
 console.log(config.app.version) // Output: v0.0.1-alpha
 console.log(config.app.meta.title) // Output: Nuxt Boilerplate
 \`\`\`
 
-## 🧩 Use Cases
+### 🧩 Use Cases
 - Dynamic rendering of headers, navigation, and footer links
 
 - Centralized control of app metadata and feature list
