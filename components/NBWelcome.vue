@@ -34,7 +34,7 @@ const FEATURES = app.features;
             class="relative h-[200px] w-[200px] flex flex-col justify-center items-center transform -skew-y-12 -skew-x-6 ">
             <div class="absolute bg-green-500/30 filter blur-2xl w-[300px] h-[300px] rounded-full animate animate-pulse " />
             <div class="">
-              <img :src="LogoImg" alt="logo" class="animate animate-slow-spining">
+              <img :src="LogoImg" alt="logo" class="animate animate-slow-spining scale-120">
             </div>
           </div>
         </div>

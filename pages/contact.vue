@@ -16,7 +16,7 @@ const contacts = computed(() => config.app.contacts)
   <div class="container flex flex-col items-center justify-center min-h-[calc(100vh-10rem)]"> 
     <div>
       <div class="rellative">
-        <div class="absolute left-1/2 top-[40%] transform -translate-x-1/2 -translate-y-1/4 bg-green-500/30 filter blur-2xl w-[300px] h-[300px] rounded-full" />
+        <div class="absolute left-1/2 top-[40%] z-[-1] transform -translate-x-1/2 -translate-y-1/4 bg-green-500/30 filter blur-2xl w-[300px] h-[300px] rounded-full" />
         <img src="@/assets/images/logo.png" alt="Devaloka Logo" class="mx-auto mb-4 w-32 h-32">
         <div>
           <h1 class="text-3xl font-bold text-center mb-2 text-primary">{{ config.app.meta.title }}</h1>
