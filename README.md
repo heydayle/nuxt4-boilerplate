@@ -1,6 +1,6 @@
-# Nuxt Boilerplate V3
+# Nuxt Boilerplate/ Nuxt starter
 
-Kickstart Your Nuxt Project – Preconfigured, Optimized, Ready to Code!
+Kickstart Your Nuxt Project – Preconfigured, Optimized, Ready to Code, Zero config!
 
 Ready-to-use framework for Nuxt projects, pre-configured framework with essential libraries and tools, streamlining development and ensuring a clean, structured codebase. 🚀
 
@@ -8,7 +8,7 @@ Ready-to-use framework for Nuxt projects, pre-configured framework with essentia
 
 - 🚀 **Nuxt 3** - Powerful Vue.js framework with high performance
 - 📱 **Responsive Design** - Compatible with all devices
-- 📐 **Nuxt UI** - Fully styled and customizable components for Nuxt
+- 📐 **NuxtUI** - Fully styled and customizable components for Nuxt
 - 🎨 **TailwindCSS** - Utility-first CSS framework for rapid design
 - 🔍 **SEO Friendly** - Optimized for search engines
 - 🌐 **i18n** - Multilingual support
@@ -33,10 +33,6 @@ git clone https://github.com/heydayle/nuxt-boilerplate-v3.git
 cd nuxt-boilerplate-v3
 
 # Install dependencies
-yarn install
-# or
-npm install
-# or
 pnpm install
 ```
 
@@ -46,10 +42,6 @@ pnpm install
 
 ```bash
 # Start development server
-yarn dev
-# or
-npm run dev
-# or
 pnpm dev
 ```
 
@@ -59,17 +51,9 @@ Access the application at `http://localhost:3000`
 
 ```bash
 # Build for production
-yarn build
-# or
-npm run build
-# or
 pnpm build
 
 # Run the built application
-yarn start
-# or
-npm run start
-# or
 pnpm start
 ```
 
