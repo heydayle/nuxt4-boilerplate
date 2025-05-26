@@ -22,7 +22,7 @@ Ready-to-use framework for Nuxt projects, pre-configured framework with essentia
 
 ## System Requirements
 
-- Node.js 16.x or higher
+- Node.js 18.x or higher
 - npm or yarn or pnpm
 
 ## Installation
