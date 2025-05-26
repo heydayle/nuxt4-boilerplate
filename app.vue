@@ -40,6 +40,10 @@ useHead({
       name: 'og:image',
       content: '/cover.png',
     },
+    {
+      name: 'google-site-verification',
+      content: process.env.GG_SEARCH_CONSOLE
+    }
   ]
 })
 </script>
