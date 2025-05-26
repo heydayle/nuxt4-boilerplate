@@ -69,7 +69,7 @@ pnpm preview
 
 - Auto imports for components and composables
 
-- Runtime config via .env
+- Runtime config via \`.env\` and \`app.config.ts\`
 
 ## 📄 Environment Variables
 
@@ -77,9 +77,9 @@ pnpm preview
 
 \`\`\`bash
 # Your secret key
-GG_CLIENT_ID=
-GG_CLIENT_SECRET=
-GG_API_KEY=
+GG_CLIENT_ID        =
+GG_CLIENT_SECRET    =
+GG_API_KEY          =
 \`\`\`
 
 ## 📁 Project Structure
@@ -92,12 +92,14 @@ nuxt-boilerplate-v3/
 ├── layouts/           # Page layouts
 ├── middleware/        # Nuxt middleware
 ├── pages/             # Application pages
+    └── index/         # Homepage
 ├── plugins/           # Nuxt plugins
 ├── public/            # Public static files
 ├── server/            # Server API endpoints and middleware
 ├── stores/            # Pinia stores
 ├── utils/             # Utility functions
 ├── .env.example       # Environment variables template
+├── app.config.ts      # App configuration
 ├── nuxt.config.ts     # Nuxt configuration
 ├── tailwind.config.js # TailwindCSS configuration
 └── tsconfig.json      # TypeScript configuration

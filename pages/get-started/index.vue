@@ -4,7 +4,13 @@ definePageMeta({
   layout: 'document'
 })
 useHead({
-  title: 'Documents'
+  title: 'Documents',
+  meta: [
+    {
+      name: 'description',
+      content: 'Documentation for Nuxt Boilerplate v3'
+    }
+  ]
 })
 
 const links = [

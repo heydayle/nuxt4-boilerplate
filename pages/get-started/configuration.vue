@@ -1,9 +1,17 @@
 <script setup lang="ts">
 import {configuration} from "~/__mock__/configuration";
-import {highlightBashInMarkdown} from "~/composables/useShiki";
 
 definePageMeta({
   layout: 'document'
+})
+useHead({
+  title: 'Configuration',
+  meta: [
+    {
+      name: 'description',
+      content: 'Configuration for Nuxt Boilerplate v3'
+    }
+  ]
 })
 const links = [
   {
@@ -15,15 +23,10 @@ const links = [
     label: 'Configuration'
   }
 ]
-const shikiConvert = ref('')
-onMounted(async () => {
-  shikiConvert.value = await highlightBashInMarkdown(configuration)
-})
 </script>
 <template>
     <div>
       <UBreadcrumb :links="links" />
       <MDC :value="configuration" tag="article" />
-      <Shiki lang="js" code="console.log('hello');" as="span" />
     </div>
 </template>

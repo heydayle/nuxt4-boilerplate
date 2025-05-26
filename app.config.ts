@@ -35,6 +35,16 @@ export default defineAppConfig({
           label: "nav.contact",
           path: "/contact",
         },
+        {
+          name: "blank",
+          label: "nav.blank",
+          path: "/blank",
+        },
+        {
+          name: "components",
+          label: "nav.components",
+          path: "/components",
+        },
       ]
     },
     features: [
@@ -102,7 +112,7 @@ export default defineAppConfig({
         href: 'https://linkedin.com/in/thinhle99'
       },
       {
-        name: '@email',
+        name: 'hungthinh.ckc@gmail.com',
         icon: 'simple-icons:gmail',
         href: 'mailto:hungthinh.ckc@gmail.com'
       },

@@ -15,7 +15,6 @@ export default defineAppConfig({
 })
 \`\`\`
 
----
 
 ## 🎨 ui
 

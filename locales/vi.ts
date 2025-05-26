@@ -9,6 +9,8 @@ export default {
       register: 'Đăng ký',
       dashboard: 'Bảng điều khiển',
       logout: 'Đăng xuất',
+      blank: 'Trang trống',
+      components: 'Components',
     },
     welcome: {
         title: 'Đây là ',

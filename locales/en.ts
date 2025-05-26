@@ -8,7 +8,9 @@ export default {
       login: 'Login',
       register: 'Register',
       dashboard: 'Dashboard',
-      logout: 'Logout'
+      logout: 'Logout',
+      blank: 'Blank Page',
+      components: 'Components',
     },
     welcome: {
         title: 'Welcome to the',
