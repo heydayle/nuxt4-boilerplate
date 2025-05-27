@@ -28,7 +28,7 @@ Ready-to-use framework for Nuxt projects, pre-configured framework with essentia
 ## System Requirements
 
 - Node.js 18.x or higher
-- npm or yarn or pnpm
+- npm or yarn or pnpm (recommend)
 
 ## Installation
 
@@ -44,6 +44,7 @@ pnpm install
 ## Usage
 
 ### Development Environment
+Duplicate `example.env` and rename to `.env` and run:
 
 ```bash
 # Start development server
