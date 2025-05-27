@@ -6,19 +6,24 @@ Ready-to-use framework for Nuxt projects, pre-configured framework with essentia
 
 ## Features
 
-- 🚀 **Nuxt 3** - Powerful Vue.js framework with high performance
-- 📱 **Responsive Design** - Compatible with all devices
-- 📐 **NuxtUI** - Fully styled and customizable components for Nuxt
-- 🎨 **TailwindCSS** - Utility-first CSS framework for rapid design
-- 🔍 **SEO Friendly** - Optimized for search engines
-- 🌐 **i18n** - Multilingual support
-- 🔐 **Authentication** - Built-in authentication system (Next-auth)
-- 📊 **Pinia** - Global state management
-- 📝 **Form Validation** - Input data validation
-- 🛠 **VueUse** - Collection of Essential Vue Composition Utilities
-- 🪄 **ESLint** - All-in-one ESLint integration for Nuxt
-- 🧪 **Testing** - Vitest support for unit and integration tests
-- 📦 **API Integration** - Easy API integration
+- [x]  🚀 **Nuxt 3** - Powerful Vue.js framework with high performance
+  - [ ] Support upgrade Nuxt 4 
+- [x] 📐 **NuxtUI** - Fully styled and customizable components for Nuxt
+  - [ ] Upgrade v3
+- [x] 🎨 **TailwindCSS** - Utility-first CSS framework for rapid design
+  - [ ] Support upgrade Tailwind v4 
+- [x] 🔍 **SEO Friendly** - Optimized for search engines
+- [x] 🌐 **i18n** - Multilingual support
+  - [x] English
+  - [x] Vietnamese
+- [x] 🔐 **Authentication** - Built-in authentication system (Next-auth)
+- [x] 📊 **Pinia** - Global state management
+- [x] 📝 **Form Validation** - Input data validation
+- [x] 🛠 **VueUse** - Collection of Essential Vue Composition Utilities
+- [x] 🪄 **ESLint** - All-in-one ESLint integration for Nuxt
+- [ ] 📱 **Responsive Design** - Compatible with all devices
+- [ ] 🧪 **Testing** - Vitest support for unit and integration tests
+- [ ] 📦 **API Integration** - Easy API integration
 
 ## System Requirements
 
