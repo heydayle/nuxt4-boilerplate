@@ -73,12 +73,14 @@ nuxt-boilerplate-v3/
 ├── layouts/           # Page layouts
 ├── middleware/        # Nuxt middleware
 ├── pages/             # Application pages
+      └── index.vue    # Homepage
 ├── plugins/           # Nuxt plugins
 ├── public/            # Public static files
 ├── server/            # Server API endpoints and middleware
 ├── stores/            # Pinia stores
 ├── utils/             # Utility functions
 ├── .env.example       # Environment variables template
+├── app.config.ts      # App configuration
 ├── nuxt.config.ts     # Nuxt configuration
 ├── tailwind.config.js # TailwindCSS configuration
 └── tsconfig.json      # TypeScript configuration

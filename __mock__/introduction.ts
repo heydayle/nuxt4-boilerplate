@@ -1,11 +1,11 @@
 export const introduce = `
-## # Introduction
+# Introduction
 
 The Nuxt Boilerplate is a comprehensive starter template designed to accelerate your [Vue.js](https://vuejs.org) development workflow using [Nuxt 3](https://nuxt.com). This boilerplate eliminates the tedious initial setup process and provides a solid foundation for building modern, performant web applications.
 
 ---
 
-## # Why Use This Boilerplate?
+## 🔍 Why use this boilerplate?
 
 Modern web development often involves setting up numerous configurations, integrating multiple libraries, and establishing project architecture - tasks that can take days before actual feature development begins. This boilerplate solves that problem by providing:
 
@@ -16,6 +16,7 @@ Modern web development often involves setting up numerous configurations, integr
 
 ---
 
-## # Features
+## 🛠 Features
+
 
 `

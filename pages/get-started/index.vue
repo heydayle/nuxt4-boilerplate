@@ -31,6 +31,10 @@ const INTRODUCE = introduce
       <UBreadcrumb :links="links" />
       <MDC :value="INTRODUCE" tag="article" />
       <NBFeatures />
+      <UButton variant="outline" to="get-started-installation" class="mt-4">
+        Intallation
+        <UIcon name="material-symbols:arrow-forward-rounded" />
+      </UButton>
   </div>
 </template>
 
