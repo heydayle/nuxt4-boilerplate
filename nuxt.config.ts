@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+// import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
@@ -18,12 +19,12 @@ export default defineNuxtConfig({
   colorMode: {
     preference: 'dark',
   },
-  image: {
-    domains: ['nuxt-boilerplate-starter.vercel.app'],
-    provider: 'ipx',
-    dir: 'public/images',
-  },
-  css: ['@/assets/styles.css'],
+  // image: {
+  //   domains: ['nuxt-boilerplate-starter.vercel.app'],
+  //   provider: 'ipx',
+  //   dir: 'public/images',
+  // },
+  css: ['~/assets/css/styles.css'],
   googleSignIn: {
     clientId: process.env.GG_CLIENT_ID,
   },
@@ -34,13 +35,13 @@ export default defineNuxtConfig({
         telegramBotToken: process.env.TELEGRAM_BOT_TOKEN
     }
   },
-  // nitro: {
-  //   publicAssets: [{
-  //     baseURL: "assets/images",
-  //     dir: "public/images",
-  //     maxAge: 60 * 60 * 24 * 7, // 7 days
-  //   },],
-  // },
+  // // nitro: {
+  // //   publicAssets: [{
+  // //     baseURL: "assets/images",
+  // //     dir: "public/images",
+  // //     maxAge: 60 * 60 * 24 * 7, // 7 days
+  // //   },],
+  // // },
   vite: {
     server: {
       allowedHosts: ['localhost', '.dev'],
@@ -64,13 +65,13 @@ export default defineNuxtConfig({
           code: 'en',
           name: 'English',
           flag: 'twemoji:flag-united-kingdom',
-          file: './locales/en.ts',
+          file: 'en.json',
         },
         {
           code: 'vi',
           name: 'Tiếng Việt',
           flag: 'twemoji:flag-vietnam',
-          file: './locales/vi.ts',
+          file: 'vi.json',
         },
     ],
   },

@@ -10,7 +10,7 @@ const github = app.socials[0]
         <NBNavigation />
       </div>
       <div class="flex flex-1 justify-end items-center space-x-2">
-        <UButton :to="github.href" variant="ghost" color="white" class="text-xl text-white dark:text-white">
+        <UButton :to="github.href" variant="ghost" color="neutral" class="text-xl">
           <UIcon :name="github.icon" size="22" class="text-xl"/>
         </UButton> 
         <NBColorMode />

@@ -21,7 +21,7 @@ const items = [{
   icon: 'i-heroicons-bell',
   count: 0
 }]
-const selected = ref(false)
+const selected = ref(true)
 
 // Form
 const schema = z.object({
@@ -42,12 +42,12 @@ const onSubmit = (event: FormSubmitEvent<Schema>) => {
     <div class="pt-8">
       <div class="flex flex-wrap gap-x-4">
         <UChip v-for="{ name, icon, count } in items" :key="name" :show="count > 0">
-          <UButton :icon="icon" color="gray" />
+          <UButton :icon="icon" color="primary" />
         </UChip>
       </div>
     </div>
     <div>
-      <UCheckbox v-model="selected" name="notifications" label="Notifications" />
+      <UCheckbox v-model="selected" label="Notifications" />
     </div>
     <div class="flex gap-2">
       <UButton>Button</UButton>
@@ -63,24 +63,24 @@ const onSubmit = (event: FormSubmitEvent<Schema>) => {
     </div>
     <div class="w-full flex gap-2 text-white">
       <UForm :schema="schema" :state="state" class="flex flex-col gap-4" @submit="onSubmit">
-        <UFormGroup label="Name" name="name">
+        <UFormField label="Name" name="name">
           <UInput v-model="state.name" label="Name" />
-        </UFormGroup>
-        <UFormGroup label="Email" name="email">
+        </UFormField>
+        <UFormField label="Email" name="email">
           <UInput v-model="state.email" label="Email" type="email" />
-        </UFormGroup>
+        </UFormField>
         <div class="flex items-center gap-2">
           <UButton type="submit">Submit</UButton>
           <UButton type="reset" variant="ghost">Reset</UButton>
         </div>
       </UForm>
       <UForm :schema="schema" :state="state" class="flex flex-col gap-4" @submit="onSubmit">
-        <UFormGroup label="Name" name="name">
+        <UFormField label="Name" name="name">
           <UInput v-model="state.name" label="Name" />
-        </UFormGroup>
-        <UFormGroup label="Email" name="email">
+        </UFormField>
+        <UFormField label="Email" name="email">
           <UInput v-model="state.email" label="Email" type="email" />
-        </UFormGroup>
+        </UFormField>
         <div class="flex items-center gap-2">
           <UButton type="submit">Submit</UButton>
           <UButton type="reset" variant="ghost">Reset</UButton>

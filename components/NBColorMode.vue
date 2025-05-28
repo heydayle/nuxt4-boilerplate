@@ -12,12 +12,13 @@ const isDark = computed({
 
 <template>
   <ClientOnly>
-  <UToggle
-    on-icon="i-heroicons-moon-20-solid"
-    off-icon="i-heroicons-sun-20-solid"
-    size="lg"
-    :model-value="isDark"
-    @click="isDark = !isDark"
-  />
+    <USwitch
+      checked-icon="i-heroicons-moon-20-solid"
+      unchecked-icon="i-heroicons-sun-20-solid"
+      size="lg"
+      color="neutral"
+      :model-value="isDark"
+      @click="isDark = !isDark"
+    />
   </ClientOnly>
 </template>
