@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/fonts',
     '@nuxtjs/eslint-module',
-    '@nuxtjs/mdc',
+    '@nuxt/content'
   ],
   colorMode: {
     preference: 'dark',
@@ -100,12 +100,17 @@ export default defineNuxtConfig({
       }
     }
   },
-  mdc: {
-    highlight: {
-      theme: 'github-dark',
-    },
-    components: {
-      prose: true
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          theme: {
+            default: 'github-light',
+            dark: 'github-dark',
+            sepia: 'monokai'
+          }
+        }
+      }
     }
-  },
+  }
 })

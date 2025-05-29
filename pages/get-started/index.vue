@@ -23,13 +23,16 @@ const links = [
     label: 'Get started'
   }
 ]
-const INTRODUCE = introduce
+
+const introduce = await queryCollection('content').path('/get-started/introduction').first()
 </script>
 
 <template>
   <div class="h-full">
       <UBreadcrumb :links="links" />
-      <MDC :value="INTRODUCE" tag="article" />
+      <article>
+        <ContentRenderer :value="introduce" />
+      </article>
       <NBFeatures />
       <UButton variant="outline" to="get-started-installation" class="mt-4">
         Intallation

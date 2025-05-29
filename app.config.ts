@@ -33,11 +33,6 @@ export default defineAppConfig({
         path: "/get-started",
       },
       {
-        name: "contact",
-        label: "nav.contact",
-        path: "/contact",
-      },
-      {
         name: "blank",
         label: "nav.blank",
         path: "/blank",
@@ -46,6 +41,11 @@ export default defineAppConfig({
         name: "components",
         label: "nav.components",
         path: "/components",
+      },
+      {
+        name: "contact",
+        label: "nav.contact",
+        path: "/contact",
       },
     ]
   },

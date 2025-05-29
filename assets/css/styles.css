@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
-@import "./app.scss";
-@import "./alert.scss";
-@import "./typography.scss";
-@import "./theme-custom.scss";
+@import "../scss/app.scss";
+@import "../scss/alert.scss";
+@import "../scss/typography.scss";
+@import "../scss/theme-custom.scss";

@@ -1,52 +1,52 @@
-export const configuration = `
 
-# ⚙️ App Configuration (\`app.config.ts\`)
 
-This file provides global app-level configuration for the Nuxt Boilerplate. It leverages the \`defineAppConfig()\` method to expose static configuration accessible via \`useAppConfig()\` anywhere in your Nuxt 3 app.
+# ⚙️ App Configuration (`app.config.ts`)
+
+This file provides global app-level configuration for the Nuxt Boilerplate. It leverages the `defineAppConfig()` method to expose static configuration accessible via `useAppConfig()` anywhere in your Nuxt 3 app.
 
 ---
 
 ## 📌 Structure Overview
 
-\`\`\`ts
+```ts
 export default defineAppConfig({
   ui: { ... },
   app: { ... }
 })
-\`\`\`
+```
 
 
 ## 🎨 ui
 
 Configures UI theming preferences:
 
-\`\`\`ts
+```ts
 ui: {
   primary: 'green',
   gray: 'cool'
 }
-\`\`\`
+```
 
-- \`primary\`: The primary theme color used across components.
+- `primary`: The primary theme color used across components.
 
-- \`gray\`: Shade variant for neutral tones (e.g., cool, warm).
+- `gray`: Shade variant for neutral tones (e.g., cool, warm).
 
 ---
 
 ## 🧠 app
 
-The main configuration object that contains \`meta\`, \`navigation\`, \`social links\`, \`features\`, and documentation structure.
+The main configuration object that contains `meta`, `navigation`, `social links`, `features`, and documentation structure.
 
 ### 🆎 version
 
-\`\`\`ts
+```ts
 version: 'v0.0.1-alpha'
-\`\`\`
+```
 - Defines the app version for reference (can be shown in footers or tooltips).
 
 ### 🧾 meta
 
-\`\`\`ts
+```ts
 meta: {
   title: 'Nuxt Boilerplate',
   description: 'Nuxt Starter with Vite',
@@ -56,7 +56,7 @@ meta: {
   publisher: 'Devaloka',
   canonical: 'https://github.com/heydayle/nuxt-boilerplate-v3'
 }
-\`\`\`
+```
 
 - Standard SEO metadata used for head tag rendering.
 
@@ -70,7 +70,7 @@ meta: {
 
 ### 🌐 socials
 
-\`\`\`ts
+```ts
 socials: [
   {
     name: 'Github',
@@ -78,7 +78,7 @@ socials: [
     href: 'https://github.com/heydayle/nuxt-boilerplate-v3'
   }
 ]
-\`\`\`
+```
 List of social profiles with:
 
 - name: Platform name.
@@ -89,13 +89,13 @@ List of social profiles with:
 
 ### 🧭 headers
 
-\`\`\`ts
+```ts
 headers: {
   heading: 'Nuxt Starter',
   logo: '/logo.svg',
   navigation: [ ... ]
 }
-\`\`\`
+```
 
 - heading: Main title in header section.
 
@@ -103,7 +103,7 @@ headers: {
 
 - navigation: Defines site navigation links:
 
-    \`\`\`ts
+    ```ts
     navigation: [
       {
         name: "get-started",
@@ -112,35 +112,35 @@ headers: {
       },
       ...
     ]
-    \`\`\`
+    ```
     Each nav item includes:
 
-    - name: \`Internal ID\`
+    - name: `Internal ID`
     
-    - label: \`i18n\` key or \`display text\`
+    - label: `i18n` key or `display text`
     
-    - path: \`Route path\`
+    - path: `Route path`
     
 ### ⚡ features
 
-\`\`\`ts
+```ts
 features: [
   { label: 'Next Auth', icon: 'fluent-color:shield-checkmark-20' },
   { label: 'Pinia', icon: 'logos:pinia' },
   ...
  ]
-\`\`\`
+```
 
 ### 🔍 Accessing Config in Your App
 
-Use \`useAppConfig()\` to access any of this configuration anywhere in your Nuxt app:
+Use `useAppConfig()` to access any of this configuration anywhere in your Nuxt app:
 
-\`\`\`ts
+```ts
 const config = useAppConfig()
 
 console.log(config.app.version) // Output: v0.0.1-alpha
 console.log(config.app.meta.title) // Output: Nuxt Boilerplate
-\`\`\`
+```
 
 ### 🧩 Use Cases
 - Dynamic rendering of headers, navigation, and footer links
@@ -150,4 +150,3 @@ console.log(config.app.meta.title) // Output: Nuxt Boilerplate
 - Easily toggle features without hardcoding
 
 - Consistent access to app-wide constants
-`

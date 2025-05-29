@@ -14,14 +14,11 @@ const isExtract = (name: string) => baseName.value.includes(name)
       <ul class="flex items-center space-x-4">
         <UNavigationMenu :items="navigation" highlight highlight-color="primary">
           <template #item="{ item }">
-            <NuxtLinkLocale :to="item.name">
+            <NuxtLinkLocale :to="item.name" exact-active-class="router-link-active" :class="{ 'router-link-active': isExtract(item.name) }">
               <span>{{ $t(item.label) }}</span>
             </NuxtLinkLocale>
           </template>
         </UNavigationMenu>
-        <!-- <NuxtLinkLocale v-for="(item) in navigation" :key="item.name" :to="item.name" :class="{ 'router-link-active': isExtract(item.name) }">
-          <span>{{ $t(item.label) }}</span>
-        </NuxtLinkLocale> -->
       </ul>
     </div>
   </div>

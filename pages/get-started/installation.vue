@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { installation } from '~/__mock__/installation'
 definePageMeta({
   layout: 'document'
 })
@@ -22,10 +21,13 @@ const links = [
     label: 'Installation'
   }
 ]
+const installation = await queryCollection('content').path('/get-started/installation').first()
 </script>
 <template>
     <div class="h-full">
       <UBreadcrumb :links="links" />
-      <MDC :value="installation" tag="article" />
+      <article>
+        <ContentRenderer :value="installation" />
+      </article>
     </div>
 </template>

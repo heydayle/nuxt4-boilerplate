@@ -1,4 +1,4 @@
-export const installation = `
+
 # Installation
 This boilerplate is a modern Nuxt 3 starter configured with useful development tools and best practices.
 
@@ -6,52 +6,52 @@ This boilerplate is a modern Nuxt 3 starter configured with useful development t
 
 Make sure you have the following installed:
 
-- \`Node.js\` (version 18 or above recommended)
+- `Node.js` (version 18 or above recommended)
 
-- \`pnpm\` (preferred), or npm/yarn
+- `pnpm` (preferred), or npm/yarn
 
-To install \`pnpm\` globally if not already:
+To install `pnpm` globally if not already:
 
-\`\`\`bash
+```bash
 npm install -g pnpm
-\`\`\`
+```
 
 ## 🚀 Steps to Install and Run the Project
 Clone the repository:
-\`\`\`bash
+```bash
 git clone https://github.com/heydayle/nuxt-boilerplate-v3.git
 cd nuxt-boilerplate-v3
-\`\`\`
+```
 
 Install dependencies:
-\`\`\`bash
+```bash
 pnpm install
-\`\`\`
+```
 
-Alternatively, use \`npm install\` or \`yarn\` depending on your preference.
+Alternatively, use `npm install` or `yarn` depending on your preference.
 Start the development server:
 
-\`\`\`bash
+```bash
 pnpm dev
 By default, the app will be running at:
 👉 http://localhost:3000
-\`\`\`
+```
 
 ## ⚙️ Build for Production
 To generate a production build:
 
-\`\`\` bash
+``` bash
 pnpm build
-\`\`\`
+```
 
 
 To preview the production build locally:
-\`\`\` bash
+``` bash
 pnpm preview
-\`\`\`
+```
 
 ## 🛠 Included Features
-- Nuxt 3
+- Nuxt 3 *(ready for v4)*
 
 - TypeScript
 
@@ -63,28 +63,28 @@ pnpm preview
 
 - Pinia
 
-- NuxtUI
+- NuxtUI v3
 
-- TailwindCSS
+- TailwindCSS v4
 
 - Auto imports for components and composables
 
-- Runtime config via \`.env\` and \`app.config.ts\`
+- Runtime config via `.env` and `app.config.ts`
 
 ## 📄 Environment Variables
 
-- Duplicate \`example.env\` file in the root and rename to \`.env\` of your project to configure runtime variables:
+- Duplicate `example.env` file in the root and rename to `.env` of your project to configure runtime variables:
 
-\`\`\`bash
+```bash
 # Your secret key
 GG_CLIENT_ID        =
 GG_CLIENT_SECRET    =
 GG_API_KEY          =
-\`\`\`
+```
 
 ## 📁 Project Structure
 
-\`\`\` bash
+``` bash
 nuxt-boilerplate-v3/
 ├── assets/            # Static assets (images, fonts, etc.)
 ├── components/        # Reusable Vue components
@@ -92,7 +92,7 @@ nuxt-boilerplate-v3/
 ├── layouts/           # Page layouts
 ├── middleware/        # Nuxt middleware
 ├── pages/             # Application pages
-    └── index/         # Homepage
+    └── index.vue      # Homepage
 ├── plugins/           # Nuxt plugins
 ├── public/            # Public static files
 ├── server/            # Server API endpoints and middleware
@@ -103,5 +103,4 @@ nuxt-boilerplate-v3/
 ├── nuxt.config.ts     # Nuxt configuration
 ├── tailwind.config.js # TailwindCSS configuration
 └── tsconfig.json      # TypeScript configuration
-\`\`\`
-`
+```

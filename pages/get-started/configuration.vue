@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import {configuration} from "~/__mock__/configuration";
-
 definePageMeta({
   layout: 'document'
 })
@@ -23,10 +21,13 @@ const links = [
     label: 'Configuration'
   }
 ]
+const configuration = await queryCollection('content').path('/get-started/configuration').first()
 </script>
 <template>
     <div>
       <UBreadcrumb :links="links" />
-      <MDC :value="configuration" tag="article" />
+      <article>
+        <ContentRenderer :value="configuration" />
+      </article>
     </div>
 </template>

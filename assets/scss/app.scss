@@ -1,0 +1,56 @@
+@layer utilities {
+    .container {
+        max-width: 1336px;
+        margin: auto;
+    }
+
+    .router-link-active {
+        color: #42b983;
+    }
+    .router-link-active .sidebar-item {
+        border-color: rgb(var(--color-gray-200) / 1);
+    }
+    
+    /* Srcollbar styles */
+    ::-webkit-scrollbar {
+        width: 2px;
+        height: 2px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: theme('colors.neutral.500');
+        border-radius: 3px;
+        transition: background 0.2s ease;
+
+        :hover {
+            background: theme('colors.neutral.500');
+        }
+
+        :active {
+            background: theme('colors.neutral.300');
+        }
+    }
+    .dark {
+        ::-webkit-scrollbar {
+            width: 2px;
+            height: 2px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.gray.500');
+            border-radius: 3px;
+
+            :hover {
+                background: theme('colors.gray.300');
+            }
+        }
+    }
+}
