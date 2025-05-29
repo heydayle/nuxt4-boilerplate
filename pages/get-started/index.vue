@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { introduce } from '~/__mock__/introduction'
 definePageMeta({
   layout: 'document'
 })
