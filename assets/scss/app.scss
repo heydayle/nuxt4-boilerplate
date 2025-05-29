@@ -4,8 +4,8 @@
         margin: auto;
     }
 
-    .router-link-active {
-        color: #42b983;
+    .router-link-active, .hash-active {
+        color: theme('colors.primary.500');
     }
     .router-link-active .sidebar-item {
         border-color: rgb(var(--color-gray-200) / 1);

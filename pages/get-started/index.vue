@@ -1,45 +1,50 @@
 <script setup lang="ts">
 definePageMeta({
-  layout: 'document'
-})
+  layout: "document",
+});
 useHead({
-  title: 'Documents',
+  title: "Documents",
   meta: [
     {
-      name: 'description',
-      content: 'Documentation for Nuxt Boilerplate v3'
-    }
-  ]
-})
+      name: "description",
+      content: "Documentation for Nuxt Boilerplate v3",
+    },
+  ],
+});
 
 const links = [
   {
-    name: 'get-started',
-    label: 'Docs'
+    name: "get-started",
+    label: "Docs",
   },
   {
-    name: '',
-    label: 'Get started'
-  }
-]
+    name: "",
+    label: "Get started",
+  },
+];
 
-const introduce = await queryCollection('content').path('/get-started/introduction').first()
+const localePath = useLocalePath();
+const introduce = await queryCollection("content")
+  .path("/get-started/introduction")
+  .first();
 </script>
 
 <template>
   <div class="h-full">
-      <UBreadcrumb :links="links" />
-      <article>
-        <ContentRenderer :value="introduce" />
-      </article>
-      <NBFeatures />
-      <UButton variant="outline" to="get-started-installation" class="mt-4">
-        Intallation
-        <UIcon name="material-symbols:arrow-forward-rounded" />
-      </UButton>
+    <UBreadcrumb :links="links" />
+    <article>
+      <ContentRenderer :value="introduce" />
+    </article>
+    <NBFeatures />
+    <UButton
+      variant="outline"
+      :to="localePath('get-started-installation')"
+      class="mt-4"
+    >
+      Intallation
+      <UIcon name="material-symbols:arrow-forward-rounded" />
+    </UButton>
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
