@@ -10,7 +10,6 @@ useHead({
   ]
 })
 
-const itemsMenu = ref(['Backlog', 'Todo', 'In Progress', 'Done']);
 </script>
 <template>
   <div class="container min-h-[calc(100vh-10rem)]">
