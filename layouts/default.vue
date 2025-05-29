@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="m-auto thin-scrollbar">
+  <div class="m-auto">
     <LayoutsHeader />
     <NuxtPage />
     <LayoutsFooter />

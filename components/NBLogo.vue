@@ -12,7 +12,8 @@ defineProps<{
 <template>
   <div>
       <NuxtLinkLocale to="/" class="flex-1 inline-flex space-x-4 items-center">
-        <UIcon name="simple-icons:nuxt" class="text-4xl text-green-500" />
+        <!-- <UIcon name="simple-icons:nuxt" class="text-4xl text-green-500" /> -->
+         <img src="/images/logo.png" alt="Nuxt Boilerplate Logo" class="w-8 h-8" />
         <template v-if="withTitle">
           <span class="text-xl font-bold">{{ title }}</span>
           <span class="text-[10px] text-primary px-2 py-1 border border-primary rounded-xl">{{ version }}</span>

@@ -12,6 +12,10 @@
     }
     
     /* Srcollbar styles */
+
+    * {
+        scroll-behavior: smooth;
+    }
     ::-webkit-scrollbar {
         width: 2px;
         height: 2px;

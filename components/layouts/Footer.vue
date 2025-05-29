@@ -1,5 +1,5 @@
 <template>
-    <footer class="footer w-full sticky bottom-0 left-0">
+    <footer class="footer w-full">
         <div class="container">
             <span>&copy; {{ currentYear }} Devaloka. All rights reserved.</span>
         </div>

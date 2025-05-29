@@ -26,6 +26,7 @@ cd nuxt-boilerplate-v3
 Install dependencies:
 ```bash
 pnpm install
+
 ```
 
 Alternatively, use `npm install` or `yarn` depending on your preference.
@@ -35,6 +36,10 @@ Start the development server:
 pnpm dev
 By default, the app will be running at:
 👉 http://localhost:3000
+
+
+// if the error of nuxt-content please run this
+pnpm approve-builds 
 ```
 
 ## ⚙️ Build for Production

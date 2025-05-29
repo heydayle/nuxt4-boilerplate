@@ -51,24 +51,40 @@ export default defineAppConfig({
   },
   features: [
     {
-      label: "Next Auth",
-      icon: "fluent-color:shield-checkmark-20",
+      label: "NuxtUI",
+      icon: "vscode-icons:file-type-nuxt",
+    },
+    {
+      label: "Nuxt Content",
+      icon: "vscode-icons:file-type-nuxt",
+    },
+    {
+      label: "Nuxt Image",
+      icon: "vscode-icons:file-type-nuxt",
+    },
+    {
+      label: "Nuxt Fonts",
+      icon: "vscode-icons:file-type-nuxt",
+    },
+    {
+      label: "Vueuse",
+      icon: "logos:vueuse",
     },
     {
       label: "Pinia",
       icon: "logos:pinia",
     },
     {
-      label: "NuxtUI",
-      icon: "vscode-icons:file-type-nuxt",
+      label: "Color mode",
+      icon: "line-md:moon-filled-loop"
+    },
+    {
+      label: "Next Auth",
+      icon: "fluent-color:shield-checkmark-20",
     },
     {
       label: "TailwindCSS",
       icon: "vscode-icons:file-type-tailwind",
-    },
-    {
-      label: "Axios",
-      icon: "simple-icons:axios",
     },
     {
       label: "i18n",
@@ -78,27 +94,70 @@ export default defineAppConfig({
       label: "Lint",
       icon: "logos:eslint",
     },
-    {
-      label: "Vueuse",
-      icon: "logos:vueuse",
-    },
   ],
   documents: {
     sidebars: [
       {
         name: 'get-started',
+        to: 'get-started',
         icon: 'lineicons:rocket-5',
         label: 'Get started'
       },
       {
         name: 'get-started-installation',
+        to: 'get-started-installation',
         icon: 'material-symbols:power-settings-new-outline',
-        label: 'Installation'
+        label: 'Installation',
+        children: [
+          {
+            label: 'Prerequisites',
+            to: '#prerequisites'
+          },
+          {
+            label: 'Install and run',
+            to: '#steps-to-install-and-run-the-project'
+          },
+          {
+            label: 'Features',
+            to: '#included-features'
+          },
+          {
+            label: 'Environment variables',
+            to: '#environment-variables'
+          },
+          {
+            label: 'Structure',
+            to: '#project-structure'
+          },
+        ]
       },
       {
         name: 'get-started-configuration',
+        to: 'get-started-configuration',
         icon: 'icon-park-outline:config',
-        label: 'Configuration'
+        label: 'Configuration',
+        children: [
+          {
+            label: 'Config structure',
+            to: '#structure-overview'
+          },
+          {
+            label: 'Nuxt UI config',
+            to: '#ui'
+          },
+          {
+            label: 'Nuxt App config',
+            to: '#app'
+          },
+          {
+            label: 'Accessing config',
+            to: '#accessing-config-in-your-app'
+          },
+          {
+            label: 'Use cases',
+            to: '#use-cases'
+          },
+        ]
       }
     ]
   },

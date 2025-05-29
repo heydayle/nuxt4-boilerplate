@@ -4,6 +4,7 @@
 
 This file provides global app-level configuration for the Nuxt Boilerplate. It leverages the `defineAppConfig()` method to expose static configuration accessible via `useAppConfig()` anywhere in your Nuxt 3 app.
 
+#
 ---
 
 ## 📌 Structure Overview
@@ -22,20 +23,21 @@ Configures UI theming preferences:
 
 ```ts
 ui: {
-  primary: 'green',
-  gray: 'cool'
+  colors: {
+    primary: 'green',
+    neutral: 'slate',
+  },
+  ...
 }
 ```
 
-- `primary`: The primary theme color used across components.
-
-- `gray`: Shade variant for neutral tones (e.g., cool, warm).
+- Checkout for more in [NuxtUI Documents](https://ui.nuxt.com/getting-started/theme#configuration)
 
 ---
 
 ## 🧠 app
 
-The main configuration object that contains `meta`, `navigation`, `social links`, `features`, and documentation structure.
+The main configuration object that contains `version`, `meta`, `navigation`, `socials`, `features`, and documentation structure.
 
 ### 🆎 version
 
@@ -103,6 +105,7 @@ headers: {
 
 - navigation: Defines site navigation links:
 
+
     ```ts
     navigation: [
       {
@@ -113,6 +116,7 @@ headers: {
       ...
     ]
     ```
+
     Each nav item includes:
 
     - name: `Internal ID`
@@ -130,6 +134,9 @@ features: [
   ...
  ]
 ```
+#
+---
+---
 
 ### 🔍 Accessing Config in Your App
 

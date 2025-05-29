@@ -1,12 +1,13 @@
 export interface Navigation {
     name: string
     label: string
-    path?: string
+    to?: string
     href?: string
     class?: string
     transition?: string
     disabled?: boolean
     icon?: string
+    children?: Navigation[]
 }
 export interface Social {
     name: string
