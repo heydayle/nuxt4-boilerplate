@@ -1,4 +1,4 @@
-# Nuxt Boilerplate/ Nuxt starter
+# Nuxt Boilerplate / Nuxt starter
 
 Kickstart Your Nuxt Project – Preconfigured, Optimized, Ready to Code, Zero config!
 
@@ -35,8 +35,8 @@ Ready-to-use framework for Nuxt projects, pre-configured framework with essentia
 
 ```bash
 # Clone repository
-git clone https://github.com/heydayle/nuxt-boilerplate-v3.git
-cd nuxt-boilerplate-v3
+git clone https://github.com/heydayle/nuxt-boilerplate.git
+cd nuxt-boilerplate
 
 # Install dependencies
 pnpm install
@@ -68,23 +68,28 @@ pnpm start
 
 ```
 nuxt-boilerplate-v3/
-├── assets/            # Static assets (images, fonts, etc.)
-├── components/        # Reusable Vue components
-├── composables/       # Vue composables
-├── layouts/           # Page layouts
-├── middleware/        # Nuxt middleware
-├── pages/             # Application pages
-      └── index.vue    # Homepage
-├── plugins/           # Nuxt plugins
-├── public/            # Public static files
-├── server/            # Server API endpoints and middleware
-├── stores/            # Pinia stores
-├── utils/             # Utility functions
-├── .env.example       # Environment variables template
-├── app.config.ts      # App configuration
-├── nuxt.config.ts     # Nuxt configuration
-├── tailwind.config.js # TailwindCSS configuration
-└── tsconfig.json      # TypeScript configuration
+    ├── app/
+    │    ├── assets/            # Static assets (images, fonts, etc.)
+    │    ├── components/        # Reusable Vue components
+    │    ├── composables/       # Vue composables
+    │    ├── layouts/           # Page layouts
+    │    ├── middleware/        # Nuxt middleware
+    │    ├── pages/             # Application pages
+    │    │      └── index.vue   # Homepage
+    │    ├── plugins/           # Nuxt plugins
+    │    ├── utils/             # Utility functions
+    │    ├── app.config.ts      # App configuration
+    │    └── app.vue            # App root
+    ├── i18n/                   # i18n 
+    │    └── locales/           # Language json
+    ├── public/                 # Public static files
+    ├── server/                 # Server API endpoints and middleware
+    ├── stores/                 # Pinia stores
+    ├── .env                    # Environment variables
+    ├── content.config.ts       # Nuxt Content configuration
+    ├── nuxt.config.ts          # Nuxt configuration
+    ├── README.md               
+    └── tsconfig.json           # TypeScript configuration
 ```
 
 ## Contributing
