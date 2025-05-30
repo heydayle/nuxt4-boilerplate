@@ -30,6 +30,7 @@
     "nuxt-vue3-google-signin": "^0.0.11",
     "pinia": "^3.0.1",
     "sass": "^1.85.1",
+    "sharp": "^0.34.2",
     "sweetalert2": "^11.22.0",
     "vue": "latest",
     "vue-router": "latest",
@@ -49,7 +50,10 @@
       "better-sqlite3"
     ],
     "onlyBuiltDependencies": [
-      "better-sqlite3"
+      "better-sqlite3",
+      "sharp",
+      "@parcel/watcher",
+      "esbuild"
     ]
   }
 }

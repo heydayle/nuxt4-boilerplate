@@ -51,7 +51,7 @@ export default defineAppConfig({
   },
   features: [
     {
-      label: "NuxtUI",
+      label: "Nuxt UI",
       icon: "vscode-icons:file-type-nuxt",
     },
     {
