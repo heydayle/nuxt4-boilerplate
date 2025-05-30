@@ -7,11 +7,12 @@ Ready-to-use framework for Nuxt projects, pre-configured framework with essentia
 ## Features
 
 - [x]  🚀 **Nuxt 3** - Powerful Vue.js framework with high performance
-  - [ ] Support upgrade Nuxt 4 
+  - [x] Support upgrade Nuxt 4
+  - [x] New directory structure
 - [x] 📐 **NuxtUI** - Fully styled and customizable components for Nuxt
-  - [ ] Upgrade v3
+  - [x] Upgrade v3
 - [x] 🎨 **TailwindCSS** - Utility-first CSS framework for rapid design
-  - [ ] Support upgrade Tailwind v4 
+  - [x] Support upgrade Tailwind v4 
 - [x] 🔍 **SEO Friendly** - Optimized for search engines
 - [x] 🌐 **i18n** - Multilingual support
   - [x] English
