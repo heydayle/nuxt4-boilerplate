@@ -1,0 +1,30 @@
+@theme {
+
+  --color-green-50: #f0f9f4;
+  --color-green-100: #d5f2e3;
+  --color-green-200: #aee6ca;
+  --color-green-300: #7edbb2;
+  --color-green-400: #54ce9a;
+  --color-green-500: #42b983;
+  --color-green-600: #379f6f;
+  --color-green-700: #2b865c;
+  --color-green-800: #216c49;
+  --color-green-900: #12392f;
+
+  --animate-slow-spining: slowSpining 30s linear infinite;
+  --animate-rotate-border: rotateBorder 3s linear infinite;
+
+  @keyframes slowSpining {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotateBorder {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(-360deg) }
+  }
+}

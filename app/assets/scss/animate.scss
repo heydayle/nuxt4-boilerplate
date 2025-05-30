@@ -1,0 +1,14 @@
+@theme {
+
+  --animate-slow-spining: slowSpining 30s linear infinite;
+
+  @keyframes slowSpining {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

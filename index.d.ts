@@ -8,7 +8,12 @@ declare module 'nuxt/schema' {
       },
       app?: {
         //eslint-disable-next-line @typescript-eslint/no-explicit-any
-        ui?: any,
+        ui?: {
+          colors?: {
+            primary?: string
+            neutral?: string
+          }
+        },
         version?: string
         meta?: {
           title?: string
