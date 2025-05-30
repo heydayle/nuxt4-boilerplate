@@ -23,7 +23,6 @@ const links = [
   },
 ];
 
-const localePath = useLocalePath();
 const introduce = await queryCollection("content")
   .path("/get-started/introduction")
   .first();
@@ -35,15 +34,12 @@ const introduce = await queryCollection("content")
     <article>
       <ContentRenderer :value="introduce" />
     </article>
-    <NBFeatures />
-    <UButton
-      variant="outline"
-      :to="localePath('get-started-installation')"
-      class="mt-4"
-    >
-      Intallation
-      <UIcon name="material-symbols:arrow-forward-rounded" />
-    </UButton>
+    <NBFeatures :extend="{
+        label: 'Installation',
+        to: 'get-started-installation'
+      }"
+      class="pb-2"
+    />
   </div>
 </template>
 

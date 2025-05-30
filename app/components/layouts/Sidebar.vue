@@ -18,10 +18,10 @@ const items = computed(() => {
 <template>
   <div class="w-full flex space-x-4 pr-4">
     <UNavigationMenu
-      class="flex-1 !text-lg"
+      class="flex-1"
       orientation="vertical"
       :items="items"
-      :ui="{ linkLabel: 'text-lg' }"
+      :ui="{ linkLabel: 'text-md' }"
     />
     <UDivider orientation="vertical" />
   </div>

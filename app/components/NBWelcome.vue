@@ -1,51 +1,9 @@
 <script setup lang="ts">
-import LogoImg from "~/public/images/logo.png";
-
 definePageMeta({
   layout: "default",
 });
 const { app } = useAppConfig();
 const localPath = useLocalePath();
-const FEATURES = app.features;
-
-const count = ref(0);
-let intervalId: number | null = null
-
-function startCounting() {
-  let index = 0
-  const values = FEATURES.map((_, i) => i + 1);
-
-  const startFast = () => {
-    intervalId = window.setInterval(() => {
-      count.value = values[index++]
-      if (index === Math.round(values.length/2)) {
-        clearInterval(intervalId!)
-        startMedium()
-      }
-    }, 200 + (index * 50))
-  }
-
-  const startMedium = () => {
-    intervalId = window.setInterval(() => {
-      count.value = values[index++]
-      if (index === (values.length - 1)) {
-        clearInterval(intervalId!)
-        startSlow()
-      }
-    }, 500 + (index * 50));
-  }
-
-  const startSlow = () => {
-    setTimeout(() => {
-      count.value = values[index++]
-    }, 800)
-  }
-
-  startFast()
-}
-onMounted(() => {
-  startCounting()
-})
 
 </script>
 <template>
@@ -59,13 +17,13 @@ onMounted(() => {
               <span class="text-green-500 font-black">Nuxt Boilerplate!</span>
             </h1>
             <p>{{ $t("welcome.subTitle") }}</p>
-            <UButton
+            <!-- <UButton
               class="mt-2"
               variant="outline"
               :to="localPath('get-started')"
               icon="material-symbols:arrow-outward"
               >{{ $t("welcome.getStarted") }}
-            </UButton>
+            </UButton> -->
             <p class="my-4">{{ $t("welcome.description") }}</p>
             <NBFeatures />
           </div>
@@ -79,7 +37,7 @@ onMounted(() => {
             />
             <div class="">
               <img
-                :src="LogoImg"
+                src="/images/logo.png"
                 alt="logo"
                 class="animate animate-slow-spining scale-120"
               >
