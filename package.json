@@ -31,7 +31,6 @@
     "pinia": "^3.0.1",
     "sass": "^1.85.1",
     "sharp": "^0.34.2",
-    "sweetalert2": "^11.22.0",
     "vue": "latest",
     "vue-router": "latest",
     "zod": "^3.25.28"

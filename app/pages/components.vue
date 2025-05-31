@@ -11,7 +11,7 @@ useHead({
     }
   ]
 })
-const { success } = useAlert()
+const toast = useToast()
 const items = [{
   name: 'messages',
   icon: 'i-heroicons-chat-bubble-oval-left',
@@ -34,7 +34,7 @@ const state = reactive({
   email: 'hungthinh.ckc@gmail.com'
 })
 const onSubmit = (event: FormSubmitEvent<Schema>) => {
-  success({ text: event.data.name + ' - ' + event.data.email })
+  toast.add({ title: event.data.name, description: event.data.email })
 }
 </script>
 <template>
@@ -62,18 +62,6 @@ const onSubmit = (event: FormSubmitEvent<Schema>) => {
       <UButton icon="gridicons:link" variant="ghost">Link</UButton>
     </div>
     <div class="w-full flex gap-2 text-white">
-      <UForm :schema="schema" :state="state" class="flex flex-col gap-4" @submit="onSubmit">
-        <UFormField label="Name" name="name">
-          <UInput v-model="state.name" label="Name" />
-        </UFormField>
-        <UFormField label="Email" name="email">
-          <UInput v-model="state.email" label="Email" type="email" />
-        </UFormField>
-        <div class="flex items-center gap-2">
-          <UButton type="submit">Submit</UButton>
-          <UButton type="reset" variant="ghost">Reset</UButton>
-        </div>
-      </UForm>
       <UForm :schema="schema" :state="state" class="flex flex-col gap-4" @submit="onSubmit">
         <UFormField label="Name" name="name">
           <UInput v-model="state.name" label="Name" />

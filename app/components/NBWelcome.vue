@@ -17,13 +17,6 @@ const localPath = useLocalePath();
               <span class="text-green-500 font-black">Nuxt Boilerplate!</span>
             </h1>
             <p>{{ $t("welcome.subTitle") }}</p>
-            <!-- <UButton
-              class="mt-2"
-              variant="outline"
-              :to="localPath('get-started')"
-              icon="material-symbols:arrow-outward"
-              >{{ $t("welcome.getStarted") }}
-            </UButton> -->
             <p class="my-4">{{ $t("welcome.description") }}</p>
             <NBFeatures />
           </div>
@@ -44,6 +37,9 @@ const localPath = useLocalePath();
             </div>
           </div>
         </div>
+      </div>
+      <div class="fixed top-10 right-10">
+        <NBColorMode />
       </div>
     </div>
   </div>

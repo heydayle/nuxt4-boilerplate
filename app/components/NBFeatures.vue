@@ -3,7 +3,7 @@ import { NuxtLinkLocale } from '#components';
 import { string } from 'zod';
 
 withDefaults(defineProps<{
-  extend: { label: string; to: string }
+  extend?: { label: string; to: string }
 }>(), {
   extend: {
     label: "Get Started",
@@ -59,15 +59,15 @@ onMounted(() => {
       class="group relative flex flex-col justify-center items-center shadow-lg ring-1 ring-black/5 h-[100px] rounded-2xl transition duration-600 cursor-pointer hover:shadow-gray-100/10 hover:shadow-2xl">
       <div class="absolute w-full h-full blur rounded-lg transition duration-500 animate-tilt"
         :class="{ 'bg-gradient-to-br from-green-700 via-green-500 to-cyan-200': count > index }" />
-      <div class="relative z-10 flex flex-col justify-center items-center  rounded-lg w-full h-full bg-black/20">
+      <div class="relative z-10 flex flex-col justify-center items-center  rounded-lg w-full h-full bg-white/50 dark:bg-black/20">
         <UIcon :name="item.icon" size="32" />
-        <div class="font-semibold">{{ item.label }}</div>
+        <div class="font-semibold text-white">{{ item.label }}</div>
       </div>
     </div>
     <NuxtLinkLocale v-if="extend" :to="extend.to">
       <div class="group relative flex flex-col justify-center items-center shadow-lg ring-1 ring-black/5 hover:ring-green-300 h-[100px] rounded-lg transition duration-600 cursor-pointer hover:shadow-gray-100/10 hover:shadow-2xl">
-        <div class="relative z-10 flex justify-center items-center rounded-lg w-full h-full bg-black/20 group-hover:text-green-300">
-          <div class="font-semibold">{{ extend.label }}</div>
+        <div class="relative z-10 flex justify-center items-center rounded-lg w-full h-full bg-white/50 dark:bg-black/20 group-hover:text-green-300">
+          <div class="text-sm font-semibold">{{ extend.label }}</div>
           <UIcon name="material-symbols:arrow-forward-rounded" size="24" class="transform duration-300 relative left-0 group-hover:left-2" />
         </div>
       </div>
