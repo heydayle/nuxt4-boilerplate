@@ -2,8 +2,6 @@
 definePageMeta({
   layout: "default",
 });
-const { app } = useAppConfig();
-const localPath = useLocalePath();
 
 </script>
 <template>

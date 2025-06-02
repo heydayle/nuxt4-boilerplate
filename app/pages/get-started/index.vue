@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { ContentCollectionItem } from '@nuxt/content';
+
 definePageMeta({
   layout: "document",
 });
@@ -25,7 +27,7 @@ const links = [
 
 const introduce = await queryCollection("content")
   .path("/get-started/introduction")
-  .first();
+  .first() as ContentCollectionItem 
 </script>
 
 <template>
@@ -34,9 +36,10 @@ const introduce = await queryCollection("content")
     <article>
       <ContentRenderer :value="introduce" />
     </article>
-    <NBFeatures :extend="{
+    <NBFeatures
+      :extend="{
         label: 'Installation',
-        to: 'get-started-installation'
+        to: 'get-started-installation',
       }"
       class="pb-2"
     />
