@@ -11,20 +11,4 @@
   --color-green-800: #216c49;
   --color-green-900: #12392f;
 
-  --animate-slow-spining: slowSpining 30s linear infinite;
-  --animate-rotate-border: rotateBorder 3s linear infinite;
-
-  @keyframes slowSpining {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  @keyframes rotateBorder {
-    0% { transform: rotate(0deg) }
-    100% { transform: rotate(-360deg) }
-  }
 }

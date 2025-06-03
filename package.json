@@ -12,6 +12,7 @@
     "lint-fix": "eslint . --fix"
   },
   "dependencies": {
+    "@internationalized/date": "^3.8.1",
     "@nuxt/content": "^3.5.1",
     "@nuxt/fonts": "^0.10.3",
     "@nuxt/image": "1.9.0",

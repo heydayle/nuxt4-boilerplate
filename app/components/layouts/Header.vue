@@ -3,7 +3,7 @@ const { app } = useAppConfig()
 const github = app.socials[0]
 </script>
 <template>
-  <div class="bg-white/20 shadow-lg ring-1 ring-black/5">
+  <div class="ring-1 ring-black/5">
     <div class="container py-4 flex justify-between items-center">
       <NBLogo with-title class="flex-1" />
       <div>

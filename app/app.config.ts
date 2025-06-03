@@ -1,9 +1,39 @@
 export default defineAppConfig({
   ui: {
     colors: {
-      primary: 'green',
-      neutral: 'slate',
+      primary: 'black',
+      neutral: 'gray',
     },
+    button: {
+      defaultVariants: {
+        color: 'neutral'
+      }
+    },
+    checkbox: {
+      defaultVariants: {
+        color: 'neutral'
+      }
+    },
+    radioGroup: {
+      defaultVariants: {
+        color: 'neutral'
+      }
+    },
+    calendar: {
+      defaultVariants: {
+        color: 'neutral'
+      }
+    },
+    chip: {
+      defaultVariants: {
+        color: 'neutral'
+      }
+    },
+    navigation: {
+      defaultVariants: {
+        color: 'neutral'
+      }
+    }
   },
   app: {
   version: 'v0.1.0',

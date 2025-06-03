@@ -12,7 +12,7 @@ const isExtract = (name: string) => baseName.value.includes(name)
   <div>
     <div class="w-full flex justify-end mr-6">
       <ul class="flex items-center space-x-4">
-        <UNavigationMenu :items="navigation" highlight highlight-color="primary">
+        <UNavigationMenu :items="navigation" highlight highlight-color="neutral">
           <template #item="{ item }">
             <NuxtLinkLocale :to="item.name" exact-active-class="router-link-active" :class="{ 'router-link-active': isExtract(item.name) }">
               <span>{{ $t(item.label) }}</span>
@@ -23,6 +23,3 @@ const isExtract = (name: string) => baseName.value.includes(name)
     </div>
   </div>
 </template>
-
-<style scoped>
-</style>
