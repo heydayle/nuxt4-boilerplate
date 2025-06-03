@@ -31,6 +31,9 @@ const contacts = computed(() => config.app.contacts)
         </li>
       </ul>
     </div>
+    <div class="mt-8">
+      <iframe src="https://github.com/sponsors/heydayle/card" title="Sponsor heydayle" height="90" width="600" style="border: 1px solid var(--ui-border-muted);border-radius: 12px;background-color: transparent;"></iframe>
+    </div>
   </div>
 </template>
 

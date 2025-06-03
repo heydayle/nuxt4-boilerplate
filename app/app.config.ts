@@ -36,21 +36,21 @@ export default defineAppConfig({
     }
   },
   app: {
-  version: 'v0.1.0',
+  version: 'v0.1.2',
   meta: {
     title: 'Nuxt Boilerplate',
-    description: 'Nuxt Starter with Vite',
+    description: 'Nuxt Starter, Nuxt UI, Nuxt Content, Nuxt Image, Nuxt Fonts, Vueuse, Pinia, TailwindCSS, i18n, and more.',
     keywords: 'nuxt, vite, starter',
     image: '/cover.png',
     author: 'Thinh Le',
     publisher: 'Thinh Le',
-    canonical: 'https://github.com/heydayle/nuxt-boilerplate-v3'
+    canonical: 'https://github.com/heydayle/nuxt-boilerplate'
   },
   socials: [
     {
       name: 'Github',
       icon: 'simple-icons:github',
-      href: 'https://github.com/heydayle/nuxt-boilerplate-v3'
+      href: 'https://github.com/heydayle/nuxt-boilerplate'
     },
   ],
   headers: {
