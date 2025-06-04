@@ -5,21 +5,21 @@ const { app } = useAppConfig()
 const github = app.socials[0] as Social
 </script>
 <template>
-  <div class="ring-1 ring-black/5">
+  <div class="ring-1 ring-black/5 sticky top-0">
     <div class="container py-4 flex justify-between items-center">
       <NBLogo with-title class="flex-1" />
       <div>
         <NBNavigation />
       </div>
-      <div class="flex flex-1 justify-end items-center space-x-2">
-        <div>
-          <iframe src="https://github.com/sponsors/heydayle/button" title="Sponsor heydayle" height="32" width="114" style="border: 0; border-radius: 6px;" />
-        </div>
+      <div class="flex flex-1 justify-end items-center space-x-2"> 
+        <NuxtLinkLocale to="auth-login">
+          <UButton variant="outline">{{ $t('nav.login') }}</UButton>
+        </NuxtLinkLocale>
+        <SelectLanguage />
+        <NBColorMode />
         <UButton :to="github.href" variant="ghost" color="neutral" class="text-xl">
           <UIcon :name="github.icon" size="22" class="text-xl"/>
-        </UButton> 
-        <NBColorMode />
-        <SelectLanguage />
+        </UButton>
       </div>
     </div>
   </div>

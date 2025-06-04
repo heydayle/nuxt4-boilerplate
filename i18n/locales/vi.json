@@ -1,5 +1,6 @@
 {
  "nav": {
+   "home": "Trang chủ",
    "docs": "Tài liệu",
    "about": "Về chúng tôi",
    "services": "Dịch vụ",
@@ -10,7 +11,8 @@
    "dashboard": "Bảng điều khiển",
    "logout": "Đăng xuất",
    "blank": "Trang trống",
-   "components": "Components"
+   "components": "Components",
+   "contents": "Contents"
  },
  "welcome": {
    "title": "Đây là ",

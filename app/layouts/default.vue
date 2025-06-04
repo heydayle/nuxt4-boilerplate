@@ -4,7 +4,9 @@
 <template>
   <div class="m-auto">
     <LayoutsHeader />
-    <NuxtPage />
+    <div class="container">
+      <NuxtPage />
+    </div>
     <LayoutsFooter />
   </div>
 </template>

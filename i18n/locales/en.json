@@ -1,5 +1,6 @@
 {
  "nav": {
+   "home": "Home",
    "docs": "Docs",
    "about": "About",
    "services": "Services",
@@ -10,7 +11,8 @@
    "dashboard": "Dashboard",
    "logout": "Logout",
    "blank": "Blank",
-   "components": "Components"
+   "components": "Components",
+   "contents": "Contents"
  },
  "welcome": {
    "title": "Welcome to the",

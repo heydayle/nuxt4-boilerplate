@@ -1,18 +1,13 @@
 <script setup lang="ts">
-
-definePageMeta({
-  layout: "landing",
-  name: 'Home'
-});
 useHead({
-  title: 'Kickstart Nuxt 🚀',
+  title: 'Home',
   meta: [
     {
       name: 'description',
-      content: 'Welcome to Nuxt Boilerplate v3!'
+      content: 'This is a home page sample for Nuxt Boilerplate'
     }
   ]
-});
+})
 
 </script>
 <template>

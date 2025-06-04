@@ -9,7 +9,7 @@ type Props = {
 };
 
 withDefaults(defineProps<Props>(), {
-  extend: () => ({ label: "Get Started", to: "get-started" }),
+  extend: () => ({ label: "Explore", to: "components" }),
 });
 const { app } = useAppConfig();
 const FEATURES = app.features;

@@ -58,14 +58,9 @@ export default defineAppConfig({
     logo: "/logo.svg",
     navigation: [
       {
-        name: "get-started",
-        label: "nav.docs",
-        path: "/get-started",
-      },
-      {
-        name: "blank",
-        label: "nav.blank",
-        path: "/blank",
+        name: "index",
+        label: "nav.home",
+        path: "/",
       },
       {
         name: "components",
@@ -73,9 +68,9 @@ export default defineAppConfig({
         path: "/components",
       },
       {
-        name: "auth-login",
-        label: "nav.login",
-        path: "/auth/login",
+        name: "contents",
+        label: "nav.contents",
+        path: "/contents",
       },
       {
         name: "contact",
@@ -126,7 +121,7 @@ export default defineAppConfig({
       icon: "ic:round-translate",
     },
     {
-      label: "Lint",
+      label: "ESLint",
       icon: "logos:eslint",
     },
   ],

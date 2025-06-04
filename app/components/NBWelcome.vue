@@ -6,10 +6,10 @@ definePageMeta({
 </script>
 <template>
   <div>
-    <div class="p-4 h-screen flex flex-col justify-center items-center">
-      <div class="grid grid-cols-3 gap-8 w-full content-center">
-        <div class="flex flex-col col-span-2 justify-between items-center">
-          <div class="w-[60%]">
+    <div class="py-4 min-h-[calc(100vh-10rem)] flex flex-col justify-center items-center">
+      <div class="grid grid-cols-5 gap-8 w-full content-center">
+        <div class="flex flex-col col-span-3 justify-between items-center">
+          <div>
             <h1 class="text-4xl font-bold">
               {{ $t("welcome.title") }}
               <span class="text-green-500 font-black">Nuxt Boilerplate!</span>
@@ -19,6 +19,7 @@ definePageMeta({
             <NBFeatures />
           </div>
         </div>
+        <div class="col-span-1" />
         <div class="flex flex-col justify-between items-center self-center">
           <div
             class="relative h-[200px] w-[200px] flex flex-col justify-center items-center"
@@ -32,9 +33,6 @@ definePageMeta({
             <NBLogo class="z-10" :width="150" :height="140" />
           </div>
         </div>
-      </div>
-      <div class="fixed top-10 right-10">
-        <NBColorMode />
       </div>
     </div>
   </div>
