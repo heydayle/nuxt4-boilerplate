@@ -4,6 +4,8 @@ Kickstart Your Nuxt Project – Preconfigured, Optimized, Ready to Code, Zero co
 
 Ready-to-use framework for Nuxt projects, pre-configured framework with essential libraries and tools, streamlining development and ensuring a clean, structured codebase. 🚀
 
+[Live Demo](https://nuxt-boilerplate-git-template-heydayles-projects.vercel.app?_vercel_share=RAPiLLyhVsAK1eaG2kKqTIHrLsoKCAiU)
+
 ## Features
 
 - [x]  🚀 **Nuxt 3** - Powerful Vue.js framework with high performance
