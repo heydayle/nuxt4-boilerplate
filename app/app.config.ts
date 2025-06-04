@@ -73,6 +73,11 @@ export default defineAppConfig({
         path: "/components",
       },
       {
+        name: "auth-login",
+        label: "nav.login",
+        path: "/auth/login",
+      },
+      {
         name: "contact",
         label: "nav.contact",
         path: "/contact",

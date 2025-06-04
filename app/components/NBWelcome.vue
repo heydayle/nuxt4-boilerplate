@@ -21,18 +21,15 @@ definePageMeta({
         </div>
         <div class="flex flex-col justify-between items-center self-center">
           <div
-            class="relative h-[200px] w-[200px] flex flex-col justify-center items-center transform -skew-y-12 -skew-x-6"
+            class="relative h-[200px] w-[200px] flex flex-col justify-center items-center"
           >
             <div
-              class="absolute bg-green-500/30 filter blur-2xl w-[300px] h-[300px] rounded-full animate animate-pulse"
+              class="absolute bg-green-500/50 filter blur-2xl w-[300px] h-[300px] rounded-full transition-all animate animate-[ping_2s_ease_infinite]"
             />
-            <div class="">
-              <img
-                src="/images/logo.png"
-                alt="logo"
-                class="animate animate-slow-spining scale-120"
-              >
-            </div>
+            <div
+              class="absolute bg-green-500/50 filter blur-2xl w-[300px] h-[300px] rounded-full"
+            />
+            <NBLogo class="z-10" :width="150" :height="140" />
           </div>
         </div>
       </div>

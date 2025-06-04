@@ -3,6 +3,10 @@
         max-width: 1336px;
         margin: auto;
     }
+    
+    [type="button"] {
+        cursor: pointer;
+    }
 
     .router-link-active, .hash-active {
         color: var(--ui-text-highlighted);

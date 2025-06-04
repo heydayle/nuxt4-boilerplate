@@ -1,22 +1,27 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
+import { defineProps, withDefaults } from "vue";
 const { app } = useAppConfig();
 const title = app.meta.title;
 const version = app.version;
 
-defineProps<{
+withDefaults(defineProps<{
   withTitle?: boolean;
-}>();
+  width?: number;
+  height?: number;
+}>(), {
+  width: 50,
+  height: 48,
+});
 </script>
 
 <template>
   <div>
     <NuxtLinkLocale to="/" class="flex-1 inline-flex space-x-4 items-center">
-      <!-- <UIcon name="simple-icons:nuxt" class="text-4xl text-green-500" /> -->
       <NuxtImg
         src="/images/logo.png"
         alt="Nuxt Boilerplate Logo"
-        class="w-12 h-12"
+        :width="width"
+        :height="height"
       />
       <template v-if="withTitle">
         <span class="text-xl font-bold">{{ title }}</span>

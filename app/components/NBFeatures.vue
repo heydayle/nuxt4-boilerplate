@@ -38,13 +38,13 @@ function startCounting() {
         clearInterval(intervalId!);
         startSlow();
       }
-    }, 400 + index * 50);
+    }, 250 + index * 20);
   };
 
   const startSlow = () => {
     setTimeout(() => {
       count.value = values[index] as number;
-    }, 600);
+    }, 350);
   };
 
   startFast();
@@ -72,7 +72,7 @@ onMounted(() => {
         class="relative z-10 flex flex-col justify-center items-center rounded-lg w-full h-full bg-white/50 dark:bg-black/20"
       >
         <UIcon :name="item.icon" size="32" />
-        <div class="font-semibold text-white">{{ item.label }}</div>
+        <div class="font-semibold transition-all" :class="count > index ? 'text-white' : 'text-black'">{{ item.label }}</div>
       </div>
     </div>
     <NuxtLinkLocale v-if="extend" :to="extend.to">
