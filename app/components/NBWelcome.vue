@@ -24,7 +24,7 @@ definePageMeta({
             class="relative h-[200px] w-[200px] flex flex-col justify-center items-center"
           >
             <div
-              class="absolute bg-green-500/50 filter blur-2xl w-[300px] h-[300px] rounded-full transition-all animate animate-[ping_2s_ease_infinite]"
+              class="absolute border border-1 border-green-500/50 filter w-[300px] h-[300px] rounded-full transition-all duration-1000 linear animate-radar"
             />
             <div
               class="absolute bg-green-500/50 filter blur-2xl w-[300px] h-[300px] rounded-full"
