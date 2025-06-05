@@ -1,6 +1,6 @@
 # Introduction
 
-The Nuxt Boilerplate is a comprehensive starter template designed to accelerate your [Vue.js](https://vuejs.org) development workflow using [Nuxt 3](https://nuxt.com). This boilerplate eliminates the tedious initial setup process and provides a solid foundation for building modern, performant web applications.
+The Nuxt Boilerplate is a comprehensive starter template designed to accelerate your [Vue.js](https://vuejs.org) development workflow using [Nuxt 3](https://nuxt.com) (ready for Nuxt 4). This boilerplate eliminates the tedious initial setup process and provides a solid foundation for building modern, performant web applications.
 
 ---
 

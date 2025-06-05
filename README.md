@@ -8,7 +8,7 @@ Ready-to-use framework for Nuxt projects, pre-configured framework with essentia
 
 - [x]  🚀 **Nuxt 3** - Powerful Vue.js framework with high performance
   - [x] Support upgrade Nuxt 4
-  - [x] New directory structure
+  - [x] [New directory structure](#project-structure)
 - [x] 📐 **NuxtUI** - Fully styled and customizable components for Nuxt
   - [x] Upgrade v3
 - [x] 🎨 **TailwindCSS** - Utility-first CSS framework for rapid design
@@ -66,10 +66,10 @@ pnpm start
 
 ## Project Structure
 
-```
-nuxt-boilerplate-v3/
+``` bash
+nuxt-boilerplate/
     ├── app/
-    │    ├── assets/            # Static assets (images, fonts, etc.)
+    │    ├── assets/            # Static assets (css, images, fonts, etc.)
     │    ├── components/        # Reusable Vue components
     │    ├── composables/       # Vue composables
     │    ├── layouts/           # Page layouts
@@ -82,6 +82,7 @@ nuxt-boilerplate-v3/
     │    └── app.vue            # App root
     ├── i18n/                   # i18n 
     │    └── locales/           # Language json
+    ├── content/                # Nuxt Content files
     ├── public/                 # Public static files
     ├── server/                 # Server API endpoints and middleware
     ├── stores/                 # Pinia stores

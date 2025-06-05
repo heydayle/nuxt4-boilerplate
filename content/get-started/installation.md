@@ -19,8 +19,8 @@ npm install -g pnpm
 ## 🚀 Steps to Install and Run the Project
 Clone the repository:
 ```bash
-git clone https://github.com/heydayle/nuxt-boilerplate-v3.git
-cd nuxt-boilerplate-v3
+git clone https://github.com/heydayle/nuxt-boilerplate.git
+cd nuxt-boilerplate
 ```
 
 Install dependencies:
@@ -90,9 +90,9 @@ GG_API_KEY          =
 ## 📁 Project Structure
 
 ``` bash
-nuxt-boilerplate-v3/
+nuxt-boilerplate/
     ├── app/
-    │    ├── assets/            # Static assets (images, fonts, etc.)
+    │    ├── assets/            # Static assets (css, images, fonts, etc.)
     │    ├── components/        # Reusable Vue components
     │    ├── composables/       # Vue composables
     │    ├── layouts/           # Page layouts
@@ -105,6 +105,7 @@ nuxt-boilerplate-v3/
     │    └── app.vue            # App root
     ├── i18n/                   # i18n 
     │    └── locales/           # Language json
+    ├── content/                # Nuxt Content files
     ├── public/                 # Public static files
     ├── server/                 # Server API endpoints and middleware
     ├── stores/                 # Pinia stores

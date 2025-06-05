@@ -63,19 +63,9 @@ export default defineAppConfig({
         path: "/get-started",
       },
       {
-        name: "blank",
-        label: "nav.blank",
-        path: "/blank",
-      },
-      {
         name: "components",
         label: "nav.components",
         path: "/components",
-      },
-      {
-        name: "auth-login",
-        label: "nav.login",
-        path: "/auth/login",
       },
       {
         name: "contact",
