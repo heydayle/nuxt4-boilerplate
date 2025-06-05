@@ -16,8 +16,8 @@ const github = app.socials[0]
         <NuxtLinkLocale to="auth-login">
           <UButton variant="outline">{{ $t('nav.login') }}</UButton>
         </NuxtLinkLocale>
-        <NBColorMode />
         <SelectLanguage />
+        <NBColorMode />
         <UButton :to="github.href" variant="ghost" color="neutral" class="text-xl">
           <UIcon :name="github.icon" size="22" class="text-xl"/>
         </UButton>
