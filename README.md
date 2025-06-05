@@ -1,32 +1,29 @@
-# Nuxt Boilerplate / Nuxt starter
+![img](/public/cover.png)
 
-Kickstart Your Nuxt Project – Preconfigured, Optimized, Ready to Code, Zero config!
+# 🚀 Nuxt Boilerplate / Nuxt starter
 
-Ready-to-use framework for Nuxt projects, pre-configured framework with essential libraries and tools, streamlining development and ensuring a clean, structured codebase. 🚀
+Kickstart Your **Nuxt** Project – **Preconfigured**, **Optimized**, **Ready to Code**, **Easy config**!
 
-[Live Demo](https://nuxt-boilerplate-git-template-heydayles-projects.vercel.app?_vercel_share=RAPiLLyhVsAK1eaG2kKqTIHrLsoKCAiU)
+*Ready-to-use* framework for **Nuxt** projects, pre-configured framework with essential libraries and tools, streamlining development and ensuring a clean, structured codebase.
+
+  [--> [Live Demo](https://nuxt-boilerplate-git-template-heydayles-projects.vercel.app?_vercel_share=RAPiLLyhVsAK1eaG2kKqTIHrLsoKCAiU) <--]
 
 ## Features
 
-- [x]  🚀 **Nuxt 3** - Powerful Vue.js framework with high performance
-  - [x] Support upgrade Nuxt 4
-  - [x] New directory structure
-- [x] 📐 **NuxtUI** - Fully styled and customizable components for Nuxt
-  - [x] Upgrade v3
-- [x] 🎨 **TailwindCSS** - Utility-first CSS framework for rapid design
-  - [x] Support upgrade Tailwind v4 
-- [x] 🔍 **SEO Friendly** - Optimized for search engines
-- [x] 🌐 **i18n** - Multilingual support
+- [x]  🚀 **[Nuxt 3](https://nuxt.com)** - Powerful Vue.js framework with high performance
+  - [x] Support upgrade [Nuxt 4](https://nuxt.com/docs/getting-started/upgrade)
+  - [x] [New directory structure](#project-structure)
+- [x] 📐 **[Nuxt UI v3](https://ui.nuxt.com/getting-started)** - Fully styled and customizable components for Nuxt
+- [x] 🎨 **[TailwindCSS v4](https://tailwindcss.com/)** - Utility-first CSS framework for rapid design
+- [x] 🌐 **[i18n](https://i18n.nuxtjs.org/)** - Multilingual support
   - [x] English
   - [x] Vietnamese
-- [x] 🔐 **Authentication** - Built-in authentication system (Next-auth)
-- [x] 📊 **Pinia** - Global state management
-- [x] 📝 **Form Validation** - Input data validation
-- [x] 🛠 **VueUse** - Collection of Essential Vue Composition Utilities
+- [x] 🔐 **[Next-auth](https://authjs.dev/)** - Built-in authentication system
+- [x] 📊 **[Pinia](https://pinia.vuejs.org/)** - Global state managemen
+- [x] 🛠 **[VueUse](https://vueuse.org/)** - Collection of Essential Vue Composition Utilities
 - [x] 🪄 **ESLint** - All-in-one ESLint integration for Nuxt
-- [ ] 📱 **Responsive Design** - Compatible with all devices
-- [ ] 🧪 **Testing** - Vitest support for unit and integration tests
-- [ ] 📦 **API Integration** - Easy API integration
+- [ ] 🧪 **Testing** - [Vitest](https://vitest.dev/) support for unit and integration tests, [Playwright](https://playwright.dev/) for e2e test.
+- [x] 🔍 **SEO Friendly** - Optimized for search engines
 
 ## System Requirements
 
@@ -68,7 +65,7 @@ pnpm start
 
 ## Project Structure
 
-```
+```bash
 nuxt-boilerplate-v3/
     ├── app/
     │    ├── assets/            # Static assets (images, fonts, etc.)
@@ -84,6 +81,7 @@ nuxt-boilerplate-v3/
     │    └── app.vue            # App root
     ├── i18n/                   # i18n 
     │    └── locales/           # Language json
+    ├── content/                # Nuxt Content files
     ├── public/                 # Public static files
     ├── server/                 # Server API endpoints and middleware
     ├── stores/                 # Pinia stores
