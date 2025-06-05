@@ -36,9 +36,9 @@ export default defineAppConfig({
     }
   },
   app: {
-  version: 'v0.1.2',
+  version: 'v0.2.0',
   meta: {
-    title: 'Nuxt Boilerplate',
+    title: 'Nuxt Boilerplate 🚀',
     description: 'Nuxt Starter, Nuxt UI, Nuxt Content, Nuxt Image, Nuxt Fonts, Vueuse, Pinia, TailwindCSS, i18n, and more.',
     keywords: 'nuxt, vite, starter',
     image: '/cover.png',

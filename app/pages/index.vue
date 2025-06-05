@@ -1,15 +1,15 @@
 <script setup lang="ts">
-
+const { app } = useAppConfig()
 definePageMeta({
   layout: "landing",
   name: 'Home'
 });
 useHead({
-  title: 'Kickstart Nuxt 🚀',
+  title: app.meta.title || 'Kickstart Nuxt 🚀',
   meta: [
     {
       name: 'description',
-      content: 'Welcome to Nuxt Boilerplate v3!'
+      content: 'Welcome to Nuxt Boilerplate!'
     }
   ]
 });
