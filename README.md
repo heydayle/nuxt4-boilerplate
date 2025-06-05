@@ -6,7 +6,7 @@ Kickstart Your **Nuxt** Project – **Preconfigured**, **Optimized**, **Ready to
 
 *Ready-to-use* framework for **Nuxt** projects, pre-configured framework with essential libraries and tools, streamlining development and ensuring a clean, structured codebase.
 
-  [--> [Live Demo](https://nuxt-boilerplate-git-template-heydayles-projects.vercel.app?_vercel_share=RAPiLLyhVsAK1eaG2kKqTIHrLsoKCAiU) <--]
+  [--> [Live Demo](https://nuxt-boilerplate-template.vercel.app/) <--]
 
 ## Features
 
