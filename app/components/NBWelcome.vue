@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import type { Social } from '~~/types/nuxtTypes';
+
 definePageMeta({
   layout: "default",
 });
+const { app } = useAppConfig()
+const github = app.socials[0] as Social
 
 </script>
 <template>
@@ -31,6 +35,7 @@ definePageMeta({
               class="absolute bg-green-500/50 filter blur-2xl w-[300px] h-[300px] rounded-full"
             />
             <NBLogo class="z-10" :width="150" :height="140" />
+            <UButton icon="fluent-color:star-28" class="mt-4 z-10" :to="github.href">Star on Github</UButton>
           </div>
         </div>
       </div>

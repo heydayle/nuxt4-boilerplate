@@ -12,7 +12,7 @@ export interface Navigation {
 export interface Social {
     name: string
     icon: string
-    href?: string
+    href: string
 }
 export interface Link {
     label: string
