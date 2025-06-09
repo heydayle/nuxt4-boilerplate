@@ -22,7 +22,7 @@ Kickstart Your **Nuxt** Project – **Preconfigured**, **Optimized**, **Ready to
 - [x] 📊 **[Pinia](https://pinia.vuejs.org/)** - Global state managemen
 - [x] 🛠 **[VueUse](https://vueuse.org/)** - Collection of Essential Vue Composition Utilities
 - [x] 🪄 **ESLint** - All-in-one ESLint integration for Nuxt
-- [ ] 🧪 **Testing** - [Vitest](https://vitest.dev/) support for unit and integration tests, [Playwright](https://playwright.dev/) for e2e test.
+- [x] 🧪 **Testing** - [Vitest](https://vitest.dev/) support for unit and integration tests, [Playwright](https://playwright.dev/) for e2e test.
 - [x] 🔍 **SEO Friendly** - Optimized for search engines
 
 ## System Requirements
