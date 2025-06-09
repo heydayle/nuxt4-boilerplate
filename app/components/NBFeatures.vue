@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { NuxtLinkLocale } from "#components";
 
 type Props = {
   extend?: {
