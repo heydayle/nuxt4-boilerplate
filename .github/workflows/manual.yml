@@ -18,6 +18,10 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+        
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
 
       - name: Cache node_modules
         uses: actions/cache@v3
@@ -28,7 +32,11 @@ jobs:
             ${{ runner.os }}-node_modules-
 
       - name: Install Dependencies
-        run: npm i
+        run: pnpm i
+
+        env:
+          GG_CLIENT_ID: ${{ secrets.GG_CLIENT_ID }}
+          GG_CLIENT_SECRET: ${{ secrets.GG_CLIENT_SECRET }}
 
       - name: Run Unit Tests
         run: npm run test
