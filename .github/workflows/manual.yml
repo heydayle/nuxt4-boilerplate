@@ -48,9 +48,13 @@ jobs:
           key: ${{ runner.os }}-node_modules-${{ hashFiles('**/pnpm.lock') }}
           restore-keys: |
             ${{ runner.os }}-node_modules-
+        
+        env:
+          GG_CLIENT_ID: ${{ secrets.GG_CLIENT_ID }}
+          GG_CLIENT_SECRET: ${{ secrets.GG_CLIENT_SECRET }}
 
       - name: Install Dependencies
-        run: npm i
+        run: pnpm i
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
