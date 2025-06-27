@@ -41,6 +41,8 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v4
+
       - name: Cache node_modules
         uses: actions/cache@v3
         with:
@@ -53,15 +55,11 @@ jobs:
           GG_CLIENT_ID: ${{ secrets.GG_CLIENT_ID }}
           GG_CLIENT_SECRET: ${{ secrets.GG_CLIENT_SECRET }}
 
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 10
-
       - name: Install Dependencies
         run: pnpm i
 
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+        run: npx playwright install
 
       - name: Run E2E Tests
         run: pnpm test:e2e
