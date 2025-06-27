@@ -20,7 +20,7 @@ export default defineConfig<ConfigOptions>({
     retries: process.env.CI ? 2 : 0,
     /* Opt out of parallel tests on CI. */
     workers: process.env.CI ? 1 : undefined,
-    reporter: process.env.CI ? 'dot' : 'html',
+    reporter: 'html',
     timeout,
     use: {
         // nuxt: {
@@ -32,6 +32,7 @@ export default defineConfig<ConfigOptions>({
         baseURL: hostUrl,
         trace: 'on-first-retry',
         screenshot: 'on',
+        headless: true,
     },
     projects: [
         {
