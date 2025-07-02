@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { NuxtLinkLocale } from "#components";
+import NBGetStartedButton from "./NBGetStartedButton.vue";
 
 type Props = {
   extend?: {
@@ -76,7 +77,8 @@ onMounted(() => {
       </div>
     </div>
     <NuxtLinkLocale v-if="extend" :to="extend.to">
-      <div
+      <NBGetStartedButton class="scale-[0.7] mt-6" />
+      <!-- <div
         class="group relative flex flex-col justify-center items-center shadow-lg ring-1 ring-black/5 hover:ring-green-300 h-[100px] rounded-lg transition duration-600 cursor-pointer hover:shadow-gray-100/10 hover:shadow-2xl"
       >
         <div
@@ -89,7 +91,7 @@ onMounted(() => {
             class="transform duration-300 relative left-0 group-hover:left-2"
           />
         </div>
-      </div>
+      </div> -->
     </NuxtLinkLocale>
   </div>
 </template>
