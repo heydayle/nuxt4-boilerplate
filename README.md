@@ -1,6 +1,6 @@
 ![img](/public/cover.png)
 
-# 🚀 Nuxt Boilerplate / Nuxt starter
+# 🚀 Nuxt 4 Boilerplate / Nuxt 4 starter
 
 Kickstart Your **Nuxt** Project – **Preconfigured**, **Optimized**, **Ready to Code**, **Easy config**!
 
@@ -10,9 +10,7 @@ Kickstart Your **Nuxt** Project – **Preconfigured**, **Optimized**, **Ready to
 
 ## Features
 
-- [x]  🚀 **[Nuxt 3](https://nuxt.com)** - Powerful Vue.js framework with high performance
-  - [x] Support upgrade [Nuxt 4](https://nuxt.com/docs/getting-started/upgrade)
-  - [x] [New directory structure](#project-structure)
+- [x]  🚀 **[Nuxt 4](https://nuxt.com)** - Powerful Vue.js framework with high performance
 - [x] 📐 **[Nuxt UI v3](https://ui.nuxt.com/getting-started)** - Fully styled and customizable components for Nuxt
 - [x] 🎨 **[TailwindCSS v4](https://tailwindcss.com/)** - Utility-first CSS framework for rapid design
 - [x] 🌐 **[i18n](https://i18n.nuxtjs.org/)** - Multilingual support
