@@ -36,7 +36,7 @@ export default defineAppConfig({
     }
   },
   app: {
-  version: 'v0.2.0',
+  version: 'v1.0.0',
   meta: {
     title: 'Nuxt Boilerplate 🚀',
     description: 'Nuxt Starter, Nuxt UI, Nuxt Content, Nuxt Image, Nuxt Fonts, Vueuse, Pinia, TailwindCSS, i18n, and more.',
@@ -110,6 +110,10 @@ export default defineAppConfig({
     {
       label: "TailwindCSS",
       icon: "vscode-icons:file-type-tailwind",
+    },
+    {
+      label: "VueBits",
+      icon: "vscode-icons:file-type-vue",
     },
     {
       label: "i18n",

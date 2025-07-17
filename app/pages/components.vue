@@ -2,6 +2,7 @@
 import { z } from "zod";
 import { CalendarDate } from "@internationalized/date";
 import type { BreadcrumbItem, RadioGroupItem, RadioGroupValue } from "@nuxt/ui";
+import SplitText from "~/components/ui/text-animation/SplitText/SplitText.vue";
 
 useHead({
   title: "Components",
@@ -26,7 +27,7 @@ const items = [
   },
 ];
 // breadcrumb
-const breadcrumbs = ref<BreadcrumbItem[]>([
+const breadcrumbsNuxtUI = ref<BreadcrumbItem[]>([
   {
     label: "Nuxt boilerplate",
     icon: "i-lucide-house",
@@ -35,6 +36,27 @@ const breadcrumbs = ref<BreadcrumbItem[]>([
     label: "Components",
     icon: "i-lucide-box",
     to: "components",
+  },
+  {
+    label: "Nuxt UI",
+    icon: "vscode-icons:file-type-nuxt",
+    to: "#nuxtui",
+  },
+]);
+const breadcrumbsVueBits = ref<BreadcrumbItem[]>([
+  {
+    label: "Nuxt boilerplate",
+    icon: "i-lucide-house",
+  },
+  {
+    label: "Components",
+    icon: "i-lucide-box",
+    to: "components",
+  },
+  {
+    label: "VueBits",
+    icon: "vscode-icons:file-type-vue",
+    to: "#nuxtui",
   },
 ]);
 const selected = ref(true);
@@ -93,9 +115,10 @@ const valueColor = ref("#ffffff");
 const chip = computed(() => ({ backgroundColor: valueColor.value }))
 </script>
 <template>
-  <div class="container flex flex-wrap gap-4 min-h-[calc(100vh-10rem)] py-4">
+  <div class="container min-h-[calc(100vh-10rem)] py-4">
+  <UBreadcrumb :items="breadcrumbsNuxtUI" />
+  <div class="flex flex-wrap gap-4">
     <div class="flex flex-col gap-4">
-      <UBreadcrumb :items="breadcrumbs" />
       <div class="pt-4">
         <div class="flex flex-wrap gap-x-4">
           <UChip
@@ -143,7 +166,6 @@ const chip = computed(() => ({ backgroundColor: valueColor.value }))
         <UButton icon="gridicons:link" variant="ghost">Link</UButton>
       </div>
     </div>
-
     <div class="flex gap-2 text-white">
       <UForm
         ref="form"
@@ -222,5 +244,23 @@ const chip = computed(() => ({ backgroundColor: valueColor.value }))
       </UPopover>
       <span>More components, check the <ULink class="underline" target="_blank" to="https://ui.nuxt.com">Nuxt UI</ULink> documentation.</span>
     </div>
+  </div>
+  <div>
+   <UBreadcrumb :items="breadcrumbsVueBits" />
+   <div class="py-4">
+    <SplitText
+      text="Animated components!"
+      class-name="text-2xl font-semibold text-center"
+      :delay="100"
+      :duration="0.6"
+      ease="power3.out"
+      split-type="chars"
+      :from="{ opacity: 0, y: 40 }"
+      :to="{ opacity: 1, y: 0 }"
+      :threshold="0.1"
+    />
+    <p>Checkout more components in <NuxtLink to="https://vue-bits.dev/text-animations/split-text" target="_blank" class="underline">VueBits</NuxtLink></p>
+   </div>
+  </div>
   </div>
 </template>
