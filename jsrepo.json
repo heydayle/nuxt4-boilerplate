@@ -1,0 +1,17 @@
+{
+	"$schema": "https://unpkg.com/jsrepo@2.4.3/schemas/project-config.json",
+	"repos": [
+		"https://vue-bits.dev/ui"
+	],
+	"includeTests": false,
+	"includeDocs": false,
+	"watermark": true,
+	"configFiles": {},
+	"paths": {
+		"*": "./app/components/ui",
+		"Animations": "./app/components/ui/animations",
+		"Backgrounds": "./app/components/ui/backgrounds",
+		"Components": "./app/components/ui/components",
+		"TextAnimations": "./app/components/ui/text-animation"
+	}
+}

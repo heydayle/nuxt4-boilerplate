@@ -4,7 +4,7 @@ const isChecked = ref(false)
 onMounted(() => {
   setTimeout(() => {
     isChecked.value = true
-  }, 3600)
+  }, 1000)
 })
 </script>
 
