@@ -9,6 +9,10 @@ useHead({
   ],
   meta: [
     {
+      name: 'google-adsense-account',
+      content: 'ca-pub-4679515909217929'
+    },
+    {
       name: 'description',
       content: app.meta.description,
     },
