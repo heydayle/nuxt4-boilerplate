@@ -56,7 +56,10 @@
   },
   "pnpm": {
     "ignoredBuiltDependencies": [
-      "better-sqlite3"
+      "@tailwindcss/oxide",
+      "better-sqlite3",
+      "unrs-resolver",
+      "vue-demi"
     ],
     "onlyBuiltDependencies": [
       "better-sqlite3",
