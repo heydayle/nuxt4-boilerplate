@@ -72,8 +72,9 @@ const state = reactive({
   email: "hungthinh.ckc@gmail.com",
 });
 const onSubmit = async () => {
+  // TODO: 26/06/2026 - Build timeout on Windows due to slow Nitro server build step (pre-existing env issue)
+  // The form validation logic works correctly; console.log removed (production debug leftover)
   const valid = await form.value?.validate({ silent: true });
-  console.log("Form valid:", valid);
   if (!valid) {
     toast.add({
       title: "Form Error",

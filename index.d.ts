@@ -7,7 +7,7 @@ declare module 'nuxt/schema' {
         primaryColor?: string
       },
       app?: {
-        //eslint-disable-next-line @typescript-eslint/no-explicit-any
+         
         ui?: {
           colors?: {
             primary?: string

@@ -113,7 +113,7 @@ const initializeAnimation = async () => {
 
   const startPct = (1 - props.threshold) * 100;
   const marginMatch = /^(-?\d+(?:\.\d+)?)(px|em|rem|%)?$/.exec(props.rootMargin);
-  const marginValue = marginMatch ? parseFloat(marginMatch[1]) : 0;
+  const marginValue = marginMatch ? Number.parseFloat(marginMatch[1]) : 0;
   const marginUnit = marginMatch ? marginMatch[2] || 'px' : 'px';
   const sign = marginValue < 0 ? `-=${Math.abs(marginValue)}${marginUnit}` : `+=${marginValue}${marginUnit}`;
   const start = `top ${startPct}%${sign}`;

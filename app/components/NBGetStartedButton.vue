@@ -17,7 +17,7 @@ onMounted(() => {
         name="btn-light" 
         type="checkbox" 
       >
-      <div class="socket"></div>
+      <div class="socket"/>
       <div class="light-bulb">
         <svg fill="none" viewBox="0 0 131 151" width="22">
           <path
