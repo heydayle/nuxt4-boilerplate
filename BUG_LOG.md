@@ -18,3 +18,27 @@
 **Files affected:** `app/pages/components.vue`
 **Fix:** Removed debug console.log statement
 **Verification:** Lint ✅, Test ✅ (build: ⏳ timeout on Windows, non-blocking)
+
+## [26/06/2026] - Missing default value for onLetterAnimationComplete prop in SplitText.vue
+
+**Status:** ✅ Fixed
+**Description:** Prop `onLetterAnimationComplete` in SplitText.vue was missing a default value, triggering `vue/require-default-prop` ESLint warning.
+**Files affected:** `app/components/ui/text-animation/SplitText/SplitText.vue`
+**Fix:** Added `onLetterAnimationComplete: undefined` to `withDefaults()` default values.
+**Verification:** Lint ✅, Test ✅ (1/1), Build: ❌ (pre-existing Nitro issue on Windows)
+
+## [26/06/2026] - Build failure on Windows (pre-existing Nitro issue)
+
+**Status:** ⏳ Pending (environment issue)
+**Description:** Nuxt Nitro build fails on Windows with: `Could not load virtual:#nitro-internal-virtual/public-assets-data` after client and SSR builds succeed.
+**Files affected:** All (Nitro build pipeline)
+**Root cause:** Nuxt 4 + Nitro compatibility issue on Windows. Client and server bundles build fine, but the final Nitro packaging step fails to find generated public asset metadata files.
+**Suggested fix:** Run builds on Linux/macOS, or update Nuxt/Nitro to a version that fixes Windows compatibility.
+
+## [27/06/2026] - Missing Navigation type import in document.vue
+
+**Status:** ✅ Fixed
+**Description:** Type `Navigation` was used in `document.vue` (line 14, `[] as Navigation[]`) without importing it, causing TypeScript error TS2552.
+**Files affected:** `app/layouts/document.vue`
+**Fix:** Added `import type { Navigation } from "~/types/nuxtTypes";` at the top of the script section.
+**Verification:** Lint ✅, Test ✅ (1/1), Build: ⏳ (pre-existing Nitro issue on Windows)

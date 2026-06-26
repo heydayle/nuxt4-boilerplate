@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { Navigation } from "~/types/nuxtTypes";
+
 const { app } = useAppConfig()
 const sidebar = app.documents.sidebars
 
