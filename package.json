@@ -66,6 +66,9 @@
       "sharp",
       "@parcel/watcher",
       "esbuild"
-    ]
+    ],
+    "patchedDependencies": {
+      "nuxt@4.0.1": "patches/nuxt@4.0.1.patch"
+    }
   }
 }

@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  nuxt@4.0.1:
+    hash: eyuszfh57k4rlqoauik2yw4iei
+    path: patches/nuxt@4.0.1.patch
+
 importers:
 
   .:
@@ -37,7 +42,7 @@ importers:
         version: 0.10.0(@netlify/blobs@9.1.2)(better-sqlite3@11.10.0)(magicast@0.3.5)(next-auth@4.21.1(next@13.5.11(@babel/core@7.28.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.89.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@vueuse/nuxt':
         specifier: 12.6.1
-        version: 12.6.1(magicast@0.3.5)(nuxt@4.0.1(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.1)(@types/node@22.15.23)(@vue/compiler-sfc@3.5.17)(better-sqlite3@11.10.0)(db0@0.3.2(better-sqlite3@11.10.0))(eslint@9.27.0(jiti@2.4.2))(ioredis@5.6.1)(lightningcss@1.30.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.45.1)(sass@1.89.0)(terser@5.40.0)(typescript@5.8.3)(vite@7.0.5(@types/node@22.15.23)(jiti@2.4.2)(lightningcss@1.30.1)(sass@1.89.0)(terser@5.40.0)(yaml@2.8.0))(vue-tsc@2.2.10(typescript@5.8.3))(yaml@2.8.0))(typescript@5.8.3)
+        version: 12.6.1(magicast@0.3.5)(nuxt@4.0.1(patch_hash=eyuszfh57k4rlqoauik2yw4iei)(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.1)(@types/node@22.15.23)(@vue/compiler-sfc@3.5.17)(better-sqlite3@11.10.0)(db0@0.3.2(better-sqlite3@11.10.0))(eslint@9.27.0(jiti@2.4.2))(ioredis@5.6.1)(lightningcss@1.30.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.45.1)(sass@1.89.0)(terser@5.40.0)(typescript@5.8.3)(vite@7.0.5(@types/node@22.15.23)(jiti@2.4.2)(lightningcss@1.30.1)(sass@1.89.0)(terser@5.40.0)(yaml@2.8.0))(vue-tsc@2.2.10(typescript@5.8.3))(yaml@2.8.0))(typescript@5.8.3)
       googleapis:
         specifier: ^144.0.0
         version: 144.0.0
@@ -55,7 +60,7 @@ importers:
         version: 0.66.0(request@2.88.2)
       nuxt:
         specifier: ^4.0.1
-        version: 4.0.1(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.1)(@types/node@22.15.23)(@vue/compiler-sfc@3.5.17)(better-sqlite3@11.10.0)(db0@0.3.2(better-sqlite3@11.10.0))(eslint@9.27.0(jiti@2.4.2))(ioredis@5.6.1)(lightningcss@1.30.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.45.1)(sass@1.89.0)(terser@5.40.0)(typescript@5.8.3)(vite@7.0.5(@types/node@22.15.23)(jiti@2.4.2)(lightningcss@1.30.1)(sass@1.89.0)(terser@5.40.0)(yaml@2.8.0))(vue-tsc@2.2.10(typescript@5.8.3))(yaml@2.8.0)
+        version: 4.0.1(patch_hash=eyuszfh57k4rlqoauik2yw4iei)(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.1)(@types/node@22.15.23)(@vue/compiler-sfc@3.5.17)(better-sqlite3@11.10.0)(db0@0.3.2(better-sqlite3@11.10.0))(eslint@9.27.0(jiti@2.4.2))(ioredis@5.6.1)(lightningcss@1.30.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.45.1)(sass@1.89.0)(terser@5.40.0)(typescript@5.8.3)(vite@7.0.5(@types/node@22.15.23)(jiti@2.4.2)(lightningcss@1.30.1)(sass@1.89.0)(terser@5.40.0)(yaml@2.8.0))(vue-tsc@2.2.10(typescript@5.8.3))(yaml@2.8.0)
       nuxt-shiki:
         specifier: 0.3.0
         version: 0.3.0(magicast@0.3.5)
@@ -7196,7 +7201,7 @@ packages:
 
   uuid@3.4.0:
     resolution: {integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==}
-    deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
     hasBin: true
 
   uuid@8.3.2:
@@ -10660,13 +10665,13 @@ snapshots:
 
   '@vueuse/metadata@13.3.0': {}
 
-  '@vueuse/nuxt@12.6.1(magicast@0.3.5)(nuxt@4.0.1(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.1)(@types/node@22.15.23)(@vue/compiler-sfc@3.5.17)(better-sqlite3@11.10.0)(db0@0.3.2(better-sqlite3@11.10.0))(eslint@9.27.0(jiti@2.4.2))(ioredis@5.6.1)(lightningcss@1.30.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.45.1)(sass@1.89.0)(terser@5.40.0)(typescript@5.8.3)(vite@7.0.5(@types/node@22.15.23)(jiti@2.4.2)(lightningcss@1.30.1)(sass@1.89.0)(terser@5.40.0)(yaml@2.8.0))(vue-tsc@2.2.10(typescript@5.8.3))(yaml@2.8.0))(typescript@5.8.3)':
+  '@vueuse/nuxt@12.6.1(magicast@0.3.5)(nuxt@4.0.1(patch_hash=eyuszfh57k4rlqoauik2yw4iei)(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.1)(@types/node@22.15.23)(@vue/compiler-sfc@3.5.17)(better-sqlite3@11.10.0)(db0@0.3.2(better-sqlite3@11.10.0))(eslint@9.27.0(jiti@2.4.2))(ioredis@5.6.1)(lightningcss@1.30.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.45.1)(sass@1.89.0)(terser@5.40.0)(typescript@5.8.3)(vite@7.0.5(@types/node@22.15.23)(jiti@2.4.2)(lightningcss@1.30.1)(sass@1.89.0)(terser@5.40.0)(yaml@2.8.0))(vue-tsc@2.2.10(typescript@5.8.3))(yaml@2.8.0))(typescript@5.8.3)':
     dependencies:
       '@nuxt/kit': 3.17.7(magicast@0.3.5)
       '@vueuse/core': 12.6.1(typescript@5.8.3)
       '@vueuse/metadata': 12.6.1
       local-pkg: 1.1.1
-      nuxt: 4.0.1(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.1)(@types/node@22.15.23)(@vue/compiler-sfc@3.5.17)(better-sqlite3@11.10.0)(db0@0.3.2(better-sqlite3@11.10.0))(eslint@9.27.0(jiti@2.4.2))(ioredis@5.6.1)(lightningcss@1.30.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.45.1)(sass@1.89.0)(terser@5.40.0)(typescript@5.8.3)(vite@7.0.5(@types/node@22.15.23)(jiti@2.4.2)(lightningcss@1.30.1)(sass@1.89.0)(terser@5.40.0)(yaml@2.8.0))(vue-tsc@2.2.10(typescript@5.8.3))(yaml@2.8.0)
+      nuxt: 4.0.1(patch_hash=eyuszfh57k4rlqoauik2yw4iei)(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.1)(@types/node@22.15.23)(@vue/compiler-sfc@3.5.17)(better-sqlite3@11.10.0)(db0@0.3.2(better-sqlite3@11.10.0))(eslint@9.27.0(jiti@2.4.2))(ioredis@5.6.1)(lightningcss@1.30.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.45.1)(sass@1.89.0)(terser@5.40.0)(typescript@5.8.3)(vite@7.0.5(@types/node@22.15.23)(jiti@2.4.2)(lightningcss@1.30.1)(sass@1.89.0)(terser@5.40.0)(yaml@2.8.0))(vue-tsc@2.2.10(typescript@5.8.3))(yaml@2.8.0)
       vue: 3.5.17(typescript@5.8.3)
     transitivePeerDependencies:
       - magicast
@@ -14135,7 +14140,7 @@ snapshots:
       - rollup
       - vue
 
-  nuxt@4.0.1(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.1)(@types/node@22.15.23)(@vue/compiler-sfc@3.5.17)(better-sqlite3@11.10.0)(db0@0.3.2(better-sqlite3@11.10.0))(eslint@9.27.0(jiti@2.4.2))(ioredis@5.6.1)(lightningcss@1.30.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.45.1)(sass@1.89.0)(terser@5.40.0)(typescript@5.8.3)(vite@7.0.5(@types/node@22.15.23)(jiti@2.4.2)(lightningcss@1.30.1)(sass@1.89.0)(terser@5.40.0)(yaml@2.8.0))(vue-tsc@2.2.10(typescript@5.8.3))(yaml@2.8.0):
+  nuxt@4.0.1(patch_hash=eyuszfh57k4rlqoauik2yw4iei)(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.1)(@types/node@22.15.23)(@vue/compiler-sfc@3.5.17)(better-sqlite3@11.10.0)(db0@0.3.2(better-sqlite3@11.10.0))(eslint@9.27.0(jiti@2.4.2))(ioredis@5.6.1)(lightningcss@1.30.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.45.1)(sass@1.89.0)(terser@5.40.0)(typescript@5.8.3)(vite@7.0.5(@types/node@22.15.23)(jiti@2.4.2)(lightningcss@1.30.1)(sass@1.89.0)(terser@5.40.0)(yaml@2.8.0))(vue-tsc@2.2.10(typescript@5.8.3))(yaml@2.8.0):
     dependencies:
       '@nuxt/cli': 3.26.4(magicast@0.3.5)
       '@nuxt/devalue': 2.0.2

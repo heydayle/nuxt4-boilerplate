@@ -1,0 +1,6 @@
+diff --git a/dist/app/types/augments.js b/dist/app/types/augments.js
+index e69de29bb2d1d6434b8b29ae775ad8c2e48c5391..8b137891791fe96927ad78e64b0aad7bded08bdc 100644
+--- a/dist/app/types/augments.js
++++ b/dist/app/types/augments.js
+@@ -0,0 +1 @@
++
