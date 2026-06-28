@@ -4,8 +4,8 @@ import type { ConfigOptions } from '@nuxt/test-utils/playwright'
 // For first setup !!
 // Please run 'npx playwright install' to install the browser
 
-// Increase the timeout to 2 minutes (because Nuxt server is start so slow)
-const timeout = 120000
+// Increase the timeout to 5 minutes (because Nuxt 4 server build is slow on first run)
+const timeout = 300000
 const hostUrl = 'http://localhost:3000'
 
 export default defineConfig<ConfigOptions>({
