@@ -23,13 +23,11 @@ jobs:
         with:
           version: 10
 
-      - name: Cache node_modules
-        uses: actions/cache@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v4
         with:
-          path: node_modules
-          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/pnpm.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node_modules-
+          node-version: 20
+          cache: 'pnpm'
 
       - name: Install Dependencies
         run: pnpm i --no-frozen-lockfile
@@ -39,7 +37,7 @@ jobs:
           GG_CLIENT_SECRET: ${{ secrets.GG_CLIENT_SECRET }}
 
       - name: Run Unit Tests
-        run: npm run test
+        run: pnpm test
 
   test-e2e:
     name: End-to-End Tests
@@ -52,29 +50,18 @@ jobs:
       - uses: pnpm/action-setup@v4
         with:
           version: 10
+
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'pnpm'
 
-      - name: Cache node_modules
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/pnpm.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node_modules-
-        
-        env:
-          GG_CLIENT_ID: ${{ secrets.GG_CLIENT_ID }}
-          GG_CLIENT_SECRET: ${{ secrets.GG_CLIENT_SECRET }}
-
       - name: Install Dependencies
         run: pnpm i --no-frozen-lockfile
 
       - name: Install Playwright Browsers
-        run: npx playwright install
+        run: npx playwright install chromium
 
       - name: Run E2E Tests
         run: pnpm test:e2e --project=chromium
