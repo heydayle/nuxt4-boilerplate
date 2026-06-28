@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps, withDefaults } from "vue";
 const { app } = useAppConfig();
 const title = app.meta.title;
 const version = app.version;

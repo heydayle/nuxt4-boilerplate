@@ -2,7 +2,7 @@
 
 ## [26/06/2026] - Build timeout on Windows (pre-existing)
 
-**Status:** ⏳ Pending (environment issue)
+**Status:** ⏳ Pending (environment issue - seems resolved as of 29/06 build succeeds)
 **Description:** Nuxt Nitro server build step times out on Windows VM (>400s for final packaging). This affects all builds on this environment.
 **Files affected:** All (Nuxt Nitro build pipeline)
 **Root cause:** Windows performance issue with Nitro's rollup-based server bundling. Client and SSR builds succeed; only the final Nitro packaging step hangs.
@@ -42,3 +42,13 @@
 **Files affected:** `app/layouts/document.vue`
 **Fix:** Added `import type { Navigation } from "~/types/nuxtTypes";` at the top of the script section.
 **Verification:** Lint ✅, Test ✅ (1/1), Build: ⏳ (pre-existing Nitro issue on Windows)
+
+---
+
+## [29/06/2026] - Unnecessary import of compiler macros in NBLogo.vue
+
+**Status:** ✅ Fixed
+**Description:** `import { defineProps, withDefaults } from "vue";` in NBLogo.vue - these are compiler macros automatically available in `<script setup>` and should not be imported. Caused Vue compiler warnings.
+**Files affected:** `app/components/NBLogo.vue`
+**Fix:** Removed the unnecessary import line.
+**Verification:** Lint ✅, Test ✅ (1/1), Build ✅
