@@ -32,7 +32,7 @@ jobs:
             ${{ runner.os }}-node_modules-
 
       - name: Install Dependencies
-        run: pnpm i
+        run: pnpm i --no-frozen-lockfile
 
         env:
           GG_CLIENT_ID: ${{ secrets.GG_CLIENT_ID }}
@@ -71,7 +71,7 @@ jobs:
           GG_CLIENT_SECRET: ${{ secrets.GG_CLIENT_SECRET }}
 
       - name: Install Dependencies
-        run: pnpm i
+        run: pnpm i --no-frozen-lockfile
 
       - name: Install Playwright Browsers
         run: npx playwright install
