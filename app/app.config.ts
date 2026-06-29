@@ -129,6 +129,23 @@ export default defineAppConfig({
       icon: "logos:eslint",
     },
   ],
+  contacts: [
+    {
+      name: '/heydayle',
+      icon: 'simple-icons:github',
+      href: 'https://github.com/heydayle'
+    },
+    {
+      name: '/thinhle99',
+      icon: 'simple-icons:linkedin',
+      href: 'https://linkedin.com/in/thinhle99'
+    },
+    {
+      name: 'hungthinh.ckc@gmail.com',
+      icon: 'simple-icons:mailboxdotorg',
+      href: 'mailto:hungthinh.ckc@gmail.com'
+    },
+  ],
   documents: {
     sidebars: [
       {
@@ -195,22 +212,5 @@ export default defineAppConfig({
       }
     ]
   },
-  contacts: [
-    {
-      name: '/heydayle',
-      icon: 'simple-icons:github',
-      href: 'https://github.com/heydayle'
-    },
-    {
-      name: '/thinhle99',
-      icon: 'simple-icons:linkedin',
-      href: 'https://linkedin.com/in/thinhle99'
-    },
-    {
-      name: 'hungthinh.ckc@gmail.com',
-      icon: 'simple-icons:mailboxdotorg',
-      href: 'mailto:hungthinh.ckc@gmail.com'
-    },
-  ]
 }
 })
