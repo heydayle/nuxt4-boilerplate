@@ -52,3 +52,19 @@
 **Files affected:** `app/components/NBLogo.vue`
 **Fix:** Removed the unnecessary import line.
 **Verification:** Lint ✅, Test ✅ (1/1), Build ✅
+
+## [30/06/2026] - Contacts config misplaced at root level instead of inside app object
+
+**Status:** ✅ Fixed
+**Description:** In `app.config.ts`, the `contacts` array was defined at the root level of the config object, but `contact.vue` accesses it via `config.app.contacts` (consistent with other config properties like `app.socials`, `app.features`). This would cause `contacts` to be `undefined` at runtime, so the contact links would not render.
+**Files affected:** `app/app.config.ts`
+**Fix:** Moved `contacts: [...]` from the root level into the `app: { ... }` object to match the access pattern in `contact.vue` and the type declaration in `index.d.ts`.
+**Verification:** Lint ✅, Test ✅ (1/1), Build: ⏳ (pre-existing Nitro timeout on Windows)
+
+## [01/07/2026] - TypeScript type errors in SelectLanguage.vue
+
+**Status:** ✅ Fixed
+**Description:** SelectLanguage.vue had 3 TypeScript errors: (1) unsafe cast from `LocaleObject` to custom `Locale` interface (missing `flag` property) flagged by TS2352; (2) v-model value ref typed as `string` but required locale code union type `"en" | "vi"` flagged by TS2322; (3) `item.flag` typed as `unknown` in template flagged by TS2322.
+**Files affected:** `app/components/SelectLanguage.vue`
+**Fix:** (1) Changed `as Locale` to `as unknown as Locale | undefined`; (2) Added `type LocaleCode = typeof locale.value` and used it for `ref<LocaleCode | undefined>`; (3) Cast `(item as unknown as Locale).flag` in template; Used optional chaining `selected?.flag` for safe access.
+**Verification:** Lint ✅, Test ✅ (1/1), Build: ⏳ (pre-existing Nitro timeout on Windows)

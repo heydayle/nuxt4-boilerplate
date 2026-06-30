@@ -6,10 +6,11 @@ interface Locale {
   flag: string
 }
 const { locale, locales } = useI18n();
+type LocaleCode = typeof locale.value
 const selected = computed(() =>
-  locales.value.find((item) => item.code === locale.value) as Locale
+  locales.value.find((item) => item.code === locale.value) as unknown as Locale | undefined
 );
-const value = ref(selected.value.code)
+const value = ref<LocaleCode | undefined>(selected.value?.code as LocaleCode | undefined)
 
 </script>
 <template>
@@ -18,15 +19,15 @@ const value = ref(selected.value.code)
     :search-input="false"
     value-key="code"
     :items="locales"
-    :icon="selected.flag"
+    :icon="selected?.flag ?? ''"
     value-attribute="code"
     variant="outline"
-    :ui="{  content: 'w-30' }"
+    :ui="{ content: 'w-30' }"
   >
     <template #item="{ item }">
       <SwitchLocalePathLink :locale="item.code">
         <span class="flex items-center gap-2">
-          <UIcon :name="item.flag" /> <span>{{ item.name }}</span>
+          <UIcon :name="(item as unknown as Locale).flag" /> <span>{{ item.name }}</span>
         </span>
       </SwitchLocalePathLink>
     </template>
