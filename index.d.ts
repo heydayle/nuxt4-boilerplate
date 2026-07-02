@@ -1,4 +1,4 @@
-import type { Social, Header, Link, Feature } from '@/types/nuxtTypes'
+import type { Social, Header, Link, Feature, Navigation } from './types/nuxtTypes'
 declare module 'nuxt/schema' {
     interface AppConfigInput {
       /** Theme configuration */

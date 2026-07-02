@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Navigation } from "~/types/nuxtTypes";
+import type { Navigation } from "~~/types/nuxtTypes";
 
 const props = defineProps<{
   sidebarItems: Navigation[];
