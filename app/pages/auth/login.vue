@@ -27,8 +27,8 @@ const handleOnSuccess = (response: AuthCodeFlowSuccessResponse) => {
   navigateTo("/");
 };
 
-const handleOnError = (errorResponse: AuthCodeFlowErrorResponse) => {
-  console.log("Error: ", errorResponse);
+const handleOnError = (_errorResponse: AuthCodeFlowErrorResponse) => {
+  // Error handling is delegated to vue3-google-signin internal logging
 };
 const scopes = ["email", "profile"];
 
