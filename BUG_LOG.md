@@ -79,3 +79,14 @@
 **Files affected:** `app/components/SelectLanguage.vue`
 **Fix:** (1) Changed `as Locale` to `as unknown as Locale | undefined`; (2) Added `type LocaleCode = typeof locale.value` and used it for `ref<LocaleCode | undefined>`; (3) Cast `(item as unknown as Locale).flag` in template; Used optional chaining `selected?.flag` for safe access.
 **Verification:** Lint ✅, Test ✅ (1/1), Build: ⏳ (pre-existing Nitro timeout on Windows)
+
+---
+
+## [03/07/2026] - console.log left in production login.vue
+
+**Status:** ✅ Fixed
+**Description:** `console.log("Error: ", errorResponse)` was left in production code in `handleOnError` callback on login.vue line 31. Same pattern as 26/06 fix for components.vue.
+**Files affected:** `app/pages/auth/login.vue`
+**Fix:** Removed console.log statement, renamed parameter to `_errorResponse` with underscore prefix for unused-var lint compliance.
+**Verification:** Lint ✅, Test ✅ (1/1), Build ⏳ (pre-existing Nitro timeout on Windows)
+**Commit:** bafdaf6
