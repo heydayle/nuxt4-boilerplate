@@ -61,6 +61,17 @@
 **Fix:** Moved `contacts: [...]` from the root level into the `app: { ... }` object to match the access pattern in `contact.vue` and the type declaration in `index.d.ts`.
 **Verification:** Lint ✅, Test ✅ (1/1), Build: ⏳ (pre-existing Nitro timeout on Windows)
 
+## [02/07/2026] - Wrong module alias imports for Nuxt 4 (Sidebar.vue, document.vue, index.d.ts)
+
+**Status:** ✅ Fixed
+**Description:** In Nuxt 4, `~` alias maps to `app/` directory, not root. Sidebar.vue and document.vue used `~/types/nuxtTypes` which resolves to `app/types/nuxtTypes` (doesn't exist). index.d.ts used `@/types/nuxtTypes` which also maps to `app/`. Additionally, `Navigation` type was used in index.d.ts but not imported.
+**Files affected:** `app/components/layouts/Sidebar.vue`, `app/layouts/document.vue`, `index.d.ts`
+**Fix:** Changed `~/types/nuxtTypes` → `~~/types/nuxtTypes` in Sidebar.vue and document.vue. Changed `@/types/nuxtTypes` → `./types/nuxtTypes` in index.d.ts and added `Navigation` to the import.
+**Verification:** Lint ✅, Test ✅ (1/1), Build ⏳ (Nitro final packaging timeout on Windows - pre-existing, client + SSR builds succeed)
+**Commit:** ba00b44
+
+---
+
 ## [01/07/2026] - TypeScript type errors in SelectLanguage.vue
 
 **Status:** ✅ Fixed
