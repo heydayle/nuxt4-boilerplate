@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
-    "test": "vitest app/components/__tests__",
+    "test": "vitest run app/components/__tests__",
     "test:e2e": "playwright test --config=playwright.config.ts"
   },
   "dependencies": {
