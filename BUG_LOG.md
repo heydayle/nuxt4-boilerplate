@@ -90,3 +90,14 @@
 **Fix:** Removed console.log statement, renamed parameter to `_errorResponse` with underscore prefix for unused-var lint compliance.
 **Verification:** Lint ✅, Test ✅ (1/1), Build ⏳ (pre-existing Nitro timeout on Windows)
 **Commit:** bafdaf6
+
+---
+
+## [04/07/2026] - Vitest watch mode hang (missing --run flag)
+
+**Status:** ✅ Fixed
+**Description:** The `test` script in package.json ran `vitest` without the `--run` flag, causing vitest to enter watch mode and hang indefinitely in automated/CI environments. All previous daily runs were also affected but the timeout masked it as a "test hang" rather than a failure.
+**Files affected:** `package.json`
+**Fix:** Changed `"test": "vitest app/components/__tests__"` → `"test": "vitest run app/components/__tests__"`. This makes vitest exit after a single test run.
+**Verification:** Lint ✅, Test ✅ (1/1), Build ⏳ (pre-existing Nitro timeout on Windows - client + SSR build succeed, only final packaging stalls)
+**Commit:** fcfcc04
