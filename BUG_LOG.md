@@ -100,4 +100,16 @@
 **Files affected:** `package.json`
 **Fix:** Changed `"test": "vitest app/components/__tests__"` → `"test": "vitest run app/components/__tests__"`. This makes vitest exit after a single test run.
 **Verification:** Lint ✅, Test ✅ (1/1), Build ⏳ (pre-existing Nitro timeout on Windows - client + SSR build succeed, only final packaging stalls)
-**Commit:** fcfcc04
+|**Commit:** fcfcc04
+
+|---
+
+## [05/07/2026] - Wrong UBreadcrumb prop in contents.vue (`:links` → `:items`)
+
+**Status:** ✅ Fixed
+**Description:** `UBreadcrumb` in contents.vue used `:links` prop, but Nuxt UI v3's `UBreadcrumb` component expects `:items` prop. The breadcrumb was not rendering at all. Other pages (components.vue) correctly used `:items`.
+
+**Files affected:** `app/pages/contents.vue`
+**Fix:** Changed `<UBreadcrumb :links="links" />` → `<UBreadcrumb :items="links" />`
+**Verification:** Lint ✅, Test ✅ (1/1), Build ✅
+**Commit:** 0d1e78a
