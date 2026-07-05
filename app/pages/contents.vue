@@ -23,7 +23,7 @@ const sampleContent = await queryCollection('content').path('/examples/content-s
 </script>
 <template>
     <div>
-      <UBreadcrumb :links="links" />
+      <UBreadcrumb :items="links" />
       <article>
         <ContentRenderer :value="sampleContent" />
       </article>
