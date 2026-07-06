@@ -113,3 +113,22 @@
 **Fix:** Changed `<UBreadcrumb :links="links" />` → `<UBreadcrumb :items="links" />`
 **Verification:** Lint ✅, Test ✅ (1/1), Build ✅
 **Commit:** 0d1e78a
+
+---
+
+## [06/07/2026] - Vite 6.3.5 missing `dist/client/client.mjs` (breaks tests)
+
+**Status:** 🔧 Skipped (external dependency bug - Vite 6.3.5 regression)
+**Description:** Vite 6.3.5 is missing `dist/client/client.mjs` which is required by Vite's `testCaseInsensitiveFS()` function called at module load time. When vitest loads Vite internally, it throws `Error: cannot test case insensitive FS, CLIENT_ENTRY does not point to an existing file`. This broke both `pnpm test` and any Nuxt module (like `@nuxt/test-utils/module`) that initializes Vite during loading.
+**Files affected:** `node_modules/.pnpm/vite@6.3.5_.../node_modules/vite/dist/client/client.mjs` (missing)
+**Root cause:** Vite 6.3.5 regression - the `dist/client/client.mjs` file was not included in the published npm package, but Vite's internal code still references it for the case-insensitive FS check.
+**Workaround:** Create an empty stub file at `vite/dist/client/client.mjs` in node_modules. Add Vite as a `pnpm.patchedDependencies` entry if this needs to persist.
+**Related TODO:** `nuxt.config.ts:18` - removed `@nuxt/test-utils/module` from modules to avoid triggering Vite init during build
+
+## [06/07/2026] - `@nuxt/test-utils/module` in build modules causes build failure
+
+**Status:** ✅ Fixed
+**Description:** The `@nuxt/test-utils/module` entry in `nuxt.config.ts` modules array triggered Vite initialization during `nuxt build`, which would fail due to Vite 6.3.5's missing `client.mjs` (see above). Additionally, this module is only needed for Vitest UI integration via Nuxt Devtools, not for CLI test runs or production builds.
+**Files affected:** `nuxt.config.ts`
+**Fix:** Removed `'@nuxt/test-utils/module'` from the modules array. The vitest config (`vitest.config.ts`) handles test environment setup independently via `@nuxt/test-utils/config`.
+**Verification:** Lint ✅, Test ✅ (1/1), Build ✅

@@ -14,8 +14,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/fonts',
     '@nuxtjs/eslint-module',
-    '@nuxt/content',
-    '@nuxt/test-utils/module'
+    '@nuxt/content'
   ],
   colorMode: {
     preference: 'dark',
