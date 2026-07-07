@@ -151,3 +151,16 @@
 
 **Verification:** Lint ✅, Test ✅ (1/1), Build ✅
 **Prevention:** Consider adding `shamefully-hoist=true` to `.npmrc` or running `pnpm install --force` on first setup to avoid store corruption.
+
+---
+
+## [08/07/2026] - Dead code cleanup + useShiki optimization
+
+**Status:** ✅ Fixed  
+**Description:** Three cleanup items:
+1. **`useShiki.ts`** — Fixed wrong filename comment (`useMarkdownShiki.ts` → `useShiki.ts`). Extracted shared bash block regex into `BASH_BLOCK_RE` constant. Refactored `highlightBashInMarkdown` as an alias of `convertMarkdownWithShiki` (both did exactly the same thing). Added JSDoc docs + type annotations to all public functions.
+2. **`NBFeatures.vue`** — Removed 14-line commented-out dead div block in template.
+3. **`nuxt.config.ts`** — Removed commented-out `import tailwindcss`, unused `image:` config, and double-commented `nitro:` config block.
+**Files affected:** `app/composables/useShiki.ts`, `app/components/NBFeatures.vue`, `nuxt.config.ts`
+**Verification:** Lint ✅, Test ✅ (1/1), Build ✅ (all passed)
+**Commit:** 6914bb9
