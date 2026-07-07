@@ -1,55 +1,54 @@
-// composables/useMarkdownShiki.ts
+// composables/useShiki.ts
 import { createHighlighter, type Highlighter } from 'shiki'
 
 let highlighter: Highlighter | null = null
 
-const initShiki = async () => {
+/** Lazy-init singleton for the Shiki highlighter instance. */
+const initShiki = async (): Promise<Highlighter> => {
     if (!highlighter) {
         highlighter = await createHighlighter({
-            themes: ['nord'], // or your preferred theme
-            langs: ['bash', 'shell', 'sh'] // only bash-related languages
+            themes: ['nord'],
+            langs: ['bash', 'shell', 'sh']
         })
     }
     return highlighter
 }
 
+/** Regex matching bash-family fenced code blocks. */
+const BASH_BLOCK_RE = /```(?:bash|shell|sh)\n([\s\S]*?)```/g
+
+/**
+ * Highlight bash/shell/sh code blocks in markdown using Shiki.
+ * @param markdown - Raw markdown string
+ * @returns Markdown with bash code blocks replaced by highlighted HTML
+ */
 export const convertMarkdownWithShiki = async (markdown: string): Promise<string> => {
     const shiki = await initShiki()
-
-    // Regex to match bash code blocks
-    const bashCodeBlockRegex = /```(?:bash|shell|sh)\n([\s\S]*?)```/g
-
-    // Replace bash code blocks with Shiki-highlighted HTML
-    const result = markdown.replace(bashCodeBlockRegex, (match, code) => {
-        const trimmedCode = code.trim()
-        return shiki.codeToHtml(trimmedCode, {
-            lang: 'bash',
-            theme: 'nord'
-        })
-    })
-
-    return result
+    return markdown.replace(BASH_BLOCK_RE, (_match, code) =>
+        shiki.codeToHtml(code.trim(), { lang: 'bash', theme: 'nord' })
+    )
 }
 
-// Alternative function that converts all markdown elements
+/**
+ * Convert full markdown to basic HTML, using Shiki for bash code blocks
+ * and simple transformations for everything else.
+ * @param markdown - Raw markdown string
+ * @returns HTML string
+ */
 export const convertFullMarkdownWithShiki = async (markdown: string): Promise<string> => {
     const shiki = await initShiki()
 
     let result = markdown
 
     // Convert bash code blocks with Shiki
-    result = result.replace(/```(?:bash|shell|sh)\n([\s\S]*?)```/g, (match, code) => {
-        const trimmedCode = code.trim()
-        return shiki.codeToHtml(trimmedCode, {
-            lang: 'bash',
-            theme: 'nord'
-        })
-    })
+    result = result.replace(BASH_BLOCK_RE, (_match, code) =>
+        shiki.codeToHtml(code.trim(), { lang: 'bash', theme: 'nord' })
+    )
 
     // Convert other code blocks to simple HTML (without Shiki)
-    result = result.replace(/```(\w+)?\n([\s\S]*?)```/g, (match, lang, code) => {
-        return `<pre><code class="language-ts">${code.trim()}</code></pre>`
-    })
+    result = result.replace(/```(\w+)?\n([\s\S]*?)```/g, (_match, _lang, code) =>
+        `<pre><code class="language-ts">${code.trim()}</code></pre>`
+    )
 
     // Convert inline code
     result = result.replace(/`([^`]+)`/g, '<code>$1</code>')
@@ -63,21 +62,17 @@ export const convertFullMarkdownWithShiki = async (markdown: string): Promise<st
     result = result.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
     result = result.replace(/\*(.*?)\*/g, '<em>$1</em>')
 
-    // Convert line breaks
+    // Wrap in paragraph markers for line breaks
     result = result.replace(/\n\n/g, '</p><p>')
     result = `<p>${result}</p>`
 
     return result
 }
 
-// Simple function - only converts bash code blocks
-export const highlightBashInMarkdown = async (markdown: string): Promise<string> => {
-    const shiki = await initShiki()
-
-    return markdown.replace(/```(?:bash|shell|sh)\n([\s\S]*?)```/g, (match, code) => {
-        return shiki.codeToHtml(code.trim(), {
-            lang: 'bash',
-            theme: 'nord'
-        })
-    })
-}
+/**
+ * Highlight bash/shell/sh code blocks in markdown using Shiki.
+ * Alias for {@link convertMarkdownWithShiki}.
+ * @param markdown - Raw markdown string
+ * @returns Markdown with bash code blocks replaced by highlighted HTML
+ */
+export const highlightBashInMarkdown = convertMarkdownWithShiki
