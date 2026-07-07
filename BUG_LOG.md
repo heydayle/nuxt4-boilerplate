@@ -100,7 +100,7 @@
 **Files affected:** `package.json`
 **Fix:** Changed `"test": "vitest app/components/__tests__"` → `"test": "vitest run app/components/__tests__"`. This makes vitest exit after a single test run.
 **Verification:** Lint ✅, Test ✅ (1/1), Build ⏳ (pre-existing Nitro timeout on Windows - client + SSR build succeed, only final packaging stalls)
-|**Commit:** fcfcc04
+||**Commit:** fcfcc04
 
 |---
 
@@ -132,3 +132,22 @@
 **Files affected:** `nuxt.config.ts`
 **Fix:** Removed `'@nuxt/test-utils/module'` from the modules array. The vitest config (`vitest.config.ts`) handles test environment setup independently via `@nuxt/test-utils/config`.
 **Verification:** Lint ✅, Test ✅ (1/1), Build ✅
+
+---
+
+## [07/07/2026] - Pnpm store corruption: multiple dependencies missing dist files
+
+**Status:** ✅ Fixed (environment fix - node_modules patched)
+**Description:** The pnpm store on this Windows environment had corrupted entries for several packages where `dist/` directories were empty or missing essential files. This caused cascading build and test failures:
+- `@intlify/core@10.0.7` — empty `dist/` (missing `core.node.mjs`, `core.mjs`, etc.)
+- `@intlify/utils@0.13.0` — missing `dist/h3.mjs` and other dist files
+- `mocked-exports@0.1.1` — missing `lib/proxy.mjs`, `lib/noop.mjs`, etc.
+- `@sqlite.org/sqlite-wasm@3.49.1-build4` — missing `node.mjs`, `index.d.ts`, and other files
+- `vite@7.0.5` — missing `dist/client/client.mjs` (Vite regression, same pattern as 06/07)
+
+**Root cause:** Corrupted pnpm store on Windows (confirmed by `pnpm store status` reporting mutated packages). Likely caused by earlier runs modifying node_modules directly or filesystem permissions issues.
+
+**Fix:** Downloaded fresh tarballs from npm registry for each affected package and extracted the missing dist files into the pnpm store (`node_modules/.pnpm/...`). Also created a stub `client.mjs` for Vite 7.0.5 to satisfy its case-insensitive FS check.
+
+**Verification:** Lint ✅, Test ✅ (1/1), Build ✅
+**Prevention:** Consider adding `shamefully-hoist=true` to `.npmrc` or running `pnpm install --force` on first setup to avoid store corruption.
