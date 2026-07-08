@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import type { Social } from '~~/types/nuxtTypes';
-
 const { app } = useAppConfig()
-const github = app.socials[0] as Social
+const github = app.socials[0]
 </script>
 <template>
   <div class="ring-1 ring-black/5 sticky top-0">

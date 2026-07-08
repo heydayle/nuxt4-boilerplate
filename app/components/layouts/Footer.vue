@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const currentYear = new Date().getFullYear()
+</script>
+
 <template>
     <footer class="footer w-full">
         <div class="container">
@@ -5,11 +9,6 @@
         </div>
     </footer>
 </template>
-
-<script setup lang="ts">
-
-const currentYear = new Date().getFullYear()
-</script>
 
 <style scoped>
 .footer {

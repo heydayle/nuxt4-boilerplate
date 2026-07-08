@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-const isChecked = ref(false)
+const isChecked = shallowRef(false)
 onMounted(() => {
   setTimeout(() => {
     isChecked.value = true

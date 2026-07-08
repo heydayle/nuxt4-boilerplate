@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import type { Social } from '~~/types/nuxtTypes';
-
 definePageMeta({
   layout: "default",
 });
 const { app } = useAppConfig()
-const github = app.socials[0] as Social
+const github = app.socials[0]
 
 </script>
 <template>

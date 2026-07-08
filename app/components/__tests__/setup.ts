@@ -23,14 +23,3 @@ beforeAll(() => {
     }
 })
 
-
-// const i18n = createI18n({
-//   legacy: false,
-//   globalInjection: true,
-//   locale: 'en',
-//   messages: {
-//     en,
-//   },
-// })
-
-// config.global.plugins.push(i18n)
