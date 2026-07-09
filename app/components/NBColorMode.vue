@@ -1,11 +1,9 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
 const isDark = computed({
-  get () {
-    return colorMode.value === 'dark'
-  },
-  set () {
-    colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
+  get: () => colorMode.value === 'dark',
+  set: (val: boolean) => {
+    colorMode.preference = val ? 'dark' : 'light'
   }
 })
 </script>
@@ -13,12 +11,11 @@ const isDark = computed({
 <template>
   <ClientOnly>
     <USwitch
+      v-model="isDark"
       checked-icon="i-heroicons-moon-20-solid"
       unchecked-icon="i-heroicons-sun-20-solid"
       size="lg"
       color="neutral"
-      :model-value="isDark"
-      @click="isDark = !isDark"
     />
   </ClientOnly>
 </template>

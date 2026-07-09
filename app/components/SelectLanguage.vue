@@ -1,17 +1,16 @@
 <script setup lang="ts">
-
 interface Locale {
-  code: string
-  name: string
-  flag: string
+  code: string;
+  name: string;
+  flag: string;
 }
-const { locale, locales } = useI18n();
-type LocaleCode = typeof locale.value
-const selected = computed(() =>
-  locales.value.find((item) => item.code === locale.value) as unknown as Locale | undefined
-);
-const value = ref<LocaleCode | undefined>(selected.value?.code as LocaleCode | undefined)
 
+const { locale, locales } = useI18n();
+
+const selected = computed(() =>
+  locales.value.find((item) => item.code === locale.value) as Locale | undefined
+);
+const value = ref(selected.value?.code);
 </script>
 <template>
   <USelectMenu
@@ -27,7 +26,7 @@ const value = ref<LocaleCode | undefined>(selected.value?.code as LocaleCode | u
     <template #item="{ item }">
       <SwitchLocalePathLink :locale="item.code">
         <span class="flex items-center gap-2">
-          <UIcon :name="(item as unknown as Locale).flag" /> <span>{{ item.name }}</span>
+          <UIcon :name="(item as Locale).flag" /> <span>{{ item.name }}</span>
         </span>
       </SwitchLocalePathLink>
     </template>

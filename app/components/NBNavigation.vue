@@ -4,7 +4,7 @@ const navigation = app.headers.navigation;
 
 const route = useRoute()
 const getRouteBaseName = useRouteBaseName()
-const baseName = computed(() => getRouteBaseName(route) as string)
+const baseName = computed(() => getRouteBaseName(route))
 const isExtract = (name: string) => baseName.value.includes(name)
 </script>
 
