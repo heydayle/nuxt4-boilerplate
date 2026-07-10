@@ -1,11 +1,8 @@
 <script setup lang="ts">
-
 const isChecked = shallowRef(false)
-onMounted(() => {
-  setTimeout(() => {
-    isChecked.value = true
-  }, 1000)
-})
+useTimeoutFn(() => {
+  isChecked.value = true
+}, 1000)
 </script>
 
 <template>

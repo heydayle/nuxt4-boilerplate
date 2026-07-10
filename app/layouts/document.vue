@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import type { Navigation } from "~~/types/nuxtTypes";
-
 const { app } = useAppConfig()
 const sidebar = app.documents.sidebars
 
@@ -8,12 +6,8 @@ const route = useRoute()
 const localePath = useLocalePath()
 
 const itemsChildren = computed(() => {
-    return sidebar.reduce((acc, item) => {
-        if (route.path === localePath(item.to) && item.children && item.children.length > 0) {
-            acc.push(...item.children)
-        }
-        return acc
-    }, [] as Navigation[])
+    const activeItem = sidebar.find(item => route.path === localePath(item.to))
+    return activeItem?.children ?? []
 })
 </script>
 

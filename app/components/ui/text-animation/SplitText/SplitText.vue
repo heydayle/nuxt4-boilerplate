@@ -82,8 +82,8 @@ const initializeAnimation = async () => {
       linesClass: 'split-line'
     });
     splitterRef.value = splitter;
-  } catch (error) {
-    console.error('Failed to create SplitText:', error);
+  } catch {
+    // GSAP SplitText failed to initialize — skip animation gracefully
     return;
   }
 
@@ -103,7 +103,7 @@ const initializeAnimation = async () => {
   }
 
   if (!targets || targets.length === 0) {
-    console.warn('No targets found for SplitText animation');
+    // No targets found for SplitText animation — revert and skip
     splitter.revert();
     return;
   }
@@ -188,8 +188,7 @@ watch(
     () => props.from,
     () => props.to,
     () => props.threshold,
-    () => props.rootMargin,
-    () => props.onLetterAnimationComplete
+    () => props.rootMargin
   ],
   () => {
     cleanup();

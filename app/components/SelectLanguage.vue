@@ -26,7 +26,7 @@ const value = ref(selected.value?.code);
     <template #item="{ item }">
       <SwitchLocalePathLink :locale="item.code">
         <span class="flex items-center gap-2">
-          <UIcon :name="(item as Locale).flag" /> <span>{{ item.name }}</span>
+          <UIcon :name="(item as unknown as Locale).flag" /> <span>{{ item.name }}</span>
         </span>
       </SwitchLocalePathLink>
     </template>
