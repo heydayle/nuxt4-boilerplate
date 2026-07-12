@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ name: 'NBLogo' })
 const { app } = useAppConfig();
 const title = app.meta.title;
 const version = app.version;

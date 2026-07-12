@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Navigation } from "~~/types/nuxtTypes";
+defineOptions({ name: 'LayoutsSidebar' })
 
 const props = defineProps<{
   sidebarItems: Navigation[];

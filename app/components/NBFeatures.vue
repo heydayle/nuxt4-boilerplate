@@ -2,6 +2,7 @@
 import { NuxtLinkLocale } from "#components";
 import NBGetStartedButton from "./NBGetStartedButton.vue";
 import SplitText from "./ui/text-animation/SplitText/SplitText.vue";
+defineOptions({ name: 'NBFeatures' })
 
 type Props = {
   extend?: {

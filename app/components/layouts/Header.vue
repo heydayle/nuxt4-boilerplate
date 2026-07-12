@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ name: 'LayoutsHeader' })
 const { app } = useAppConfig()
 const github = app.socials[0]
 </script>

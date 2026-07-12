@@ -1,14 +1,11 @@
 <script setup lang="ts">
-interface Locale {
-  code: string;
-  name: string;
-  flag: string;
-}
+import type { LocaleObject } from '@nuxtjs/i18n'
+defineOptions({ name: 'SelectLanguage' })
 
 const { locale, locales } = useI18n();
 
 const selected = computed(() =>
-  locales.value.find((item) => item.code === locale.value) as Locale | undefined
+  (locales.value as LocaleObject[]).find((item) => item.code === locale.value)
 );
 const value = ref(selected.value?.code);
 </script>
@@ -26,7 +23,7 @@ const value = ref(selected.value?.code);
     <template #item="{ item }">
       <SwitchLocalePathLink :locale="item.code">
         <span class="flex items-center gap-2">
-          <UIcon :name="(item as unknown as Locale).flag" /> <span>{{ item.name }}</span>
+        <UIcon :name="(item as LocaleObject).flag" /> <span>{{ item.name }}</span>
         </span>
       </SwitchLocalePathLink>
     </template>

@@ -1,7 +1,5 @@
 <script setup lang="ts">
-definePageMeta({
-  layout: "default",
-});
+defineOptions({ name: 'NBWelcome' })
 const { app } = useAppConfig()
 const github = app.socials[0]
 

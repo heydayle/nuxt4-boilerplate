@@ -1,11 +1,12 @@
 <script setup lang="ts">
+defineOptions({ name: 'NBNavigation' })
 const { app } = useAppConfig();
 const navigation = app.headers.navigation;
 
 const route = useRoute()
 const getRouteBaseName = useRouteBaseName()
 const baseName = computed(() => getRouteBaseName(route))
-const isExtract = (name: string) => baseName.value.includes(name)
+const isActiveRoute = (name: string) => baseName.value.includes(name)
 </script>
 
 <template>
@@ -14,7 +15,7 @@ const isExtract = (name: string) => baseName.value.includes(name)
       <ul class="flex items-center space-x-4">
         <UNavigationMenu :items="navigation" highlight highlight-color="neutral">
           <template #item="{ item }">
-            <NuxtLinkLocale :to="item.name" exact-active-class="router-link-active" :class="{ 'router-link-active': isExtract(item.name) }">
+            <NuxtLinkLocale :to="item.name" exact-active-class="router-link-active" :class="{ 'router-link-active': isActiveRoute(item.name) }">
               <span>{{ $t(item.label) }}</span>
             </NuxtLinkLocale>
           </template>

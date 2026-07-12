@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ name: 'NBGetStartedButton' })
 const isChecked = shallowRef(false)
 useTimeoutFn(() => {
   isChecked.value = true

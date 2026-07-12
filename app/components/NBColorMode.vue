@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ name: 'NBColorMode' })
 const colorMode = useColorMode()
 const isDark = computed({
   get: () => colorMode.value === 'dark',

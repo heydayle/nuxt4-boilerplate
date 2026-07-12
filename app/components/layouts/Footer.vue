@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ name: 'LayoutsFooter' })
 const currentYear = new Date().getFullYear()
 </script>
 
