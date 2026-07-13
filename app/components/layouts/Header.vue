@@ -1,7 +1,7 @@
 <script setup lang="ts">
 defineOptions({ name: 'LayoutsHeader' })
 const { app } = useAppConfig()
-const github = app.socials[0]
+const github = app.socials?.[0] ?? { href: '#' }
 </script>
 <template>
   <div class="ring-1 ring-black/5 sticky top-0">

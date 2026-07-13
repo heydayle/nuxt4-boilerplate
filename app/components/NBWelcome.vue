@@ -1,8 +1,7 @@
 <script setup lang="ts">
 defineOptions({ name: 'NBWelcome' })
 const { app } = useAppConfig()
-const github = app.socials[0]
-
+const github = app.socials?.[0] ?? { href: '#' }
 </script>
 <template>
   <div>

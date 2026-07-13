@@ -7,7 +7,7 @@ const { locale, locales } = useI18n();
 const selected = computed(() =>
   (locales.value as LocaleObject[]).find((item) => item.code === locale.value)
 );
-const value = ref(selected.value?.code);
+const value = ref<string | undefined>(selected.value?.code);
 </script>
 <template>
   <USelectMenu
