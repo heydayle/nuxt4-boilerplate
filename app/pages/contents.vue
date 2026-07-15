@@ -5,7 +5,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'Contents page sample for Nuxt Boilerplat'
+      content: 'Contents page sample for Nuxt Boilerplate'
     }
   ]
 })

@@ -1,6 +1,11 @@
 <script setup lang="ts">
 defineOptions({ name: 'NBFeatures' })
 
+interface Feature {
+  label: string;
+  icon: string;
+}
+
 type Props = {
   extend?: {
     label: string;
@@ -12,14 +17,14 @@ withDefaults(defineProps<Props>(), {
   extend: () => ({ label: "Explore", to: "components" }),
 });
 const { app } = useAppConfig();
-const FEATURES = app.features;
+const features = app.features as Feature[];
 
 </script>
 
 <template>
   <div class="grid grid-cols-4 gap-4 mt-6 content-center align-center">
     <div
-      v-for="(item, index) in FEATURES"
+      v-for="(item, index) in features"
       :key="index"
       class="group relative flex flex-col justify-center items-center shadow-lg ring-1 ring-black/5 h-[100px] rounded-2xl transition duration-600 cursor-pointer shadow-gray-100/10 shadow-2xl"
     >
