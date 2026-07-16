@@ -2,7 +2,6 @@
 import { z } from "zod";
 import { CalendarDate } from "@internationalized/date";
 import type { BreadcrumbItem, RadioGroupItem, RadioGroupValue } from "@nuxt/ui";
-import SplitText from "~/components/ui/text-animation/SplitText/SplitText.vue";
 
 useHead({
   title: "Components",

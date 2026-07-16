@@ -58,9 +58,9 @@ const emit = defineEmits<{
 
 const textRef = ref<HTMLParagraphElement | null>(null);
 const animationCompletedRef = ref(false);
-const scrollTriggerRef = ref<ScrollTrigger | null>(null);
-const timelineRef = ref<gsap.core.Timeline | null>(null);
-const splitterRef = ref<GSAPSplitText | null>(null);
+const scrollTriggerRef = shallowRef<ScrollTrigger | null>(null);
+const timelineRef = shallowRef<gsap.core.Timeline | null>(null);
+const splitterRef = shallowRef<GSAPSplitText | null>(null);
 
 const initializeAnimation = async () => {
   if (typeof window === 'undefined' || !textRef.value || !props.text) return;
