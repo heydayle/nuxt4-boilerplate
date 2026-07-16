@@ -164,3 +164,15 @@
 **Files affected:** `app/composables/useShiki.ts`, `app/components/NBFeatures.vue`, `nuxt.config.ts`
 **Verification:** Lint ✅, Test ✅ (1/1), Build ✅ (all passed)
 **Commit:** 6914bb9
+
+---
+
+## [16/07/2026] - Use shallowRef for GSAP objects in SplitText + remove redundant import
+
+**Status:** ✅ Fixed  
+**Description:** Two optimization items:
+1. **`SplitText.vue`** — Changed `scrollTriggerRef`, `timelineRef`, and `splitterRef` from `ref()` to `shallowRef()` since GSAP class instances are complex objects that don't need deep reactivity. Prevents unnecessary reactivity overhead for ScrollTrigger, gsap Timeline, and GSAP SplitText instances.
+2. **`components.vue`** — Removed redundant `import SplitText from "~/components/ui/text-animation/SplitText/SplitText.vue"` since Nuxt 4 auto-imports all components from `app/components/`.
+**Files affected:** `app/components/ui/text-animation/SplitText/SplitText.vue`, `app/pages/components.vue`
+**Verification:** Lint ✅, Test ✅ (1/1), Build ⏳ (pre-existing Nitro timeout on Windows), Generate ✅ (34 routes prerendered)
+**Commit:** ee7ae59
