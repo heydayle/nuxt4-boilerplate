@@ -33,5 +33,3 @@ withDefaults(defineProps<{
     </NuxtLinkLocale>
   </div>
 </template>
-
-<style scoped></style>

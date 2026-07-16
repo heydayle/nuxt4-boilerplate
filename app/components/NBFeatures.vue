@@ -17,7 +17,7 @@ withDefaults(defineProps<Props>(), {
   extend: () => ({ label: "Explore", to: "components" }),
 });
 const { app } = useAppConfig();
-const features = app.features as Feature[];
+const features: Feature[] = app.features ?? [];
 
 </script>
 

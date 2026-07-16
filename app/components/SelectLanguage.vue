@@ -7,16 +7,10 @@ const { locale, locales } = useI18n();
 const selected = computed(() =>
   (locales.value as LocaleObject[]).find((item) => item.code === locale.value)
 );
-
-// Sync local value when locale changes programmatically (not just via user interaction)
-const value = ref<string | undefined>(selected.value?.code);
-watch(locale, (newLocale) => {
-  value.value = newLocale;
-});
 </script>
 <template>
   <USelectMenu
-    v-model="value"
+    v-model="locale"
     :search-input="false"
     value-key="code"
     :items="locales"

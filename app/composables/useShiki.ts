@@ -68,11 +68,3 @@ export const convertFullMarkdownWithShiki = async (markdown: string): Promise<st
 
     return result
 }
-
-/**
- * Highlight bash/shell/sh code blocks in markdown using Shiki.
- * Alias for {@link convertMarkdownWithShiki}.
- * @param markdown - Raw markdown string
- * @returns Markdown with bash code blocks replaced by highlighted HTML
- */
-export const highlightBashInMarkdown = convertMarkdownWithShiki
