@@ -193,6 +193,7 @@ watch(
   () => {
     cleanup();
     initializeAnimation();
-  }
+  },
+  { deep: true }
 );
 </script>

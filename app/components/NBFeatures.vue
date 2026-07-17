@@ -26,6 +26,7 @@ const features: Feature[] = app.features ?? [];
     <div
       v-for="(item, index) in features"
       :key="index"
+      v-memo="[item.label, item.icon]"
       class="group relative flex flex-col justify-center items-center shadow-lg ring-1 ring-black/5 h-[100px] rounded-2xl transition duration-600 cursor-pointer shadow-gray-100/10 shadow-2xl"
     >
       <div
