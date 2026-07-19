@@ -1,11 +1,6 @@
 <script setup lang="ts">
-import { ref, reactive, useTemplateRef } from "vue";
+import { ref, reactive, useTemplateRef, onMounted } from "vue";
 import { useStorage } from "@vueuse/core";
-import {
-  useTokenClient,
-  type AuthCodeFlowSuccessResponse,
-  type AuthCodeFlowErrorResponse,
-} from "vue3-google-signin";
 import { z } from "zod";
 
 definePageMeta({
@@ -21,21 +16,31 @@ const localePath = useLocalePath();
 const access_token = useStorage("access_token", "");
 const credentials = useStorage("credentials", "");
 
-const handleOnSuccess = (response: AuthCodeFlowSuccessResponse) => {
-  access_token.value = response.access_token;
-  credentials.value = JSON.stringify(response);
-  navigateTo("/");
-};
+// Google Sign-In — the nuxt-vue3-google-signin module is disabled on Nuxt 4,
+// so load dynamically and fall back silently if unavailable.
+const loginByGoogle = ref<(() => void) | undefined>(undefined);
 
-const handleOnError = (_errorResponse: AuthCodeFlowErrorResponse) => {
-  // Error handling is delegated to vue3-google-signin internal logging
-};
-const scopes = ["email", "profile"];
-
-const { login: loginByGoogle } = useTokenClient({
-  scope: scopes,
-  onSuccess: handleOnSuccess,
-  onError: handleOnError,
+onMounted(async () => {
+  try {
+    const { useTokenClient } = await import("vue3-google-signin");
+    const scopes = ["email", "profile"];
+    const handleOnSuccess = (response: { access_token: string }) => {
+      access_token.value = response.access_token;
+      credentials.value = JSON.stringify(response);
+      navigateTo("/");
+    };
+    const handleOnError = () => {
+      // Error handling is delegated to vue3-google-signin internal logging
+    };
+    loginByGoogle.value = useTokenClient({
+      scope: scopes,
+      onSuccess: handleOnSuccess,
+      onError: handleOnError,
+    }).login;
+  } catch {
+    // vue3-google-signin is unavailable — Google login button stays hidden
+    loginByGoogle.value = undefined;
+  }
 });
 
 const form = useTemplateRef("form");
@@ -55,10 +60,8 @@ const showPassword = () => {
   passwordType.value = passwordType.value === "password" ? "text" : "password";
 };
 const onSubmit = async () => {
-  const valid = (await form.value?.validate({
-    silent: true,
-  })) as unknown as Promise<typeof schema | boolean>;
-  if (!valid) {
+  const result = await form.value?.validate({ silent: true });
+  if (!result) {
     toast.add({
       title: "Login Fail",
       description: `Please try again!`,
@@ -139,7 +142,7 @@ const onSubmit = async () => {
           </div>
         </UForm>
         <UDivider label="OR" :ui="{ label: 'text-white' }" />
-        <div class="flex justify-center space-x-4">
+        <div v-if="loginByGoogle" class="flex justify-center space-x-4">
           <UButton
             icon="logos:google-icon"
             variant="outline"
