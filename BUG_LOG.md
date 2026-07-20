@@ -176,3 +176,22 @@
 **Files affected:** `app/components/ui/text-animation/SplitText/SplitText.vue`, `app/pages/components.vue`
 **Verification:** Lint ✅, Test ✅ (1/1), Build ⏳ (pre-existing Nitro timeout on Windows), Generate ✅ (34 routes prerendered)
 **Commit:** ee7ae59
+
+---
+
+## [20/07/2026] - Resolved 7 TypeScript strict-mode errors across 7 files
+
+**Status:** ✅ Fixed
+**Description:** `vue-tsc --noEmit` revealed 7 TypeScript strict-mode errors that were not caught by ESLint:
+
+1. **`Header.vue:20`** — `github.icon` accessed on a fallback object `{ href: '#' }` that had no `icon` property (TS2339). Added `icon: ''` to fallback.
+2. **`NBNavigation.vue:9`** — `baseName.value` from `getRouteBaseName()` could be `undefined` (TS18048). Used optional chaining `?.includes()` with nullish coalescing.
+3. **`SelectLanguage.vue:17,25`** — USelectMenu v-model type mismatch (TS2322): `locale` from `useI18n()` has narrow union type `'en' | 'vi'` that doesn't match USelectMenu's v-model type. Created separate `Ref<LocaleCode>` with a watch bridge. Also fixed `(item as LocaleObject).flag` being `unknown` → `as string`.
+4. **`SplitText.vue:117`** — `props.rootMargin` possibly `undefined` in regex `.exec()` (TS2345). Added `?? ''` fallback.
+5. **`Sidebar.vue:13`** — After making `Navigation.name` optional, `localePath(item.name)` received `string | undefined` (TS2345). Added `item.name ? localePath(item.name) : item.to` fallback.
+6. **`types/nuxtTypes.ts`** — `Navigation.name` was required but sidebar children in `app.config.ts` use `{ label, to }` without `name`. Made `name` optional to match actual usage.
+7. **`components.vue:195`** — CalendarDate class with private fields structurally incompatible with ZonedDateTime in the `DateValue` union (TS2322). Used `as any` with eslint-disable comment since `DateValue` type is not exported from `@internationalized/date`.
+
+**Files affected:** `app/components/NBNavigation.vue`, `app/components/SelectLanguage.vue`, `app/components/layouts/Header.vue`, `app/components/layouts/Sidebar.vue`, `app/components/ui/text-animation/SplitText/SplitText.vue`, `app/pages/components.vue`, `types/nuxtTypes.ts`
+**Verification:** Lint ✅, Test ✅ (1/1), vue-tsc ✅ (0 errors, down from 7), Build ⏳ (pre-existing Nitro timeout on Windows)
+**Commit:** dd6d3eb
