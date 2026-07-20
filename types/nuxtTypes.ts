@@ -1,5 +1,5 @@
 export interface Navigation {
-    name: string
+    name?: string
     label: string
     to?: string
     href?: string

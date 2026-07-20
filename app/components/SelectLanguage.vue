@@ -2,19 +2,28 @@
 import type { LocaleObject } from '@nuxtjs/i18n'
 defineOptions({ name: 'SelectLanguage' })
 
-const { locale, locales } = useI18n();
+const { locale, locales } = useI18n()
+
+type LocaleCode = 'en' | 'vi'
+
+// Separate ref for USelectMenu v-model compatibility (locale from i18n has narrow union type)
+const selectedLocale = ref<LocaleCode>(locale.value as LocaleCode)
+watch(selectedLocale, (val) => {
+  locale.value = val
+})
 
 const selected = computed(() =>
-  (locales.value as LocaleObject[]).find((item) => item.code === locale.value)
-);
+  (locales.value as LocaleObject[]).find((item) => item.code === selectedLocale.value)
+)
+const selectedFlag = computed(() => selected.value?.flag as string | undefined)
 </script>
 <template>
   <USelectMenu
-    v-model="locale"
+    v-model="selectedLocale"
     :search-input="false"
     value-key="code"
     :items="locales"
-    :icon="selected?.flag ?? ''"
+    :icon="selectedFlag ?? ''"
     value-attribute="code"
     variant="outline"
     :ui="{ content: 'w-30' }"
@@ -22,7 +31,7 @@ const selected = computed(() =>
     <template #item="{ item }">
       <SwitchLocalePathLink :locale="item.code">
         <span class="flex items-center gap-2">
-        <UIcon :name="(item as LocaleObject).flag" /> <span>{{ item.name }}</span>
+        <UIcon :name="(item as LocaleObject).flag as string" /> <span>{{ item.name }}</span>
         </span>
       </SwitchLocalePathLink>
     </template>

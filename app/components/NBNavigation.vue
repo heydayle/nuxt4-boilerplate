@@ -6,7 +6,7 @@ const navigation = app.headers.navigation;
 const route = useRoute()
 const getRouteBaseName = useRouteBaseName()
 const baseName = computed(() => getRouteBaseName(route))
-const isActiveRoute = (name: string) => baseName.value.includes(name)
+const isActiveRoute = (name: string) => baseName.value?.includes(name) ?? false
 </script>
 
 <template>

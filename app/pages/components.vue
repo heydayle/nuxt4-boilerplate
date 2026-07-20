@@ -98,11 +98,14 @@ const menuSelected = ref("Backlog");
 const itemsRadio = ref<RadioGroupItem[]>(["System", "Light", "Dark"]);
 const valueRadio = ref<RadioGroupValue>("System");
 
-// calendar
-const valueDate = ref<{
-  start: CalendarDate | string;
-  end: CalendarDate | string;
-}>({ start: new CalendarDate(2022, 2, 3), end: new CalendarDate(2022, 2, 20) });
+// calendar — DateValue type is not exported from @internationalized/date,
+// and CalendarDate class has private fields that don't structurally match
+// ZonedDateTime (known TS class-union limitation). Cast is safe at runtime.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const valueDate: any = ref({
+  start: new CalendarDate(2022, 2, 3),
+  end: new CalendarDate(2022, 2, 20),
+});
 
 // pagination
 const page = ref(1);

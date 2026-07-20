@@ -10,7 +10,7 @@ const localePath = useLocalePath();
 const items = computed(() => {
   return props.sidebarItems.map((item) => ({
     ...item,
-    to: localePath(item.name),
+    to: item.name ? localePath(item.name) : item.to,
     children: [],
   }));
 });
