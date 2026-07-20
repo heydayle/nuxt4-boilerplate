@@ -15,7 +15,8 @@ watch(selectedLocale, (val) => {
 const selected = computed(() =>
   (locales.value as LocaleObject[]).find((item) => item.code === selectedLocale.value)
 )
-const selectedFlag = computed(() => selected.value?.flag as string | undefined)
+const getItemFlag = (item: unknown): string => (item as LocaleObject).flag ?? ''
+const selectedFlag = computed(() => selected.value?.flag ?? '')
 </script>
 <template>
   <USelectMenu
@@ -23,7 +24,7 @@ const selectedFlag = computed(() => selected.value?.flag as string | undefined)
     :search-input="false"
     value-key="code"
     :items="locales"
-    :icon="selectedFlag ?? ''"
+    :icon="selectedFlag"
     value-attribute="code"
     variant="outline"
     :ui="{ content: 'w-30' }"
@@ -31,7 +32,7 @@ const selectedFlag = computed(() => selected.value?.flag as string | undefined)
     <template #item="{ item }">
       <SwitchLocalePathLink :locale="item.code">
         <span class="flex items-center gap-2">
-        <UIcon :name="(item as LocaleObject).flag as string" /> <span>{{ item.name }}</span>
+        <UIcon :name="getItemFlag(item)" /> <span>{{ item.name }}</span>
         </span>
       </SwitchLocalePathLink>
     </template>

@@ -18,15 +18,22 @@ const initShiki = async (): Promise<Highlighter> => {
 const BASH_BLOCK_RE = /```(?:bash|shell|sh)\n([\s\S]*?)```/g
 
 /**
+ * Internal: replace bash/shell/sh code blocks with Shiki-highlighted HTML.
+ */
+const replaceBashBlocks = async (text: string, shiki: Highlighter): Promise<string> => {
+    return text.replace(BASH_BLOCK_RE, (_match: string, code: string) =>
+        shiki.codeToHtml(code.trim(), { lang: 'bash', theme: 'nord' })
+    )
+}
+
+/**
  * Highlight bash/shell/sh code blocks in markdown using Shiki.
  * @param markdown - Raw markdown string
  * @returns Markdown with bash code blocks replaced by highlighted HTML
  */
 export const convertMarkdownWithShiki = async (markdown: string): Promise<string> => {
     const shiki = await initShiki()
-    return markdown.replace(BASH_BLOCK_RE, (_match: string, code: string) =>
-        shiki.codeToHtml(code.trim(), { lang: 'bash', theme: 'nord' })
-    )
+    return replaceBashBlocks(markdown, shiki)
 }
 
 /**
@@ -41,9 +48,7 @@ export const convertFullMarkdownWithShiki = async (markdown: string): Promise<st
     let result = markdown
 
     // Convert bash code blocks with Shiki
-    result = result.replace(BASH_BLOCK_RE, (_match: string, code: string) =>
-        shiki.codeToHtml(code.trim(), { lang: 'bash', theme: 'nord' })
-    )
+    result = await replaceBashBlocks(result, shiki)
 
     // Convert other code blocks to simple HTML (without Shiki)
     result = result.replace(/```(\w+)?\n([\s\S]*?)```/g, (_match: string, _lang: string, code: string) =>
