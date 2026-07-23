@@ -7,6 +7,7 @@ export default defineVitestConfig({
     setupFiles: [
       fileURLToPath(new URL('./app/components/__tests__/setup.ts', import.meta.url))
     ],
+    exclude: ['**/node_modules/**', '**/e2e/**', '**/dist/**', '**/.nuxt/**'],
     // you can optionally set Nuxt-specific environment options
     environmentOptions: {
       nuxt: {

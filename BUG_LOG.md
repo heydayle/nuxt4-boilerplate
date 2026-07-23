@@ -179,6 +179,16 @@
 
 ---
 
+## [23/07/2026] - Vitest picks up Playwright e2e test from `app/e2e/`, causing test failure
+
+**Status:** ✅ Fixed
+**Description:** The `app/e2e/example.spec.ts` file (a Playwright test using `@nuxt/test-utils/playwright`) sits inside `app/` directory and was being picked up by vitest's Nuxt test environment even when the CLI only specified `app/components/__tests__`. This caused a test suite error: `Playwright Test did not expect test() to be called here` because vitest tried to execute Playwright `test()` calls within vitest's context.
+**Files affected:** `vitest.config.ts`
+**Fix:** Added `exclude: ['**/node_modules/**', '**/e2e/**', '**/dist/**', '**/.nuxt/**']` to the vitest config to prevent vitest from scanning Playwright E2E test files.
+**Verification:** Lint ✅, Test ✅ (1/1), Build ⏳ (pre-existing Nitro timeout on Windows)
+
+---
+
 ## [20/07/2026] - Resolved 7 TypeScript strict-mode errors across 7 files
 
 **Status:** ✅ Fixed
