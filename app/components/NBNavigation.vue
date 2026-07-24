@@ -1,7 +1,7 @@
 <script setup lang="ts">
 defineOptions({ name: 'NBNavigation' })
 const { app } = useAppConfig();
-const navigation = app.headers.navigation;
+const navigation = computed(() => app.headers.navigation);
 
 const route = useRoute()
 const getRouteBaseName = useRouteBaseName()
