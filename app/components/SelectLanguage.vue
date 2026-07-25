@@ -12,13 +12,13 @@ watch(selectedLocale, (val) => {
   locale.value = val
 })
 
-const localeItems = computed<LocaleObject[]>(() => locales.value as LocaleObject[])
-
-const selected = computed(() =>
-  localeItems.value.find((item) => item.code === selectedLocale.value)
-)
 const getItemFlag = (item: LocaleObject): string => item.flag ?? ''
-const selectedFlag = computed(() => selected.value?.flag ?? '')
+const selectedFlag = computed(() => {
+  const selected = (locales.value as LocaleObject[]).find(
+    (item) => item.code === selectedLocale.value
+  )
+  return selected?.flag ?? ''
+})
 </script>
 <template>
   <USelectMenu
