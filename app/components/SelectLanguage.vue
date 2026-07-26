@@ -12,12 +12,12 @@ watch(selectedLocale, (val) => {
   locale.value = val
 })
 
-const getItemFlag = (item: LocaleObject): string => item.flag ?? ''
+const getItemFlag = (item: LocaleObject): string => String(item.flag ?? '')
 const selectedFlag = computed(() => {
   const selected = (locales.value as LocaleObject[]).find(
     (item) => item.code === selectedLocale.value
   )
-  return selected?.flag ?? ''
+  return String(selected?.flag ?? '')
 })
 </script>
 <template>

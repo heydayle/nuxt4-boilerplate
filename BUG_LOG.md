@@ -1,5 +1,17 @@
 # Bug Tracker
 
+## [26/07/2026] - Fixed 2 TypeScript errors in SelectLanguage.vue (LocaleObject.flag type mismatch)
+
+**Status:** ✅ Fixed  
+**Description:** `vue-tsc --noEmit` revealed 2 TypeScript errors in `SelectLanguage.vue` where `LocaleObject.flag` from `@nuxtjs/i18n` is typed as `unknown`/`{}` (not `string`), causing `TS2322: Type '{}' is not assignable to type 'string'` when using `?? ''` fallback without explicit casting.
+
+**Files affected:** `app/components/SelectLanguage.vue`  
+**Fix:** Wrapped `item.flag ?? ''` and `selected?.flag ?? ''` with `String()` to ensure the return type is `string` regardless of the underlying `LocaleObject.flag` type.  
+**Verification:** vue-tsc ✅ (0 errors, down from 2), lint ✅ (0 errors), test ✅ (1/1), Build ⏳ (pre-existing Nitro timeout on Windows - client + SSR build succeed, only final packaging stalls)  
+**Commit:** [commit hash]
+
+---
+
 ## [26/06/2026] - Build timeout on Windows (pre-existing)
 
 **Status:** ⏳ Pending (environment issue - seems resolved as of 29/06 build succeeds)
