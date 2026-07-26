@@ -51,8 +51,8 @@ export const convertFullMarkdownWithShiki = async (markdown: string): Promise<st
     result = await replaceBashBlocks(result, shiki)
 
     // Convert other code blocks to simple HTML (without Shiki)
-    result = result.replace(/```(\w+)?\n([\s\S]*?)```/g, (_match: string, _lang: string, code: string) =>
-        `<pre><code class="language-ts">${code.trim()}</code></pre>`
+    result = result.replace(/```(\w+)?\n([\s\S]*?)```/g, (_match: string, lang: string | undefined, code: string) =>
+        `<pre><code class="language-${lang || 'text'}">${code.trim()}</code></pre>`
     )
 
     // Convert inline code

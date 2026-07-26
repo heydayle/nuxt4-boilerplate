@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import type { Navigation } from "~~/types/nuxtTypes";
 defineOptions({ name: 'NBNavigation' })
 const { app } = useAppConfig();
-const navigation = computed(() => app.headers.navigation);
+const navigation = computed<Navigation[]>(() => app.headers.navigation);
 
 const route = useRoute()
 const getRouteBaseName = useRouteBaseName()
