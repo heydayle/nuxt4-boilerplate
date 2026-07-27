@@ -1,8 +1,8 @@
 <script setup lang="ts">
 defineOptions({ name: 'NBLogo' })
 const { app } = useAppConfig();
-const title = app.meta.title;
-const version = app.version;
+const title: string = app.meta?.title ?? 'Nuxt Boilerplate';
+const version: string = app.version ?? 'v1.0.0';
 
 withDefaults(defineProps<{
   withTitle?: boolean;
