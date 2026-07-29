@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import type { Social } from '~~/types/nuxtTypes'
 defineOptions({ name: 'NBWelcome' })
 const { app } = useAppConfig()
-const github: NonNullable<typeof app.socials>[number] = app.socials?.[0] ?? { name: 'Github', href: '#', icon: '' }
+const github: Social = app.socials?.[0] ?? { name: 'Github', href: '#', icon: '' }
 </script>
 <template>
   <div>

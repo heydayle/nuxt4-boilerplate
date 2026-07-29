@@ -36,7 +36,3 @@ const contacts = computed(() => config.app.contacts)
     </div>
   </div>
 </template>
-
-<style scoped>
-
-</style>

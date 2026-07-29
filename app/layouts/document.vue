@@ -32,7 +32,3 @@ const itemsChildren = computed(() => {
   <LayoutsFooter />
 </div>
 </template>
-
-<style scoped>
-
-</style>

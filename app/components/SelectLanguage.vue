@@ -6,10 +6,14 @@ const { locale, locales } = useI18n()
 
 type LocaleCode = 'en' | 'vi'
 
-// Separate ref for USelectMenu v-model compatibility (locale from i18n has narrow union type)
-const selectedLocale = ref<LocaleCode>(locale.value as LocaleCode)
-watch(selectedLocale, (val) => {
-  locale.value = val
+/**
+ * Computed get/set bridges USelectMenu v-model with the i18n locale.
+ * Separate writable ref is needed because `locale` from useI18n() has a
+ * narrow union type that doesn't accept arbitrary LocaleCode writes.
+ */
+const selectedLocale = computed({
+  get: () => locale.value as LocaleCode,
+  set: (val: LocaleCode) => { locale.value = val },
 })
 
 const getItemFlag = (item: LocaleObject): string => String(item.flag ?? '')
