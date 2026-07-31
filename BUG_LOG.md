@@ -1,5 +1,14 @@
 # Bug Tracker
 
+## [01/08/2026] - Remove unnecessary async wrapper in useShiki.ts (shiki codeToHtml is sync)
+
+**Status:** ✅ Fixed
+**Description:** `replaceBashBlocks` in `useShiki.ts` was declared `async` but its body is fully synchronous — Shiki's `Highlighter.codeToHtml` has been synchronous since shiki >= 0.14 (confirmed in `@shikijs/core` types: `codeToHtml(...): string`; only the singleton shorthand variant is async). Made `replaceBashBlocks` return `string` directly and dropped the now-unneeded `await` in `convertFullMarkdownWithShiki`. Public API signatures unchanged (`Promise<string>` preserved since `initShiki()` is still async). Behavior identical, less promise overhead.
+**Files affected:** `app/composables/useShiki.ts`
+**Verification:** Lint ✅, Test ✅ (1/1), Build ✅, vue-tsc --noEmit ✅ (0 errors)
+
+---
+
 ## [26/07/2026] - Fixed 2 TypeScript errors in SelectLanguage.vue (LocaleObject.flag type mismatch)
 
 **Status:** ✅ Fixed  

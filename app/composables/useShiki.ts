@@ -19,8 +19,9 @@ const BASH_BLOCK_RE = /```(?:bash|shell|sh)\n([\s\S]*?)```/g
 
 /**
  * Internal: replace bash/shell/sh code blocks with Shiki-highlighted HTML.
+ * Shiki's `Highlighter.codeToHtml` is synchronous (shiki >= 0.14), so no await needed.
  */
-const replaceBashBlocks = async (text: string, shiki: Highlighter): Promise<string> => {
+const replaceBashBlocks = (text: string, shiki: Highlighter): string => {
     return text.replace(BASH_BLOCK_RE, (_match: string, code: string) =>
         shiki.codeToHtml(code.trim(), { lang: 'bash', theme: 'nord' })
     )
@@ -48,7 +49,7 @@ export const convertFullMarkdownWithShiki = async (markdown: string): Promise<st
     let result = markdown
 
     // Convert bash code blocks with Shiki
-    result = await replaceBashBlocks(result, shiki)
+    result = replaceBashBlocks(result, shiki)
 
     // Convert other code blocks to simple HTML (without Shiki)
     result = result.replace(/```(\w+)?\n([\s\S]*?)```/g, (_match: string, lang: string | undefined, code: string) =>
