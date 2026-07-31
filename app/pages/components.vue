@@ -88,7 +88,7 @@ const resetForm = () => {
   form.value?.clear();
 };
 // pin input
-const pin = ref([]);
+const pin = ref<string[]>([]);
 
 // select menu
 const selects = ref(["Backlog", "Todo", "In Progress", "Done"]);
@@ -98,9 +98,10 @@ const menuSelected = ref("Backlog");
 const itemsRadio = ref<RadioGroupItem[]>(["System", "Light", "Dark"]);
 const valueRadio = ref<RadioGroupValue>("System");
 
-// calendar — DateValue type is not exported from @internationalized/date,
-// and CalendarDate class has private fields that don't structurally match
-// ZonedDateTime (known TS class-union limitation). Cast is safe at runtime.
+// calendar — UCalendar's range model is `DateRange | null` (reka-ui), but
+// CalendarDate's private fields don't structurally match the DateValue class
+// union, and the template v-model check fails under vue-tsc (verified 2026-07).
+// The cast is safe at runtime; `DateRange` is not assignable in both directions.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const valueDate: any = ref({
   start: new CalendarDate(2022, 2, 3),
