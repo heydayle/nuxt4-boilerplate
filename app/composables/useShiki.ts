@@ -18,6 +18,17 @@ const initShiki = async (): Promise<Highlighter> => {
 const BASH_BLOCK_RE = /```(?:bash|shell|sh)\n([\s\S]*?)```/g
 
 /**
+ * Escape HTML special characters so raw markdown content cannot break out of
+ * the generated markup (prevents HTML injection when rendering code/headings).
+ */
+const escapeHtml = (value: string): string => value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+
+/**
  * Internal: replace bash/shell/sh code blocks with Shiki-highlighted HTML.
  * Shiki's `Highlighter.codeToHtml` is synchronous (shiki >= 0.14), so no await needed.
  */
@@ -53,20 +64,20 @@ export const convertFullMarkdownWithShiki = async (markdown: string): Promise<st
 
     // Convert other code blocks to simple HTML (without Shiki)
     result = result.replace(/```(\w+)?\n([\s\S]*?)```/g, (_match: string, lang: string | undefined, code: string) =>
-        `<pre><code class="language-${lang || 'text'}">${code.trim()}</code></pre>`
+        `<pre><code class="language-${lang || 'text'}">${escapeHtml(code.trim())}</code></pre>`
     )
 
     // Convert inline code
-    result = result.replace(/`([^`]+)`/g, '<code>$1</code>')
+    result = result.replace(/`([^`]+)`/g, (_match: string, code: string) => `<code>${escapeHtml(code)}</code>`)
 
     // Convert headers
-    result = result.replace(/^### (.*$)/gm, '<h3>$1</h3>')
-    result = result.replace(/^## (.*$)/gm, '<h2>$1</h2>')
-    result = result.replace(/^# (.*$)/gm, '<h1>$1</h1>')
+    result = result.replace(/^### (.*$)/gm, (_match: string, content: string) => `<h3>${escapeHtml(content)}</h3>`)
+    result = result.replace(/^## (.*$)/gm, (_match: string, content: string) => `<h2>${escapeHtml(content)}</h2>`)
+    result = result.replace(/^# (.*$)/gm, (_match: string, content: string) => `<h1>${escapeHtml(content)}</h1>`)
 
     // Convert bold and italic
-    result = result.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    result = result.replace(/\*(.*?)\*/g, '<em>$1</em>')
+    result = result.replace(/\*\*(.*?)\*\*/g, (_match: string, content: string) => `<strong>${escapeHtml(content)}</strong>`)
+    result = result.replace(/\*(.*?)\*/g, (_match: string, content: string) => `<em>${escapeHtml(content)}</em>`)
 
     // Wrap in paragraph markers for line breaks
     result = result.replace(/\n\n/g, '</p><p>')

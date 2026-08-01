@@ -1,5 +1,14 @@
 # Bug Tracker
 
+## [02/08/2026] - HTML injection in convertFullMarkdownWithShiki (unescaped markdown content)
+
+**Status:** ✅ Fixed
+**Description:** `convertFullMarkdownWithShiki` in `useShiki.ts` injected raw markdown content into generated HTML without escaping — fallback fenced code blocks, inline code, headings, bold and italic text could contain raw HTML (e.g. `<script>`) that would be parsed by the browser instead of rendered as literal text. Added an `escapeHtml` helper and applied it to all dynamic content. Bash blocks were already safe (Shiki escapes output). Also consolidated the three sequential header regex passes (`###`/`##`/`#`) into a single `^(#{1,3}) (.*)$` pass — behavior identical (verified `####`+ headings remain untouched).
+**Files affected:** `app/composables/useShiki.ts`, `app/components/__tests__/use-shiki.spec.ts` (new tests)
+**Verification:** Lint ✅, Test ✅ (5/5, incl. 4 new escaping regression tests), Build ✅
+
+---
+
 ## [01/08/2026] - Remove unnecessary async wrapper in useShiki.ts (shiki codeToHtml is sync)
 
 **Status:** ✅ Fixed
