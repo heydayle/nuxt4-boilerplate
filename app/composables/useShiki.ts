@@ -70,10 +70,10 @@ export const convertFullMarkdownWithShiki = async (markdown: string): Promise<st
     // Convert inline code
     result = result.replace(/`([^`]+)`/g, (_match: string, code: string) => `<code>${escapeHtml(code)}</code>`)
 
-    // Convert headers
-    result = result.replace(/^### (.*$)/gm, (_match: string, content: string) => `<h3>${escapeHtml(content)}</h3>`)
-    result = result.replace(/^## (.*$)/gm, (_match: string, content: string) => `<h2>${escapeHtml(content)}</h2>`)
-    result = result.replace(/^# (.*$)/gm, (_match: string, content: string) => `<h1>${escapeHtml(content)}</h1>`)
+    // Convert headers (single pass for h1-h3)
+    result = result.replace(/^(#{1,3}) (.*)$/gm, (_match: string, hashes: string, content: string) =>
+        `<h${hashes.length}>${escapeHtml(content)}</h${hashes.length}>`
+    )
 
     // Convert bold and italic
     result = result.replace(/\*\*(.*?)\*\*/g, (_match: string, content: string) => `<strong>${escapeHtml(content)}</strong>`)
