@@ -39,16 +39,6 @@ const replaceBashBlocks = (text: string, shiki: Highlighter): string => {
 }
 
 /**
- * Highlight bash/shell/sh code blocks in markdown using Shiki.
- * @param markdown - Raw markdown string
- * @returns Markdown with bash code blocks replaced by highlighted HTML
- */
-export const convertMarkdownWithShiki = async (markdown: string): Promise<string> => {
-    const shiki = await initShiki()
-    return replaceBashBlocks(markdown, shiki)
-}
-
-/**
  * Convert full markdown to basic HTML, using Shiki for bash code blocks
  * and simple transformations for everything else.
  * @param markdown - Raw markdown string
