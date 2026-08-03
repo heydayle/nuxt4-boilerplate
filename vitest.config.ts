@@ -14,7 +14,12 @@ export default defineVitestConfig({
         rootDir: fileURLToPath(new URL('.', import.meta.url)),
         domEnvironment: 'happy-dom', // 'happy-dom' (default) or 'jsdom'
         overrides: {
-          // other Nuxt config you want to pass
+          // Disable nuxt-auth during unit tests: its runtime plugin fetches
+          // /api/auth/session at app init and logs a 404 FetchError to stderr
+          // (no server is running inside vitest).
+          auth: {
+            isEnabled: false
+          }
         }
       }
     }
